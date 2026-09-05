@@ -624,7 +624,7 @@ export function StickyMobileCTA() {
 
 export function Footer() {
   return (
-    <footer className="bg-[color-mix(in_oklab,var(--navy)_92%,black)] pb-24 pt-12 text-primary-foreground md:pb-12">
+    <footer className="bg-primary pb-24 pt-12 text-primary-foreground md:pb-12">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:grid-cols-3">
         <div>
           <p className="font-display text-lg font-extrabold">{business.name}</p>
