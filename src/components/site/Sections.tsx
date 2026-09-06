@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ImageUp, Phone } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -15,7 +16,9 @@ import {
   problemOptions,
 } from "@/config/business";
 import { track } from "@/lib/analytics";
+import { Button } from "@/components/ui/button";
 import { CallButton, WhatsAppButton } from "./cta";
+import { WhatsAppIcon } from "./icons";
 
 function Heading({ children, sub }: { children: React.ReactNode; sub?: string }) {
   return (
@@ -73,7 +76,7 @@ export function ProblemSelector() {
           Not sure what's wrong? That's okay. Just send us a photo.
         </p>
         <WhatsAppButton location="problem_section" className="mt-5">
-          📸 SHOW US THE PROBLEM
+          SHOW US THE PROBLEM
         </WhatsAppButton>
       </div>
     </section>
@@ -147,7 +150,7 @@ export function HowItWorks() {
       </ol>
 
       <div className="mt-9 text-center">
-        <WhatsAppButton location="how_it_works">📸 SEND MY PHOTO</WhatsAppButton>
+        <WhatsAppButton location="how_it_works">SEND MY PHOTO</WhatsAppButton>
       </div>
     </section>
   );
@@ -551,13 +554,15 @@ export function LeadForm() {
           )}
         </div>
 
-        <button
+        <Button
           type="submit"
-          className="min-h-[54px] w-full rounded-xl bg-whatsapp text-base font-bold text-whatsapp-foreground shadow-cta"
+          className="min-h-[54px] w-full rounded-xl bg-whatsapp text-base font-bold text-whatsapp-foreground shadow-cta hover:bg-whatsapp/90"
         >
+          <WhatsAppIcon className="h-5 w-5" />
           CONTINUE ON WHATSAPP
-        </button>
+        </Button>
         <p className="text-center text-xs text-muted-foreground">
+          <ImageUp aria-hidden="true" className="mr-1 inline h-4 w-4 align-text-bottom" />
           You can attach your photo once WhatsApp opens.
         </p>
       </form>
@@ -602,18 +607,20 @@ export function StickyMobileCTA() {
         <a
           href={business.phoneHref}
           onClick={() => track("call_click", { location: "sticky_mobile" })}
-          className="flex min-h-[52px] w-[38%] items-center justify-center rounded-xl border-2 border-primary/25 text-sm font-bold text-primary"
+          className="flex min-h-[52px] w-[38%] items-center justify-center gap-2 rounded-xl border-2 border-primary/25 text-sm font-bold text-primary"
         >
-          ☎ CALL NOW
+          <Phone aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
+          CALL NOW
         </a>
         <a
           href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
-          className="flex min-h-[52px] flex-1 items-center justify-center rounded-xl bg-whatsapp text-sm font-bold text-whatsapp-foreground shadow-cta"
+          className="flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-xl bg-whatsapp text-sm font-bold text-whatsapp-foreground shadow-cta"
         >
-          💬 WHATSAPP
+          <WhatsAppIcon className="h-5 w-5" />
+          WHATSAPP
         </a>
       </div>
     </div>
