@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ImageUp, Phone } from "lucide-react";
 import { business, whatsappLink, whatsappMessages } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -8,7 +9,7 @@ const base =
 
 export function WhatsAppButton({
   location,
-  children = "📸 SEND PHOTO → GET HELP",
+  children = "SEND PHOTO → GET HELP",
   message = whatsappMessages.default,
   className,
   variant = "solid",
@@ -33,6 +34,7 @@ export function WhatsAppButton({
         className,
       )}
     >
+      <ImageUp aria-hidden="true" className="h-5 w-5 shrink-0" strokeWidth={2.25} />
       {children}
     </a>
   );
@@ -61,7 +63,8 @@ export function CallButton({
         className,
       )}
     >
-      ☎ {children}
+      <Phone aria-hidden="true" className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+      {children}
     </a>
   );
 }
