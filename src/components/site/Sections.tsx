@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ImageUp, MessageCircle, Phone } from "lucide-react";
+import { ImageUp, Phone } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -18,6 +18,7 @@ import {
 import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { CallButton, WhatsAppButton } from "./cta";
+import { WhatsAppIcon } from "./icons";
 
 function Heading({ children, sub }: { children: React.ReactNode; sub?: string }) {
   return (
@@ -557,7 +558,7 @@ export function LeadForm() {
           type="submit"
           className="min-h-[54px] w-full rounded-xl bg-whatsapp text-base font-bold text-whatsapp-foreground shadow-cta hover:bg-whatsapp/90"
         >
-          <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
+          <WhatsAppIcon className="h-5 w-5" />
           CONTINUE ON WHATSAPP
         </Button>
         <p className="text-center text-xs text-muted-foreground">
@@ -618,7 +619,7 @@ export function StickyMobileCTA() {
           onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
           className="flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-xl bg-whatsapp text-sm font-bold text-whatsapp-foreground shadow-cta"
         >
-          <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
+          <WhatsAppIcon className="h-5 w-5" />
           WHATSAPP
         </a>
       </div>

@@ -3,6 +3,7 @@ import { ImageUp, Phone } from "lucide-react";
 import { business, whatsappLink, whatsappMessages } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { WhatsAppIcon } from "./icons";
 
 const base =
   "inline-flex min-h-[54px] items-center justify-center gap-2 rounded-xl px-6 text-base font-bold tracking-tight transition-transform active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring";
@@ -34,7 +35,10 @@ export function WhatsAppButton({
         className,
       )}
     >
-      <ImageUp aria-hidden="true" className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+      <span className="relative h-5 w-5 shrink-0" aria-hidden="true">
+        <WhatsAppIcon className="absolute h-5 w-5" />
+        <ImageUp className="absolute -bottom-1 -right-1 h-3 w-3 rounded-sm bg-whatsapp" strokeWidth={2.75} />
+      </span>
       {children}
     </a>
   );

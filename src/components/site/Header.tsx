@@ -1,6 +1,6 @@
-import { MessageCircle } from "lucide-react";
 import { business, whatsappLink } from "@/config/business";
 import { track } from "@/lib/analytics";
+import { WhatsAppIcon } from "./icons";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -41,7 +41,7 @@ export function Header() {
           onClick={() => track("whatsapp_click", { location: "header" })}
           className="inline-flex h-11 items-center gap-2 rounded-xl bg-whatsapp px-4 text-sm font-bold text-whatsapp-foreground"
         >
-          <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
+          <WhatsAppIcon className="h-5 w-5" />
           WhatsApp
         </a>
       </div>
