@@ -196,6 +196,15 @@ export function Services() {
               >
                 SHOW US
               </a>
+              {servicePages[s.name] ? (
+                <a
+                  href={servicePages[s.name]}
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                >
+                  More about this repair
+                  <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </a>
+              ) : null}
             </div>
           ))}
         </div>
