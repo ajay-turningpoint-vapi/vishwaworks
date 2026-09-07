@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AluminiumWindowRepairPowaiRouteImport } from './routes/aluminium-window-repair-powai'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SlidingDoorRepairPowaiRouteImport } from './routes/sliding-door-repair-powai'
 import { Route as SlidingWindowRepairPowaiRouteImport } from './routes/sliding-window-repair-powai'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WindowGlassReplacementPowaiRouteImport } from './routes/window-glass-replacement-powai'
@@ -33,6 +34,11 @@ const AluminiumWindowRepairPowaiRoute =
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlidingDoorRepairPowaiRoute = SlidingDoorRepairPowaiRouteImport.update({
+  id: '/sliding-door-repair-powai',
+  path: '/sliding-door-repair-powai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SlidingWindowRepairPowaiRoute =
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/privacy': typeof PrivacyRoute
+  '/sliding-door-repair-powai': typeof SlidingDoorRepairPowaiRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
   '/window-glass-replacement-powai': typeof WindowGlassReplacementPowaiRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/privacy': typeof PrivacyRoute
+  '/sliding-door-repair-powai': typeof SlidingDoorRepairPowaiRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
   '/window-glass-replacement-powai': typeof WindowGlassReplacementPowaiRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/privacy': typeof PrivacyRoute
+  '/sliding-door-repair-powai': typeof SlidingDoorRepairPowaiRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
   '/window-glass-replacement-powai': typeof WindowGlassReplacementPowaiRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aluminium-window-repair-powai'
     | '/privacy'
+    | '/sliding-door-repair-powai'
     | '/sliding-window-repair-powai'
     | '/terms'
     | '/window-glass-replacement-powai'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aluminium-window-repair-powai'
     | '/privacy'
+    | '/sliding-door-repair-powai'
     | '/sliding-window-repair-powai'
     | '/terms'
     | '/window-glass-replacement-powai'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aluminium-window-repair-powai'
     | '/privacy'
+    | '/sliding-door-repair-powai'
     | '/sliding-window-repair-powai'
     | '/terms'
     | '/window-glass-replacement-powai'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AluminiumWindowRepairPowaiRoute: typeof AluminiumWindowRepairPowaiRoute
   PrivacyRoute: typeof PrivacyRoute
+  SlidingDoorRepairPowaiRoute: typeof SlidingDoorRepairPowaiRoute
   SlidingWindowRepairPowaiRoute: typeof SlidingWindowRepairPowaiRoute
   TermsRoute: typeof TermsRoute
   WindowGlassReplacementPowaiRoute: typeof WindowGlassReplacementPowaiRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sliding-door-repair-powai': {
+      id: '/sliding-door-repair-powai'
+      path: '/sliding-door-repair-powai'
+      fullPath: '/sliding-door-repair-powai'
+      preLoaderRoute: typeof SlidingDoorRepairPowaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sliding-window-repair-powai': {
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AluminiumWindowRepairPowaiRoute: AluminiumWindowRepairPowaiRoute,
   PrivacyRoute: PrivacyRoute,
+  SlidingDoorRepairPowaiRoute: SlidingDoorRepairPowaiRoute,
   SlidingWindowRepairPowaiRoute: SlidingWindowRepairPowaiRoute,
   TermsRoute: TermsRoute,
   WindowGlassReplacementPowaiRoute: WindowGlassReplacementPowaiRoute,

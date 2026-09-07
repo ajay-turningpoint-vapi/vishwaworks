@@ -689,6 +689,27 @@ export function Footer() {
               <a href="#faq">FAQ</a>
             </li>
             <li>
+              <a href="/sliding-window-repair-powai">Sliding Window Repair</a>
+            </li>
+            <li>
+              <a href="/aluminium-window-repair-powai">Aluminium Window Repair</a>
+            </li>
+            <li>
+              <a href="/window-roller-repair-powai">Window Roller Replacement</a>
+            </li>
+            <li>
+              <a href="/window-track-repair-powai">Window Track Repair</a>
+            </li>
+            <li>
+              <a href="/window-lock-repair-powai">Window Lock &amp; Handle Repair</a>
+            </li>
+            <li>
+              <a href="/window-glass-replacement-powai">Window Glass Replacement</a>
+            </li>
+            <li>
+              <a href="/sliding-door-repair-powai">Sliding Door Repair</a>
+            </li>
+            <li>
               <a href="/privacy">Privacy Policy</a>
             </li>
             <li>
