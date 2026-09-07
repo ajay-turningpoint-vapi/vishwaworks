@@ -14,6 +14,7 @@ import { Route as AluminiumWindowRepairPowaiRouteImport } from './routes/alumini
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SlidingWindowRepairPowaiRouteImport } from './routes/sliding-window-repair-powai'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WindowRollerRepairPowaiRouteImport } from './routes/window-roller-repair-powai'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -42,6 +43,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WindowRollerRepairPowaiRoute = WindowRollerRepairPowaiRouteImport.update({
+  id: '/window-roller-repair-powai',
+  path: '/window-roller-repair-powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -49,6 +55,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -56,6 +63,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -64,6 +72,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -73,6 +82,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sliding-window-repair-powai'
     | '/terms'
+    | '/window-roller-repair-powai'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -80,6 +90,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sliding-window-repair-powai'
     | '/terms'
+    | '/window-roller-repair-powai'
   id:
     | '__root__'
     | '/'
@@ -87,6 +98,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sliding-window-repair-powai'
     | '/terms'
+    | '/window-roller-repair-powai'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -95,6 +107,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SlidingWindowRepairPowaiRoute: typeof SlidingWindowRepairPowaiRoute
   TermsRoute: typeof TermsRoute
+  WindowRollerRepairPowaiRoute: typeof WindowRollerRepairPowaiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -134,6 +147,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/window-roller-repair-powai': {
+      id: '/window-roller-repair-powai'
+      path: '/window-roller-repair-powai'
+      fullPath: '/window-roller-repair-powai'
+      preLoaderRoute: typeof WindowRollerRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -143,6 +163,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SlidingWindowRepairPowaiRoute: SlidingWindowRepairPowaiRoute,
   TermsRoute: TermsRoute,
+  WindowRollerRepairPowaiRoute: WindowRollerRepairPowaiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
