@@ -659,7 +659,7 @@ export function Footer() {
               WhatsApp us
             </a>
           </p>
-          <p className="mt-1">{business.hours}</p>
+          {business.hours ? <p className="mt-1">{business.hours}</p> : null}
           {business.googleBusinessProfileUrl ? (
             <p className="mt-1">
               <a
