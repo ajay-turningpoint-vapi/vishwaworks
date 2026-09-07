@@ -159,6 +159,17 @@ export function HowItWorks() {
 
 /* ---------------- 9. SERVICES ---------------- */
 
+const servicePages: Record<string, string | undefined> = {
+  "Sliding Window Repair": "/sliding-window-repair-powai",
+  "Aluminium Window Repair": "/aluminium-window-repair-powai",
+  "Window Roller Replacement": "/window-roller-repair-powai",
+  "Window Track Repair": "/window-track-repair-powai",
+  "Window Lock Repair": "/window-lock-repair-powai",
+  "Handle Replacement": "/window-lock-repair-powai",
+  "Window Glass Replacement": "/window-glass-replacement-powai",
+  "Sliding Door Repair": "/sliding-door-repair-powai",
+};
+
 export function Services() {
   return (
     <section id="services" className="bg-secondary/60 py-14 sm:py-20">
