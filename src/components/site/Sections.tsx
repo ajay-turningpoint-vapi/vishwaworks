@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ImageUp, Phone } from "lucide-react";
+import { ArrowRight, ImageUp, PanelsTopLeft, Phone, Wrench } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -55,11 +55,12 @@ export function ProblemSelector() {
             }}
             className="group rounded-2xl border border-border bg-card p-4 text-left transition-shadow hover:shadow-lg sm:p-5"
           >
-            <span
-              aria-hidden
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15 text-lg"
-            >
-              🪟
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
+              <PanelsTopLeft
+                aria-hidden="true"
+                className="h-5 w-5 text-accent"
+                strokeWidth={2.25}
+              />
             </span>
             <h3 className="mt-3 text-sm font-bold text-primary sm:text-base">
               {p.title}
@@ -158,6 +159,17 @@ export function HowItWorks() {
 
 /* ---------------- 9. SERVICES ---------------- */
 
+const servicePages: Record<string, string | undefined> = {
+  "Sliding Window Repair": "/sliding-window-repair-powai",
+  "Aluminium Window Repair": "/aluminium-window-repair-powai",
+  "Window Roller Replacement": "/window-roller-repair-powai",
+  "Window Track Repair": "/window-track-repair-powai",
+  "Window Lock Repair": "/window-lock-repair-powai",
+  "Handle Replacement": "/window-lock-repair-powai",
+  "Window Glass Replacement": "/window-glass-replacement-powai",
+  "Sliding Door Repair": "/sliding-door-repair-powai",
+};
+
 export function Services() {
   return (
     <section id="services" className="bg-secondary/60 py-14 sm:py-20">
@@ -170,8 +182,12 @@ export function Services() {
               key={s.name}
               className="flex flex-col rounded-2xl border border-border bg-card p-5"
             >
-              <span aria-hidden className="text-2xl">
-                🛠️
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                <Wrench
+                  aria-hidden="true"
+                  className="h-5 w-5 text-primary"
+                  strokeWidth={2.25}
+                />
               </span>
               <h3 className="mt-3 text-base font-bold text-primary">{s.name}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
@@ -191,6 +207,15 @@ export function Services() {
               >
                 SHOW US
               </a>
+              {servicePages[s.name] ? (
+                <a
+                  href={servicePages[s.name]}
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                >
+                  More about this repair
+                  <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </a>
+              ) : null}
             </div>
           ))}
         </div>
@@ -659,7 +684,7 @@ export function Footer() {
               WhatsApp us
             </a>
           </p>
-          <p className="mt-1">{business.hours}</p>
+          {business.hours ? <p className="mt-1">{business.hours}</p> : null}
           {business.googleBusinessProfileUrl ? (
             <p className="mt-1">
               <a
@@ -687,6 +712,27 @@ export function Footer() {
             </li>
             <li>
               <a href="#faq">FAQ</a>
+            </li>
+            <li>
+              <a href="/sliding-window-repair-powai">Sliding Window Repair</a>
+            </li>
+            <li>
+              <a href="/aluminium-window-repair-powai">Aluminium Window Repair</a>
+            </li>
+            <li>
+              <a href="/window-roller-repair-powai">Window Roller Replacement</a>
+            </li>
+            <li>
+              <a href="/window-track-repair-powai">Window Track Repair</a>
+            </li>
+            <li>
+              <a href="/window-lock-repair-powai">Window Lock &amp; Handle Repair</a>
+            </li>
+            <li>
+              <a href="/window-glass-replacement-powai">Window Glass Replacement</a>
+            </li>
+            <li>
+              <a href="/sliding-door-repair-powai">Sliding Door Repair</a>
             </li>
             <li>
               <a href="/privacy">Privacy Policy</a>

@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
             addressRegion: "Maharashtra",
             addressCountry: "IN",
           },
-          openingHours: business.hours,
+          ...(business.hours ? { openingHours: business.hours } : {}),
         }),
       },
     ],

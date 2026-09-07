@@ -10,53 +10,157 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AluminiumWindowRepairPowaiRouteImport } from './routes/aluminium-window-repair-powai'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SlidingDoorRepairPowaiRouteImport } from './routes/sliding-door-repair-powai'
+import { Route as SlidingWindowRepairPowaiRouteImport } from './routes/sliding-window-repair-powai'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WindowGlassReplacementPowaiRouteImport } from './routes/window-glass-replacement-powai'
+import { Route as WindowLockRepairPowaiRouteImport } from './routes/window-lock-repair-powai'
+import { Route as WindowRollerRepairPowaiRouteImport } from './routes/window-roller-repair-powai'
+import { Route as WindowTrackRepairPowaiRouteImport } from './routes/window-track-repair-powai'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AluminiumWindowRepairPowaiRoute =
+  AluminiumWindowRepairPowaiRouteImport.update({
+    id: '/aluminium-window-repair-powai',
+    path: '/aluminium-window-repair-powai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SlidingDoorRepairPowaiRoute = SlidingDoorRepairPowaiRouteImport.update({
+  id: '/sliding-door-repair-powai',
+  path: '/sliding-door-repair-powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlidingWindowRepairPowaiRoute =
+  SlidingWindowRepairPowaiRouteImport.update({
+    id: '/sliding-window-repair-powai',
+    path: '/sliding-window-repair-powai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WindowGlassReplacementPowaiRoute =
+  WindowGlassReplacementPowaiRouteImport.update({
+    id: '/window-glass-replacement-powai',
+    path: '/window-glass-replacement-powai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WindowLockRepairPowaiRoute = WindowLockRepairPowaiRouteImport.update({
+  id: '/window-lock-repair-powai',
+  path: '/window-lock-repair-powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WindowRollerRepairPowaiRoute = WindowRollerRepairPowaiRouteImport.update({
+  id: '/window-roller-repair-powai',
+  path: '/window-roller-repair-powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WindowTrackRepairPowaiRoute = WindowTrackRepairPowaiRouteImport.update({
+  id: '/window-track-repair-powai',
+  path: '/window-track-repair-powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/privacy': typeof PrivacyRoute
+  '/sliding-door-repair-powai': typeof SlidingDoorRepairPowaiRoute
+  '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-glass-replacement-powai': typeof WindowGlassReplacementPowaiRoute
+  '/window-lock-repair-powai': typeof WindowLockRepairPowaiRoute
+  '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
+  '/window-track-repair-powai': typeof WindowTrackRepairPowaiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/privacy': typeof PrivacyRoute
+  '/sliding-door-repair-powai': typeof SlidingDoorRepairPowaiRoute
+  '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-glass-replacement-powai': typeof WindowGlassReplacementPowaiRoute
+  '/window-lock-repair-powai': typeof WindowLockRepairPowaiRoute
+  '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
+  '/window-track-repair-powai': typeof WindowTrackRepairPowaiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/privacy': typeof PrivacyRoute
+  '/sliding-door-repair-powai': typeof SlidingDoorRepairPowaiRoute
+  '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-glass-replacement-powai': typeof WindowGlassReplacementPowaiRoute
+  '/window-lock-repair-powai': typeof WindowLockRepairPowaiRoute
+  '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
+  '/window-track-repair-powai': typeof WindowTrackRepairPowaiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/terms'
+  fullPaths:
+    | '/'
+    | '/aluminium-window-repair-powai'
+    | '/privacy'
+    | '/sliding-door-repair-powai'
+    | '/sliding-window-repair-powai'
+    | '/terms'
+    | '/window-glass-replacement-powai'
+    | '/window-lock-repair-powai'
+    | '/window-roller-repair-powai'
+    | '/window-track-repair-powai'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/terms'
-  id: '__root__' | '/' | '/privacy' | '/terms'
+  to:
+    | '/'
+    | '/aluminium-window-repair-powai'
+    | '/privacy'
+    | '/sliding-door-repair-powai'
+    | '/sliding-window-repair-powai'
+    | '/terms'
+    | '/window-glass-replacement-powai'
+    | '/window-lock-repair-powai'
+    | '/window-roller-repair-powai'
+    | '/window-track-repair-powai'
+  id:
+    | '__root__'
+    | '/'
+    | '/aluminium-window-repair-powai'
+    | '/privacy'
+    | '/sliding-door-repair-powai'
+    | '/sliding-window-repair-powai'
+    | '/terms'
+    | '/window-glass-replacement-powai'
+    | '/window-lock-repair-powai'
+    | '/window-roller-repair-powai'
+    | '/window-track-repair-powai'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AluminiumWindowRepairPowaiRoute: typeof AluminiumWindowRepairPowaiRoute
   PrivacyRoute: typeof PrivacyRoute
+  SlidingDoorRepairPowaiRoute: typeof SlidingDoorRepairPowaiRoute
+  SlidingWindowRepairPowaiRoute: typeof SlidingWindowRepairPowaiRoute
   TermsRoute: typeof TermsRoute
+  WindowGlassReplacementPowaiRoute: typeof WindowGlassReplacementPowaiRoute
+  WindowLockRepairPowaiRoute: typeof WindowLockRepairPowaiRoute
+  WindowRollerRepairPowaiRoute: typeof WindowRollerRepairPowaiRoute
+  WindowTrackRepairPowaiRoute: typeof WindowTrackRepairPowaiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,11 +172,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aluminium-window-repair-powai': {
+      id: '/aluminium-window-repair-powai'
+      path: '/aluminium-window-repair-powai'
+      fullPath: '/aluminium-window-repair-powai'
+      preLoaderRoute: typeof AluminiumWindowRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sliding-door-repair-powai': {
+      id: '/sliding-door-repair-powai'
+      path: '/sliding-door-repair-powai'
+      fullPath: '/sliding-door-repair-powai'
+      preLoaderRoute: typeof SlidingDoorRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sliding-window-repair-powai': {
+      id: '/sliding-window-repair-powai'
+      path: '/sliding-window-repair-powai'
+      fullPath: '/sliding-window-repair-powai'
+      preLoaderRoute: typeof SlidingWindowRepairPowaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -82,13 +207,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/window-glass-replacement-powai': {
+      id: '/window-glass-replacement-powai'
+      path: '/window-glass-replacement-powai'
+      fullPath: '/window-glass-replacement-powai'
+      preLoaderRoute: typeof WindowGlassReplacementPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/window-lock-repair-powai': {
+      id: '/window-lock-repair-powai'
+      path: '/window-lock-repair-powai'
+      fullPath: '/window-lock-repair-powai'
+      preLoaderRoute: typeof WindowLockRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/window-roller-repair-powai': {
+      id: '/window-roller-repair-powai'
+      path: '/window-roller-repair-powai'
+      fullPath: '/window-roller-repair-powai'
+      preLoaderRoute: typeof WindowRollerRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/window-track-repair-powai': {
+      id: '/window-track-repair-powai'
+      path: '/window-track-repair-powai'
+      fullPath: '/window-track-repair-powai'
+      preLoaderRoute: typeof WindowTrackRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AluminiumWindowRepairPowaiRoute: AluminiumWindowRepairPowaiRoute,
   PrivacyRoute: PrivacyRoute,
+  SlidingDoorRepairPowaiRoute: SlidingDoorRepairPowaiRoute,
+  SlidingWindowRepairPowaiRoute: SlidingWindowRepairPowaiRoute,
   TermsRoute: TermsRoute,
+  WindowGlassReplacementPowaiRoute: WindowGlassReplacementPowaiRoute,
+  WindowLockRepairPowaiRoute: WindowLockRepairPowaiRoute,
+  WindowRollerRepairPowaiRoute: WindowRollerRepairPowaiRoute,
+  WindowTrackRepairPowaiRoute: WindowTrackRepairPowaiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

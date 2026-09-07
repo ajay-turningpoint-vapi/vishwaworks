@@ -17,7 +17,8 @@ export const business = {
   // Leave address empty until it is verified. Empty = not shown.
   address: "",
   googleBusinessProfileUrl: "",
-  hours: "Mon – Sat, 9:00 AM – 8:00 PM",
+  // Leave empty until the real working hours are confirmed. Empty = not shown.
+  hours: "",
 
   primaryArea: "Powai, Mumbai",
   areaLine: "Powai • Hiranandani • Chandivali & Nearby",
