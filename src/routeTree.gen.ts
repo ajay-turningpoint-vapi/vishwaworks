@@ -14,6 +14,7 @@ import { Route as AluminiumWindowRepairPowaiRouteImport } from './routes/alumini
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SlidingWindowRepairPowaiRouteImport } from './routes/sliding-window-repair-powai'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WindowLockRepairPowaiRouteImport } from './routes/window-lock-repair-powai'
 import { Route as WindowRollerRepairPowaiRouteImport } from './routes/window-roller-repair-powai'
 import { Route as WindowTrackRepairPowaiRouteImport } from './routes/window-track-repair-powai'
 
@@ -44,6 +45,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WindowLockRepairPowaiRoute = WindowLockRepairPowaiRouteImport.update({
+  id: '/window-lock-repair-powai',
+  path: '/window-lock-repair-powai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WindowRollerRepairPowaiRoute = WindowRollerRepairPowaiRouteImport.update({
   id: '/window-roller-repair-powai',
   path: '/window-roller-repair-powai',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-lock-repair-powai': typeof WindowLockRepairPowaiRoute
   '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
   '/window-track-repair-powai': typeof WindowTrackRepairPowaiRoute
 }
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-lock-repair-powai': typeof WindowLockRepairPowaiRoute
   '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
   '/window-track-repair-powai': typeof WindowTrackRepairPowaiRoute
 }
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/sliding-window-repair-powai': typeof SlidingWindowRepairPowaiRoute
   '/terms': typeof TermsRoute
+  '/window-lock-repair-powai': typeof WindowLockRepairPowaiRoute
   '/window-roller-repair-powai': typeof WindowRollerRepairPowaiRoute
   '/window-track-repair-powai': typeof WindowTrackRepairPowaiRoute
 }
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sliding-window-repair-powai'
     | '/terms'
+    | '/window-lock-repair-powai'
     | '/window-roller-repair-powai'
     | '/window-track-repair-powai'
   fileRoutesByTo: FileRoutesByTo
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sliding-window-repair-powai'
     | '/terms'
+    | '/window-lock-repair-powai'
     | '/window-roller-repair-powai'
     | '/window-track-repair-powai'
   id:
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sliding-window-repair-powai'
     | '/terms'
+    | '/window-lock-repair-powai'
     | '/window-roller-repair-powai'
     | '/window-track-repair-powai'
   fileRoutesById: FileRoutesById
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SlidingWindowRepairPowaiRoute: typeof SlidingWindowRepairPowaiRoute
   TermsRoute: typeof TermsRoute
+  WindowLockRepairPowaiRoute: typeof WindowLockRepairPowaiRoute
   WindowRollerRepairPowaiRoute: typeof WindowRollerRepairPowaiRoute
   WindowTrackRepairPowaiRoute: typeof WindowTrackRepairPowaiRoute
 }
@@ -160,6 +173,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/window-lock-repair-powai': {
+      id: '/window-lock-repair-powai'
+      path: '/window-lock-repair-powai'
+      fullPath: '/window-lock-repair-powai'
+      preLoaderRoute: typeof WindowLockRepairPowaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/window-roller-repair-powai': {
       id: '/window-roller-repair-powai'
       path: '/window-roller-repair-powai'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SlidingWindowRepairPowaiRoute: SlidingWindowRepairPowaiRoute,
   TermsRoute: TermsRoute,
+  WindowLockRepairPowaiRoute: WindowLockRepairPowaiRoute,
   WindowRollerRepairPowaiRoute: WindowRollerRepairPowaiRoute,
   WindowTrackRepairPowaiRoute: WindowTrackRepairPowaiRoute,
 }
