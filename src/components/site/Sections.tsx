@@ -171,8 +171,12 @@ export function Services() {
               key={s.name}
               className="flex flex-col rounded-2xl border border-border bg-card p-5"
             >
-              <span aria-hidden className="text-2xl">
-                🛠️
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                <Wrench
+                  aria-hidden="true"
+                  className="h-5 w-5 text-primary"
+                  strokeWidth={2.25}
+                />
               </span>
               <h3 className="mt-3 text-base font-bold text-primary">{s.name}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
