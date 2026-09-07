@@ -55,11 +55,12 @@ export function ProblemSelector() {
             }}
             className="group rounded-2xl border border-border bg-card p-4 text-left transition-shadow hover:shadow-lg sm:p-5"
           >
-            <span
-              aria-hidden
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15 text-lg"
-            >
-              🪟
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
+              <PanelsTopLeft
+                aria-hidden="true"
+                className="h-5 w-5 text-accent"
+                strokeWidth={2.25}
+              />
             </span>
             <h3 className="mt-3 text-sm font-bold text-primary sm:text-base">
               {p.title}
