@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ImageUp, Phone } from "lucide-react";
+import { ArrowRight, ImageUp, PanelsTopLeft, Phone, Wrench } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
