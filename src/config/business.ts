@@ -8,11 +8,10 @@ export const business = {
   name: "Vishwa Windows",
   tagline: "Show Us The Problem.",
 
-  // IMPORTANT: replace with the real WhatsApp number (country code + number, digits only)
-  whatsappNumber: "919999999999",
+  whatsappNumber: "919004515924",
   // Phone number used for the CALL NOW buttons
-  phone: "+91 99999 99999",
-  phoneHref: "tel:+919999999999",
+  phone: "+91 90045 15924",
+  phoneHref: "tel:+919004515924",
 
   // Leave address empty until it is verified. Empty = not shown.
   address: "",
