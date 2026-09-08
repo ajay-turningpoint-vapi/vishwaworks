@@ -247,41 +247,68 @@ export function Offer() {
 /* ---------------- 11 + 12. PROOF ---------------- */
 
 const galleryStages = ["Before", "During", "After"] as const;
-const galleryItems = [
-  "Broken roller",
-  "Damaged track",
-  "Broken handle",
-  "Window repair",
-  "Glass replacement",
-  "Sliding door repair",
+import rollerBefore from "@/assets/gallery/roller-before.jpg";
+import rollerDuring from "@/assets/gallery/roller-during.jpg";
+import rollerAfter from "@/assets/gallery/roller-after.jpg";
+import trackBefore from "@/assets/gallery/track-before.jpg";
+import trackDuring from "@/assets/gallery/track-during.jpg";
+import trackAfter from "@/assets/gallery/track-after.jpg";
+import glassBefore from "@/assets/gallery/glass-before.jpg";
+import glassDuring from "@/assets/gallery/glass-during.jpg";
+import glassAfter from "@/assets/gallery/glass-after.jpg";
+import wsProfiles from "@/assets/workshop/profiles.jpg";
+import wsTools from "@/assets/workshop/tools.jpg";
+import wsTechnician from "@/assets/workshop/technician.jpg";
+import wsFrames from "@/assets/workshop/frames.jpg";
+import wsRepairWork from "@/assets/workshop/repair-work.jpg";
+import wsWorkshop from "@/assets/workshop/workshop.jpg";
+
+const galleryItems: { title: string; stages: [string, string, string] }[] = [
+  {
+    title: "Worn window roller",
+    stages: [rollerBefore, rollerDuring, rollerAfter],
+  },
+  {
+    title: "Damaged window track",
+    stages: [trackBefore, trackDuring, trackAfter],
+  },
+  {
+    title: "Broken glass panel",
+    stages: [glassBefore, glassDuring, glassAfter],
+  },
 ];
 
 export function WorkGallery() {
   return (
     <section id="our-work" className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
-      <Heading sub="Before, during and after — from real jobs.">
+      <Heading sub="Before, during and after — how a typical repair goes.">
         This is what we actually do.
       </Heading>
 
       <div className="mt-10 space-y-8">
-        {galleryItems.slice(0, 3).map((item) => (
-          <div key={item}>
+        {galleryItems.map((item) => (
+          <div key={item.title}>
             <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-primary">
-              {item}
+              {item.title}
             </h3>
             <div className="grid gap-3 sm:grid-cols-3">
-              {galleryStages.map((stage) => (
-                <div
-                  key={stage}
-                  className="flex aspect-[4/3] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border bg-secondary/50 p-4 text-center"
+              {item.stages.map((src, i) => (
+                <figure
+                  key={src}
+                  className="overflow-hidden rounded-2xl border border-border bg-secondary/50"
                 >
-                  <span className="text-xs font-bold uppercase tracking-wide text-accent">
-                    {stage}
-                  </span>
-                  <span className="mt-2 text-xs text-muted-foreground">
-                    Add real customer repair photo here
-                  </span>
-                </div>
+                  <img
+                    src={src}
+                    alt={`${item.title} — ${galleryStages[i]}`}
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="aspect-[4/3] h-full w-full object-cover"
+                  />
+                  <figcaption className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-accent">
+                    {galleryStages[i]}
+                  </figcaption>
+                </figure>
               ))}
             </div>
           </div>
@@ -292,13 +319,13 @@ export function WorkGallery() {
 }
 
 export function WorkshopProof() {
-  const shots = [
-    "Aluminium profiles",
-    "Tools",
-    "Technician working",
-    "Window frames",
-    "Repair work",
-    "Workshop",
+  const shots: [string, string][] = [
+    ["Aluminium profiles", wsProfiles],
+    ["Tools of the trade", wsTools],
+    ["Technician at work", wsTechnician],
+    ["Window frames", wsFrames],
+    ["Lock repair work", wsRepairWork],
+    ["The workshop", wsWorkshop],
   ];
   return (
     <section className="bg-secondary/60 py-14 sm:py-20">
@@ -307,16 +334,23 @@ export function WorkshopProof() {
           Real people. Real repairs.
         </Heading>
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {shots.map((s) => (
-            <div
-              key={s}
-              className="flex aspect-square flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border bg-card p-3 text-center"
+          {shots.map(([label, src]) => (
+            <figure
+              key={label}
+              className="overflow-hidden rounded-2xl border border-border bg-card"
             >
-              <span className="text-xs font-bold text-primary">{s}</span>
-              <span className="mt-1 text-[11px] text-muted-foreground">
-                Add real business photo here
-              </span>
-            </div>
+              <img
+                src={src}
+                alt={label}
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="aspect-square h-full w-full object-cover"
+              />
+              <figcaption className="px-3 py-2 text-xs font-bold text-primary">
+                {label}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
