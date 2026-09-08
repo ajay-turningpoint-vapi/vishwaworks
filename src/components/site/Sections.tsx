@@ -303,7 +303,7 @@ export function WorkGallery() {
                     loading="lazy"
                     width={1024}
                     height={768}
-                    className="aspect-[4/3] h-full w-full object-cover"
+                    className="aspect-[4/3] w-full object-cover"
                   />
                   <figcaption className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-accent">
                     {galleryStages[i]}
@@ -345,7 +345,7 @@ export function WorkshopProof() {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="aspect-square h-full w-full object-cover"
+                className="aspect-square w-full object-cover"
               />
               <figcaption className="px-3 py-2 text-xs font-bold text-primary">
                 {label}
