@@ -135,6 +135,43 @@
   }
 }
 
+@keyframes cta-glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px -8px color-mix(in oklab, var(--whatsapp) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 14px 34px -6px color-mix(in oklab, var(--whatsapp) 75%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cta-live {
+    animation: cta-glow 2.8s ease-in-out infinite;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility safe-bottom {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+}
+
+@utility tap {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.25s ease;
+  &:active {
+    transform: scale(0.975);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
