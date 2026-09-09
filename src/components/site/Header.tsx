@@ -39,7 +39,7 @@ export function Header() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", { location: "header" })}
-          className="inline-flex h-11 items-center gap-2 rounded-xl bg-whatsapp px-4 text-sm font-bold text-whatsapp-foreground"
+          className="inline-flex h-11 items-center gap-2 rounded-xl bg-whatsapp px-4 text-sm font-bold text-whatsapp-foreground shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105"
         >
           <WhatsAppIcon className="h-5 w-5" />
           WhatsApp

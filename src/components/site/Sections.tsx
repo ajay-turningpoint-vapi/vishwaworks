@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { ArrowRight, ImageUp, PanelsTopLeft, Phone, Wrench } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarCheck,
+  Camera,
+  MessageCircle,
+  PanelsTopLeft,
+  Phone,
+  SearchCheck,
+  Wrench,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -37,7 +46,7 @@ function Heading({ children, sub }: { children: React.ReactNode; sub?: string })
 
 export function ProblemSelector() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
       <Heading>Is your window doing this?</Heading>
 
       <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
@@ -53,7 +62,7 @@ export function ProblemSelector() {
               track("problem_selected", { problem: p.title });
               track("whatsapp_click", { location: "problem_section" });
             }}
-            className="group rounded-2xl border border-border bg-card p-4 text-left transition-shadow hover:shadow-lg sm:p-5"
+            className="group rounded-2xl border border-border bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
               <PanelsTopLeft
@@ -88,7 +97,7 @@ export function ProblemSelector() {
 
 export function NoNeedToKnow() {
   return (
-    <section className="bg-primary py-16 text-primary-foreground sm:py-24">
+    <section className="reveal-section bg-primary py-16 text-primary-foreground sm:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-3xl font-extrabold uppercase leading-[1.05] sm:text-5xl">
           You don't need to know
@@ -118,34 +127,52 @@ export function NoNeedToKnow() {
 /* ---------------- 8. HOW IT WORKS ---------------- */
 
 const steps = [
-  { t: "Take a photo", d: "Take a clear photo or short video of the problem." },
-  { t: "Send it on WhatsApp", d: "Send the photo to our team." },
+  {
+    t: "Take a photo",
+    d: "Take a clear photo or short video of the problem.",
+    icon: Camera,
+  },
+  {
+    t: "Send it on WhatsApp",
+    d: "Send the photo to our team.",
+    icon: MessageCircle,
+  },
   {
     t: "Understand the next step",
     d: "We'll review the problem and guide you on what to do next.",
+    icon: SearchCheck,
   },
   {
     t: "Arrange the service",
     d: "If a visit or repair is required, arrange the next step with us.",
+    icon: CalendarCheck,
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
       <Heading>Get help without explaining the technical details.</Heading>
 
-      <ol className="mt-10 grid gap-4 md:grid-cols-4">
+      <ol className="relative mt-10 grid gap-0 md:grid-cols-4">
         {steps.map((s, i) => (
           <li
             key={s.t}
-            className="relative rounded-2xl border border-border bg-card p-5"
+            className="group relative flex gap-4 pb-8 pl-1 md:block md:px-3 md:pb-0 md:text-center"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-base font-extrabold text-primary-foreground">
-              {i + 1}
+            {i < steps.length - 1 ? (
+              <span className="absolute bottom-0 left-6 top-12 w-0.5 bg-border md:bottom-auto md:left-1/2 md:right-0 md:top-6 md:h-0.5 md:w-auto" />
+            ) : null}
+            <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-transform duration-300 group-hover:scale-110">
+              <s.icon aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[11px] font-extrabold text-accent-foreground">
+                {i + 1}
+              </span>
             </span>
-            <h3 className="mt-3 text-base font-bold text-primary">{s.t}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
+            <div className="pt-1 md:pt-0">
+              <h3 className="md:mt-4 text-base font-bold text-primary">{s.t}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
+            </div>
           </li>
         ))}
       </ol>
@@ -172,7 +199,7 @@ const servicePages: Record<string, string | undefined> = {
 
 export function Services() {
   return (
-    <section id="services" className="bg-secondary/60 py-14 sm:py-20">
+    <section id="services" className="reveal-section bg-secondary/60 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <Heading>Whatever the window problem, start by showing us.</Heading>
 
@@ -180,7 +207,7 @@ export function Services() {
           {services.map((s) => (
             <div
               key={s.name}
-              className="flex flex-col rounded-2xl border border-border bg-card p-5"
+              className="flex flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                 <Wrench
@@ -228,7 +255,7 @@ export function Services() {
 
 export function Offer() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-4xl px-4 py-14 sm:py-20">
       <div className="rounded-3xl border-2 border-accent/40 bg-card p-6 text-center sm:p-12">
         <h2 className="text-2xl font-extrabold uppercase leading-tight text-primary sm:text-4xl">
           Not sure if you need a repair or a replacement?
@@ -280,7 +307,7 @@ const galleryItems: { title: string; stages: [string, string, string] }[] = [
 
 export function WorkGallery() {
   return (
-    <section id="our-work" className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section id="our-work" className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
       <Heading sub="Before, during and after — how a typical repair goes.">
         This is what we actually do.
       </Heading>
@@ -295,7 +322,7 @@ export function WorkGallery() {
               {item.stages.map((src, i) => (
                 <figure
                   key={src}
-                  className="overflow-hidden rounded-2xl border border-border bg-secondary/50"
+                  className="group overflow-hidden rounded-2xl border border-border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <img
                     src={src}
@@ -303,7 +330,7 @@ export function WorkGallery() {
                     loading="lazy"
                     width={1024}
                     height={768}
-                    className="aspect-[4/3] w-full object-cover"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <figcaption className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-accent">
                     {galleryStages[i]}
@@ -328,7 +355,7 @@ export function WorkshopProof() {
     ["The workshop", wsWorkshop],
   ];
   return (
-    <section className="bg-secondary/60 py-14 sm:py-20">
+    <section className="reveal-section bg-secondary/60 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <Heading sub="See the people and workshop behind the service.">
           Real people. Real repairs.
@@ -337,7 +364,7 @@ export function WorkshopProof() {
           {shots.map(([label, src]) => (
             <figure
               key={label}
-              className="overflow-hidden rounded-2xl border border-border bg-card"
+              className="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <img
                 src={src}
@@ -345,7 +372,7 @@ export function WorkshopProof() {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="aspect-square w-full object-cover"
+                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
               <figcaption className="px-3 py-2 text-xs font-bold text-primary">
                 {label}
@@ -375,7 +402,7 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
       <Heading>Why customers show us first</Heading>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {reasons.map((r) => (
@@ -393,7 +420,7 @@ export function WhyChooseUs() {
 
 export function ServiceAreas() {
   return (
-    <section id="areas" className="bg-primary py-14 text-primary-foreground sm:py-20">
+    <section id="areas" className="reveal-section bg-primary py-14 text-primary-foreground sm:py-20">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <h2 className="text-2xl font-extrabold uppercase sm:text-4xl">
           Window repair around Powai
@@ -439,7 +466,7 @@ export function ServiceAreas() {
 
 export function Reviews() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-4xl px-4 py-14 sm:py-20">
       <Heading>What our customers say</Heading>
       <div className="mt-8 rounded-2xl border-2 border-dashed border-border bg-card p-8 text-center">
         <p className="text-base font-semibold text-primary">
@@ -457,7 +484,7 @@ export function Reviews() {
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-secondary/60 py-14 sm:py-20">
+    <section id="faq" className="reveal-section bg-secondary/60 py-14 sm:py-20">
       <div className="mx-auto max-w-3xl px-4">
         <Heading>Questions people ask us</Heading>
         <Accordion
@@ -528,7 +555,7 @@ export function LeadForm() {
     "mt-1 w-full rounded-xl border border-input bg-card px-4 py-3 text-base text-foreground outline-none focus:border-whatsapp";
 
   return (
-    <section className="mx-auto max-w-xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-xl px-4 py-14 sm:py-20">
       <Heading sub="Four quick details, then continue the chat on WhatsApp.">
         Prefer to type it out?
       </Heading>
@@ -621,7 +648,7 @@ export function LeadForm() {
           CONTINUE ON WHATSAPP
         </Button>
         <p className="text-center text-xs text-muted-foreground">
-          <ImageUp aria-hidden="true" className="mr-1 inline h-4 w-4 align-text-bottom" />
+           <Camera aria-hidden="true" className="mr-1 inline h-4 w-4 align-text-bottom" />
           You can attach your photo once WhatsApp opens.
         </p>
       </form>
@@ -633,7 +660,7 @@ export function LeadForm() {
 
 export function FinalCTA() {
   return (
-    <section className="bg-primary py-16 text-primary-foreground sm:py-24">
+    <section className="reveal-section bg-primary py-16 text-primary-foreground sm:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-3xl font-extrabold uppercase leading-[1.05] sm:text-5xl">
           Got a window problem?

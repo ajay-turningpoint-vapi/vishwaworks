@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
-import { ImageUp, Phone } from "lucide-react";
+import { Camera, Phone } from "lucide-react";
 import { business, whatsappLink, whatsappMessages } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "./icons";
 
 const base =
-  "inline-flex min-h-[54px] items-center justify-center gap-2 rounded-xl px-6 text-base font-bold tracking-tight transition-transform active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring";
+  "inline-flex min-h-[54px] items-center justify-center gap-2 rounded-xl px-6 text-base font-bold tracking-tight transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring";
 
 export function WhatsAppButton({
   location,
@@ -35,9 +35,9 @@ export function WhatsAppButton({
         className,
       )}
     >
-      <span className="relative h-5 w-5 shrink-0" aria-hidden="true">
-        <WhatsAppIcon className="absolute h-5 w-5" />
-        <ImageUp className="absolute -bottom-1 -right-1 h-3 w-3 rounded-sm bg-whatsapp" strokeWidth={2.75} />
+      <span className="flex items-center gap-1.5" aria-hidden="true">
+        <Camera className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+        <WhatsAppIcon className="h-5 w-5 shrink-0" />
       </span>
       {children}
     </a>
