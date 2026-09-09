@@ -41,10 +41,25 @@ export function Header() {
           onClick={() => track("whatsapp_click", { location: "header" })}
           className="inline-flex h-11 items-center gap-2 rounded-xl bg-whatsapp px-4 text-sm font-bold text-whatsapp-foreground shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105"
         >
-          <WhatsAppIcon className="h-5 w-5" />
-          WhatsApp
+          <WhatsAppIcon className="h-5 w-5 text-white" />
+          <span className="hidden sm:inline">WhatsApp</span>
         </a>
       </div>
+
+      <nav
+        aria-label="Sections"
+        className="no-scrollbar flex snap-x snap-mandatory gap-2 overflow-x-auto border-t border-border/60 px-4 pb-2 pt-2 md:hidden"
+      >
+        {links.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="tap snap-start whitespace-nowrap rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-bold text-primary"
+          >
+            {l.label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }

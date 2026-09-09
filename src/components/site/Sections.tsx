@@ -62,7 +62,7 @@ export function ProblemSelector() {
               track("problem_selected", { problem: p.title });
               track("whatsapp_click", { location: "problem_section" });
             }}
-            className="group rounded-2xl border border-border bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5"
+            className="tap group rounded-2xl border border-border bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
               <PanelsTopLeft
@@ -207,7 +207,7 @@ export function Services() {
           {services.map((s) => (
             <div
               key={s.name}
-              className="flex flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="tap flex flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                 <Wrench
@@ -318,11 +318,11 @@ export function WorkGallery() {
             <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-primary">
               {item.title}
             </h3>
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
               {item.stages.map((src, i) => (
                 <figure
                   key={src}
-                  className="group overflow-hidden rounded-2xl border border-border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="tap group min-w-[76%] shrink-0 snap-center overflow-hidden rounded-2xl border border-border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-w-0 sm:shrink"
                 >
                   <img
                     src={src}
@@ -360,11 +360,11 @@ export function WorkshopProof() {
         <Heading sub="See the people and workshop behind the service.">
           Real people. Real repairs.
         </Heading>
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="no-scrollbar -mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
           {shots.map(([label, src]) => (
             <figure
               key={label}
-              className="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="tap group min-w-[62%] shrink-0 snap-center overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-w-0 sm:shrink"
             >
               <img
                 src={src}
