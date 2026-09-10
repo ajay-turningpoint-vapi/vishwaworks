@@ -322,7 +322,7 @@ export function WorkGallery() {
               {item.stages.map((src, i) => (
                 <figure
                   key={src}
-                  className="tap group min-w-[76%] shrink-0 snap-center overflow-hidden rounded-2xl border border-border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-w-0 sm:shrink"
+                  className="tap group w-[76%] shrink-0 snap-center overflow-hidden rounded-2xl border border-border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
                 >
                   <img
                     src={src}
@@ -364,7 +364,7 @@ export function WorkshopProof() {
           {shots.map(([label, src]) => (
             <figure
               key={label}
-              className="tap group min-w-[62%] shrink-0 snap-center overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-w-0 sm:shrink"
+              className="tap group w-[62%] shrink-0 snap-center overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
             >
               <img
                 src={src}
