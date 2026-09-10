@@ -644,7 +644,7 @@ export function LeadForm() {
           type="submit"
           className="min-h-[54px] w-full rounded-xl bg-whatsapp text-base font-bold text-whatsapp-foreground shadow-cta hover:bg-whatsapp/90"
         >
-          <WhatsAppIcon className="h-5 w-5" />
+          <WhatsAppIcon className="h-5 w-5 text-white" />
           CONTINUE ON WHATSAPP
         </Button>
         <p className="text-center text-xs text-muted-foreground">
@@ -688,12 +688,12 @@ export function FinalCTA() {
 
 export function StickyMobileCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 p-2 backdrop-blur md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 p-2 safe-bottom backdrop-blur md:hidden">
       <div className="flex gap-2">
         <a
           href={business.phoneHref}
           onClick={() => track("call_click", { location: "sticky_mobile" })}
-          className="flex min-h-[52px] w-[38%] items-center justify-center gap-2 rounded-xl border-2 border-primary/25 text-sm font-bold text-primary"
+          className="tap flex min-h-[52px] w-[38%] items-center justify-center gap-2 rounded-xl border-2 border-primary/25 text-sm font-bold text-primary"
         >
           <Phone aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
           CALL NOW
@@ -703,9 +703,9 @@ export function StickyMobileCTA() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
-          className="flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-xl bg-whatsapp text-sm font-bold text-whatsapp-foreground shadow-cta"
+          className="tap cta-live flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-xl bg-whatsapp text-sm font-bold text-white shadow-cta"
         >
-          <WhatsAppIcon className="h-5 w-5" />
+          <WhatsAppIcon className="h-5 w-5 text-white" />
           WHATSAPP
         </a>
       </div>
