@@ -748,17 +748,20 @@ export function Footer() {
             </a>
           </p>
           {business.hours ? <p className="mt-1">{business.hours}</p> : null}
-          {business.googleBusinessProfileUrl ? (
-            <p className="mt-1">
-              <a
-                href={business.googleBusinessProfileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Google Business Profile
-              </a>
-            </p>
-          ) : null}
+          <p className="mt-1">
+            <a
+              href={
+                business.googleBusinessProfileUrl ||
+                business.googleMapsSearchUrl
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track("google_profile_click", { location: "footer" })}
+              className="underline underline-offset-4"
+            >
+              Find us on Google
+            </a>
+          </p>
         </div>
 
         <div className="text-sm text-primary-foreground/80">
