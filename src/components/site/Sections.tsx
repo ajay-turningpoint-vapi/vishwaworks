@@ -48,7 +48,7 @@ function Heading({ children, sub }: { children: React.ReactNode; sub?: string })
 
 export function ProblemSelector() {
   return (
-    <section className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
       <Heading>Is your window doing this?</Heading>
 
       <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
@@ -153,7 +153,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
       <Heading>Get help without explaining the technical details.</Heading>
 
       <ol className="relative mt-10 grid gap-0 md:grid-cols-4">
@@ -201,7 +201,7 @@ const servicePages: Record<string, string | undefined> = {
 
 export function Services() {
   return (
-    <section id="services" className="reveal-section bg-secondary/60 py-14 sm:py-20">
+    <section id="services" className="reveal-section bg-secondary/60 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <Heading>Whatever the window problem, start by showing us.</Heading>
 
@@ -257,7 +257,7 @@ export function Services() {
 
 export function Offer() {
   return (
-    <section className="reveal-section mx-auto max-w-4xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
       <div className="rounded-3xl border-2 border-accent/40 bg-card p-6 text-center sm:p-12">
         <h2 className="text-2xl font-extrabold uppercase leading-tight text-primary sm:text-4xl">
           Not sure if you need a repair or a replacement?
@@ -309,7 +309,7 @@ const galleryItems: { title: string; stages: [string, string, string] }[] = [
 
 export function WorkGallery() {
   return (
-    <section id="our-work" className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section id="our-work" className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
       <Heading sub="Before, during and after — how a typical repair goes.">
         This is what we actually do.
       </Heading>
@@ -357,7 +357,7 @@ export function WorkshopProof() {
     ["The workshop", wsWorkshop],
   ];
   return (
-    <section className="reveal-section bg-secondary/60 py-14 sm:py-20">
+    <section className="reveal-section bg-secondary/60 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <Heading sub="See the people and workshop behind the service.">
           Real people. Real repairs.
@@ -404,7 +404,7 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="reveal-section mx-auto max-w-6xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
       <Heading>Why customers show us first</Heading>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {reasons.map((r) => (
@@ -468,7 +468,7 @@ export function ServiceAreas() {
 
 export function Reviews() {
   return (
-    <section className="reveal-section mx-auto max-w-4xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
       <Heading>What our customers say</Heading>
       <div className="mt-8 rounded-2xl border-2 border-dashed border-border bg-card p-8 text-center">
         <p className="text-base font-semibold text-primary">
@@ -486,7 +486,7 @@ export function Reviews() {
 
 export function Faq() {
   return (
-    <section id="faq" className="reveal-section bg-secondary/60 py-14 sm:py-20">
+    <section id="faq" className="reveal-section bg-secondary/60 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4">
         <Heading>Questions people ask us</Heading>
         <Accordion
@@ -557,7 +557,7 @@ export function LeadForm() {
     "mt-1 w-full rounded-xl border border-input bg-card px-4 py-3 text-base text-foreground outline-none focus:border-whatsapp";
 
   return (
-    <section className="reveal-section mx-auto max-w-xl px-4 py-14 sm:py-20">
+    <section className="reveal-section mx-auto max-w-xl px-4 py-20 sm:py-28">
       <Heading sub="Four quick details, then continue the chat on WhatsApp.">
         Prefer to type it out?
       </Heading>
