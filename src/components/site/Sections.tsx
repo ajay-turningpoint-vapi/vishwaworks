@@ -32,11 +32,13 @@ import { WhatsAppIcon } from "./icons";
 function Heading({ children, sub }: { children: React.ReactNode; sub?: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-2xl font-extrabold uppercase leading-tight text-primary sm:text-4xl">
+      <h2 className="text-[1.85rem] font-extrabold uppercase leading-[1.02] tracking-[-0.03em] text-primary sm:text-5xl">
         {children}
       </h2>
       {sub ? (
-        <p className="mt-3 text-base text-muted-foreground sm:text-lg">{sub}</p>
+        <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+          {sub}
+        </p>
       ) : null}
     </div>
   );

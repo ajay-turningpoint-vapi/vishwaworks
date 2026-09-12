@@ -5,17 +5,18 @@ import { CallButton, WhatsAppButton } from "./cta";
 export function Hero() {
   return (
     <section id="top" className="bg-primary text-primary-foreground">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 md:grid-cols-2 md:gap-12 md:py-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:py-24">
         <div>
-          <p className="mb-4 inline-block rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold tracking-wide">
+          <p className="mb-5 inline-block rounded-full bg-primary-foreground/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em]">
             {business.areaLine}
           </p>
-          <h1 className="text-[2.1rem] font-extrabold leading-[1.05] sm:text-5xl">
+          <h1 className="text-[2.6rem] font-extrabold leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
             WINDOW STUCK?
             <br />
             <span className="text-accent">DON'T REPLACE IT YET.</span>
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-primary-foreground/80 sm:text-xl">
+
             Send us a photo of the problem on WhatsApp. You don't need to know
             what's broken. We'll help you understand the problem and the next
             step.
