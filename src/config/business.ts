@@ -15,7 +15,12 @@ export const business = {
 
   // Leave address empty until it is verified. Empty = not shown.
   address: "",
+  // Paste the Google Business Profile short link here once the listing is live
+  // (looks like https://g.page/r/XXXXXXXX or https://maps.app.goo.gl/XXXXXXXX).
   googleBusinessProfileUrl: "",
+  // Shown until the profile link above is added.
+  googleMapsSearchUrl:
+    "https://www.google.com/maps/search/?api=1&query=Vishwa+Windows+window+repair+Powai+Mumbai",
   // Leave empty until the real working hours are confirmed. Empty = not shown.
   hours: "",
 
