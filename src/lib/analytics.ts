@@ -12,7 +12,8 @@ type EventName =
   | "problem_selected"
   | "area_selected"
   | "service_clicked"
-  | "faq_opened";
+  | "faq_opened"
+  | "google_profile_click";
 
 type Payload = Record<string, string | number | boolean | undefined>;
 
