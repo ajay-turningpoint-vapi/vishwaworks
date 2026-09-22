@@ -33,10 +33,10 @@ export function Hero() {
           </div>
           
           <h1 className="text-[2.6rem] font-extrabold leading-snug tracking-tight sm:text-6xl lg:text-[4.2rem]">
-            How 1,200+ Mumbai Families Saved <span className="highlighter">₹15,000</span> By Fixing Their <span className="text-red-500">Heavy Aluminium Windows</span> Instead of Replacing Them
+            How 1,200+ Mumbai Families Saved <span className="highlighter">₹15,000</span> With Our <span className="text-red-500">Aluminium Sliding Window Repair</span> Instead of Replacing Them
           </h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-primary-foreground/80 sm:text-xl">
-            Are your sliding doors too heavy for you or your maid to open? We can fix them! <b>EVEN IF</b> they are jammed tight, the tracks look ruined, and local carpenters said it can't be done.
+            Are your sliding doors too heavy for you or your maid to open? We can <b>fix jammed sliding windows</b> and provide expert sliding glass door roller replacement! <b>EVEN IF</b> the tracks look ruined and local mistris said it can't be done.
           </p>
           <p className="mt-4 max-w-md text-lg font-semibold leading-relaxed text-primary-foreground sm:text-xl">
             Send us a photo on WhatsApp for a <span className="highlighter">Free 15-Minute Diagnosis</span>. No fix, no fee.

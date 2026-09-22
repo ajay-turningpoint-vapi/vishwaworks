@@ -23,13 +23,15 @@ import {
   FoundersStory,
   RealWorkGallery,
 } from "@/components/site/Sections";
+import { faqs } from "@/config/business";
 import { business } from "@/config/business";
 import heroVideo from "@/assets/hero.mp4";
 import heroPoster from "@/assets/hero-poster.jpg";
 
-const title = "Sliding Window & Glass Door Repair Mumbai | Fix Jammed Tracks";
+const title = "Sliding Window Repair Mumbai | Aluminium & Glass Door Roller Replacement";
 const description =
-  "Expert sliding window and glass door repair in Mumbai. We fix jammed doors, replace broken rollers & tracks. 100% Guaranteed. Serving premium Mumbai high-rises.";
+  "Looking for sliding window repair near me in Mumbai? We fix jammed sliding windows, offer aluminium window repair, and sliding glass door roller replacement. 100% Guaranteed.";
+const liveUrl = "https://vishwawindows.in";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,11 +41,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: liveUrl },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: `${liveUrl}/` },
       { rel: "preload", as: "video", href: heroVideo, type: "video/mp4" },
       { rel: "preload", as: "image", href: heroPoster }
     ],
@@ -52,10 +54,18 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
+          "@type": "HomeAndConstructionBusiness",
           name: business.name,
+          image: `${liveUrl}${heroPoster}`,
           description,
+          url: liveUrl,
           telephone: business.phone,
+          priceRange: "₹₹",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "128"
+          },
           areaServed: business.serviceAreas.map((a) => ({
             "@type": "Place",
             name: `${a}, Mumbai`,
@@ -67,6 +77,21 @@ export const Route = createFileRoute("/")({
             addressCountry: "IN",
           },
           ...(business.hours ? { openingHours: business.hours } : {}),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.a,
+            },
+          })),
         }),
       },
     ],

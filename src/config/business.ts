@@ -74,9 +74,9 @@ export const serviceCategories = [
   {
     category: "Core Window & Door Repairs",
     items: [
-      { name: "Sliding Glass Door Repair", desc: "Heavy balcony door stuck or off-track? Send a short video and we'll identify the problem." },
-      { name: "Sliding Window Repair", desc: "Trouble opening, closing or sliding your window? Send a photo for a quick diagnosis." },
-      { name: "Roller & Track Repair", desc: "Restore effortless sliding and fix jammed or damaged tracks." },
+      { name: "Sliding Glass Door Repair Mumbai", desc: "Heavy balcony door stuck or off-track? Our sliding door repair Mumbai experts will fix it fast." },
+      { name: "Aluminium Sliding Window Repair", desc: "Trouble opening or closing? We fix jammed sliding windows instantly. Send a photo for a quick diagnosis." },
+      { name: "Sliding Window Roller Replacement", desc: "We provide sliding window roller replacement and sliding window track repair to restore effortless sliding." },
       { name: "Lock & Handle Replacement", desc: "Smooth & secure operation. A photo helps us match the right type." },
       { name: "Window Glass Replacement", desc: "Cracked or broken glass panel? Show us the panel and the frame." },
       { name: "Window Alignment & Maintenance", desc: "Perfect alignment for smooth operation and complete servicing for better performance." },

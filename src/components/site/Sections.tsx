@@ -619,7 +619,7 @@ export function ServiceAreas() {
   return (
     <section id="areas" className="reveal-section py-20 sm:py-28 overflow-hidden bg-background">
       <div className="mx-auto max-w-7xl px-4 text-center mb-10">
-        <Heading sub="Serving homeowners in Powai, Bandra, Worli, South Mumbai, and premium complexes everywhere in between.">
+        <Heading sub="Serving homeowners in Powai, Bandra, Worli, South Mumbai, and premium complexes everywhere in between. When you search for 'sliding window repair near me' or 'sliding glass door repair near me', we are your trusted local experts.">
           FAST, ON-SITE REPAIRS <br className="hidden sm:block" />ACROSS <span className="highlighter px-2 text-black">MUMBAI.</span>
         </Heading>
       </div>
