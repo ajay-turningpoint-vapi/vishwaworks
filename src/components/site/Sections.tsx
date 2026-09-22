@@ -37,7 +37,7 @@ import { WhatsAppIcon } from "./icons";
 function Heading({ children, sub }: { children: React.ReactNode; sub?: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-[1.85rem] font-extrabold uppercase leading-[1.02] tracking-[-0.03em] text-primary sm:text-5xl">
+      <h2 className="text-4xl font-black uppercase leading-[1.25] tracking-tight text-primary font-display sm:text-6xl drop-shadow-sm pb-1">
         {children}
       </h2>
       {sub ? (
@@ -54,7 +54,9 @@ function Heading({ children, sub }: { children: React.ReactNode; sub?: string })
 export function ProblemSelector() {
   return (
     <section className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
-      <Heading sub="Does any of this sound familiar?">Is your window or sliding door doing this?</Heading>
+      <Heading sub="Does any of this sound familiar?">
+        IS YOUR WINDOW OR SLIDING DOOR <span className="highlighter px-2 text-black">DOING THIS?</span>
+      </Heading>
 
       <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {problems.map((p) => (
@@ -69,30 +71,29 @@ export function ProblemSelector() {
               track("problem_selected", { problem: p.title });
               track("whatsapp_click", { location: "problem_section" });
             }}
-            className="tap group rounded-2xl border border-border bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5"
+            className="tap group rounded-2xl border-2 border-red-500/10 bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-xl hover:shadow-red-500/10 sm:p-5"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
-              <PanelsTopLeft
-                aria-hidden="true"
-                className="h-5 w-5 text-accent"
-                strokeWidth={2.25}
-              />
+            <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-red-500/10 text-xl sm:text-2xl transition-transform group-hover:scale-110 group-hover:bg-red-500/20">
+              ❌
             </span>
-            <h3 className="mt-3 text-sm font-bold text-primary sm:text-base">
+            <h3 className="mt-3 text-sm font-black text-primary font-display uppercase tracking-tight sm:text-base">
               {p.title}
             </h3>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground font-medium sm:text-sm">
               {p.desc}
             </p>
           </a>
         ))}
       </div>
 
-      <div className="mt-12 text-center flex flex-col items-center">
-        <p className="text-lg font-bold text-primary mb-4">
-          Not sure what the exact problem is? That's okay.
+      <div className="mt-16 text-center flex flex-col items-center">
+        <h3 className="text-xl sm:text-2xl font-black uppercase text-primary font-display mb-2">
+          Not sure what the exact problem is?
+        </h3>
+        <p className="text-lg sm:text-xl font-bold mb-8">
+          <span className="highlighter px-2 text-black">That's completely fine.</span> 👇
         </p>
-        <WhatsAppButton location="problem_section" className="cta-live shadow-[var(--shadow-cta)]" />
+        <WhatsAppButton location="problem_section" className="cta-live shadow-[var(--shadow-cta)] transform hover:scale-105 transition-transform" />
       </div>
     </section>
   );
@@ -103,27 +104,29 @@ export function ProblemSelector() {
 export function NoNeedToKnow() {
   return (
     <section className="reveal-section bg-primary py-16 text-primary-foreground sm:py-24">
-      <div className="mx-auto max-w-3xl px-4 text-center">
-        <h2 className="text-3xl font-extrabold uppercase leading-[1.05] sm:text-5xl">
+      <div className="mx-auto max-w-2xl px-4 text-center">
+        <h2 className="text-4xl font-black uppercase leading-[1.1] tracking-tight font-display sm:text-6xl text-white">
           You don't need to know
           <br />
-          <span className="text-accent">what's broken.</span>
+          <span className="text-accent drop-shadow-md">what's broken.</span>
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 flex flex-col gap-4 max-w-md mx-auto">
           {[
             "Take a photo.",
             "Send it to us.",
             "We'll help you understand what may be wrong.",
           ].map((t) => (
-            <p
+            <div
               key={t}
-              className="rounded-2xl bg-primary-foreground/10 px-4 py-5 text-base font-semibold"
+              className="rounded-2xl bg-white/5 border border-white/10 px-6 py-6 text-center shadow-lg transition-transform hover:bg-white/10"
             >
-              {t}
-            </p>
+              <p className="text-[17px] font-bold text-white leading-snug">
+                {t}
+              </p>
+            </div>
           ))}
         </div>
-        <WhatsAppButton location="uncertainty" className="mt-8" />
+        <WhatsAppButton location="uncertainty" className="mt-10 cta-live scale-105" />
       </div>
     </section>
   );
@@ -143,8 +146,8 @@ const steps = [
     icon: MessageCircle,
   },
   {
-    t: "Understand the next step",
-    d: "We'll review the problem and guide you on what to do next.",
+    t: "Know what's wrong",
+    d: "We will look at your photo and tell you exactly how to fix it.",
     icon: SearchCheck,
   },
   {
@@ -156,34 +159,37 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
-      <Heading>Get help without explaining the technical details.</Heading>
+    <section className="reveal-section mx-auto max-w-5xl px-4 py-20 sm:py-28 bg-secondary/5 rounded-3xl my-10 border border-border/50">
+      <Heading>
+        Get help without knowing <span className="highlighter px-2 text-black">fancy technical words.</span>
+      </Heading>
 
-      <ol className="relative mt-10 grid gap-0 md:grid-cols-4">
-        {steps.map((s, i) => (
-          <li
-            key={s.t}
-            className="group relative flex gap-4 pb-8 pl-1 md:block md:px-3 md:pb-0 md:text-center"
-          >
-            {i < steps.length - 1 ? (
-              <span className="absolute bottom-0 left-6 top-12 w-0.5 bg-border md:bottom-auto md:left-1/2 md:right-0 md:top-6 md:h-0.5 md:w-auto" />
-            ) : null}
-            <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-transform duration-300 group-hover:scale-110">
-              <s.icon aria-hidden="true" className="h-5 w-5" strokeWidth={2.25} />
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[11px] font-extrabold text-accent-foreground">
-                {i + 1}
-              </span>
-            </span>
-            <div className="pt-1 md:pt-0">
-              <h3 className="md:mt-4 text-base font-bold text-primary">{s.t}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <div className="mt-16 mx-auto max-w-md">
+        <ol className="relative">
+          <div className="absolute left-[27px] top-6 bottom-6 w-0.5 bg-border/80 hidden sm:block"></div>
+          <div className="absolute left-[27px] top-6 bottom-6 w-0.5 bg-border/80 sm:hidden"></div>
+          
+          <div className="space-y-12">
+            {steps.map((s, i) => (
+              <li key={s.t} className="relative flex gap-6 sm:gap-8 items-start group">
+                <span className="relative z-10 flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-[#111827] text-white shadow-xl transition-transform duration-300 group-hover:scale-110 border-4 border-white">
+                  <s.icon aria-hidden="true" className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2} />
+                  <span className="absolute -right-2 -top-2 flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-accent text-[13px] sm:text-[15px] font-black text-black shadow-sm ring-2 ring-white">
+                    {i + 1}
+                  </span>
+                </span>
+                <div className="pt-2 sm:pt-3">
+                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-primary font-display uppercase">{s.t}</h3>
+                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-600 font-medium">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </div>
+        </ol>
+      </div>
 
-      <div className="mt-9 text-center">
-        <WhatsAppButton location="how_it_works">SEND MY PHOTO</WhatsAppButton>
+      <div className="mt-16 text-center">
+        <WhatsAppButton location="how_it_works" className="cta-live scale-105">SEND MY PHOTO</WhatsAppButton>
       </div>
     </section>
   );
@@ -193,31 +199,33 @@ export function HowItWorks() {
 
 export function Services() {
   return (
-    <section id="services" className="reveal-section bg-secondary/60 py-20 sm:py-28">
+    <section id="services" className="reveal-section bg-secondary/5 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <Heading sub="From emergency repairs to premium upgrades.">Our Expertise</Heading>
+        <Heading sub="From stuck sliding doors to brand new safety nets. We fix it all without the headache.">
+          EVERYTHING <span className="highlighter px-2 text-black">WE FIX FOR YOU.</span>
+        </Heading>
 
-        <div className="mt-12 space-y-16">
+        <div className="mt-16 space-y-20">
           {serviceCategories.map((category) => (
             <div key={category.category}>
-              <h3 className="mb-6 text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 inline-block">
+              <h3 className="mb-8 text-[26px] sm:text-[32px] font-black uppercase tracking-tight text-primary font-display border-b-4 border-accent pb-2 inline-block drop-shadow-sm">
                 {category.category}
               </h3>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {category.items.map((s) => (
                   <div
                     key={s.name}
-                    className="tap flex flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    className="tap flex flex-col rounded-3xl border-2 border-border/60 bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl shadow-md"
                   >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/20">
                       <Wrench
                         aria-hidden="true"
-                        className="h-5 w-5 text-primary"
-                        strokeWidth={2.25}
+                        className="h-6 w-6 text-primary"
+                        strokeWidth={2.5}
                       />
                     </span>
-                    <h3 className="mt-3 text-base font-bold text-primary">{s.name}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    <h3 className="mt-5 text-[18px] font-black text-primary leading-tight tracking-wide">{s.name}</h3>
+                    <p className="mt-3 flex-1 text-[15px] font-medium leading-relaxed text-slate-600">
                       {s.desc}
                     </p>
                     <a
@@ -230,9 +238,9 @@ export function Services() {
                         track("service_clicked", { service: s.name });
                         track("whatsapp_click", { location: "services" });
                       }}
-                      className="mt-4 inline-flex min-h-[46px] items-center justify-center rounded-xl bg-whatsapp px-4 text-sm font-bold text-whatsapp-foreground tap shadow-[var(--shadow-cta)]"
+                      className="mt-6 inline-flex min-h-[50px] items-center justify-center rounded-xl bg-whatsapp px-4 text-[15px] font-black tracking-wide text-whatsapp-foreground tap shadow-[var(--shadow-cta)] hover:bg-whatsapp/90 transition-colors"
                     >
-                      SHOW US
+                      SEND A PHOTO ➔
                     </a>
                   </div>
                 ))}
@@ -250,49 +258,57 @@ export function Services() {
 export function Offer() {
   return (
     <section className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
-      <div className="rounded-3xl border-[6px] border border-red-500 bg-yellow-50 p-6 text-center sm:p-12 shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 font-bold text-xs uppercase tracking-widest rounded-bl-xl shadow-md">Risk-Free</div>
-        <h2 className="text-3xl font-extrabold uppercase leading-tight text-black sm:text-5xl">
-          The "No Fix, No Fee" <br className="hidden sm:block" /><span className="text-red-600">Iron-Clad Guarantee</span>
+      <div className="rounded-3xl border-4 border-red-500 bg-yellow-50/50 p-6 text-center sm:p-12 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 bg-red-600 text-white px-4 py-1.5 font-bold text-xs sm:text-sm uppercase tracking-widest rounded-bl-xl shadow-md">Risk-Free</div>
+        <h2 className="text-4xl font-black uppercase leading-[1.1] text-black font-display sm:text-6xl tracking-tight mt-4 sm:mt-0">
+          The "No Fix, No Fee" <br className="hidden sm:block" /><span className="text-red-600 drop-shadow-sm">Iron-Clad Guarantee</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-800 sm:text-lg font-medium">
-          Don't guess or let a local handyman practice on your expensive windows. 
-          Send us a photo on WhatsApp and we will give you:
+        <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-slate-800 sm:text-[19px] font-medium">
+          You're busy. You don't have time to chase unreliable mistris who do trial-and-error 'jugaad' on your expensive windows. 
+          <br className="hidden sm:block" />
+          Send us a quick WhatsApp photo for a zero-BS diagnosis. Here is what you get:
         </p>
         
-        <div className="mt-8 mx-auto max-w-md bg-secondary/30 rounded-2xl p-6 text-left border border-border">
+        <div className="mt-8 mx-auto max-w-md bg-white rounded-2xl p-6 text-left border border-border shadow-sm">
           <ul className="space-y-4">
             <li className="flex justify-between items-center pb-4 border-b border-border/60">
-              <span className="text-sm font-semibold text-primary">Comprehensive WhatsApp Diagnosis</span>
-              <span className="text-sm text-muted-foreground line-through">Value: ₹500</span>
+              <span className="text-[15px] font-bold text-primary">👉 Comprehensive<br/>WhatsApp Diagnosis</span>
+              <div className="text-right">
+                <span className="block text-[13px] text-muted-foreground line-through">Value:</span>
+                <span className="block text-[15px] text-muted-foreground line-through">₹500</span>
+              </div>
             </li>
             <li className="flex justify-between items-center pb-4 border-b border-border/60">
-              <span className="text-sm font-semibold text-primary"><b>BONUS 1:</b> Track & Roller Health Check</span>
-              <span className="text-sm text-muted-foreground line-through">Value: ₹800</span>
+              <span className="text-[15px] font-bold text-primary">₹ BONUS 1: Track & Roller<br/>Health Check</span>
+              <div className="text-right">
+                <span className="block text-[13px] text-muted-foreground line-through">Value:</span>
+                <span className="block text-[15px] text-muted-foreground line-through">₹800</span>
+              </div>
             </li>
             <li className="flex justify-between items-center pb-4 border-b border-border/60">
-              <span className="text-sm font-semibold text-primary text-accent">The "No Fix, No Fee" Guarantee</span>
-              <span className="text-sm font-bold text-accent">PRICELESS</span>
+              <span className="text-[15px] font-black text-green-600">✅ The "No Fix, No Fee"<br/>Guarantee</span>
+              <span className="text-[15px] font-black text-accent drop-shadow-sm">PRICELESS</span>
             </li>
             <li className="flex justify-between items-center pt-2">
-              <span className="text-base font-bold text-primary">Total Value:</span>
-              <span className="text-base font-bold text-primary line-through">₹1,300</span>
+              <span className="text-[17px] font-black text-primary">Total Value:</span>
+              <span className="text-[17px] font-black text-primary line-through drop-shadow-sm">₹1,300</span>
             </li>
-            <li className="flex justify-between items-center bg-accent/10 p-3 rounded-lg border border-accent/20">
-              <span className="text-lg font-extrabold text-primary">Your Price Today:</span>
-              <span className="text-2xl font-extrabold text-accent">₹0 (FREE)</span>
+            <li className="flex justify-between items-center bg-orange-50/50 p-4 rounded-xl border-2 border-accent/20 mt-2">
+              <span className="text-[19px] font-black text-primary leading-tight">Your Price<br/>Today:</span>
+              <div className="text-right flex flex-col items-end">
+                <span className="text-2xl font-black text-black highlighter px-2 leading-none">₹0</span>
+                <span className="text-2xl font-black text-black highlighter px-2 leading-tight mt-1">(FREE)</span>
+              </div>
             </li>
           </ul>
         </div>
         
-        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-700">
-          If you decide to book us, and we can't figure out the problem or fix it, <b>you don't pay a single rupee for the visit.</b>
+        <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-slate-700 font-medium">
+          If you decide to book us, and we can't fix the problem, <b className="text-red-600">you don't pay a single rupee.</b> No excuses. No hidden visiting charges. Just honest, professional work.
         </p>
         
-        <div className="mt-8 flex justify-center">
-             <svg className="w-12 h-12 text-red-600 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-             </svg>
+        <div className="flex justify-center mt-6 text-[40px] animate-bounce drop-shadow-sm">
+          👇
         </div>
         <WhatsAppButton location="offer" className="mt-2 scale-105 cta-live" />
       </div>
@@ -321,15 +337,15 @@ import founderImage from "@/assets/sumit_vishwakarma.png";
 
 const galleryItems: { title: string; stages: [string, string, string] }[] = [
   {
-    title: "Worn window roller",
+    title: "Stuck Window ➔ Slides with 1 Finger",
     stages: [rollerBefore, rollerDuring, rollerAfter],
   },
   {
-    title: "Damaged window track",
+    title: "Broken Track ➔ Safe & Smooth",
     stages: [trackBefore, trackDuring, trackAfter],
   },
   {
-    title: "Broken glass panel",
+    title: "Broken Glass ➔ Brand New Glass",
     stages: [glassBefore, glassDuring, glassAfter],
   },
 ];
@@ -384,20 +400,22 @@ function BeforeAfterSlider({ beforeImage, afterImage, label }: { beforeImage: st
 
 export function WorkGallery() {
   return (
-    <section id="our-work" className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
-      <Heading sub="Slide to see the difference between a jammed window and a perfectly repaired one.">
-        This is what we actually do.
+    <section id="our-work" className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
+      <Heading sub="Slide to see how we fix stuck windows and make them slide with just one finger.">
+        THIS IS <span className="highlighter px-2 text-black">HOW WE FIX IT.</span>
       </Heading>
 
-      <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-16 grid-cols-1">
         {galleryItems.map((item) => (
-          <div key={item.title} className="flex flex-col gap-4">
-            <h3 className="text-xl font-extrabold text-primary text-center sm:text-left">{item.title}</h3>
-            <BeforeAfterSlider 
-              beforeImage={item.stages[0]} 
-              afterImage={item.stages[2]} 
-              label={item.title} 
-            />
+          <div key={item.title} className="flex flex-col gap-6">
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-primary text-center font-display tracking-wide">{item.title}</h3>
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 w-full">
+              <BeforeAfterSlider 
+                beforeImage={item.stages[0]} 
+                afterImage={item.stages[2]} 
+                label={item.title} 
+              />
+            </div>
           </div>
         ))}
       </div>
@@ -425,10 +443,10 @@ export function WorkshopProof() {
   };
 
   return (
-    <section className="reveal-section bg-secondary/60 py-20 sm:py-28">
+    <section className="reveal-section bg-secondary/10 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <Heading sub="We aren't a faceless app. We are a real, physical workshop located at Shop S/159/160, IIT Market, Powai.">
-          See the real people and workshop behind the service.
+        <Heading sub="Tired of apps sending random guys to your home? We have a real, physical workshop in Powai. You know exactly who is fixing your window.">
+          NO FACELESS APPS. <br className="hidden sm:block" />JUST <span className="highlighter px-2 text-black">REAL PEOPLE.</span>
         </Heading>
         
         {/* Stacked Carousel for Mobile */}
@@ -521,29 +539,29 @@ export function WorkshopProof() {
 /* ---------------- 13. WHY CHOOSE US ---------------- */
 
 const reasons = [
-  { t: "Local to Powai", d: "Serving Powai and nearby areas." },
+  { t: "We Are Local", d: "Serving premium apartments across Powai, Bandra, and South Mumbai." },
   {
-    t: "Show us the problem",
-    d: "You don't need to know the technical name.",
+    t: "Zero Technical BS",
+    d: "Don't know the parts? Just send a WhatsApp photo and we figure it out.",
   },
   {
-    t: "Repair-first approach",
-    d: "If the problem can be repaired, you can discuss the repair before considering replacement.",
+    t: "We Fix, Not Force",
+    d: "Other guys force you to buy new windows. We fix your old ones to save you money.",
   },
-  { t: "Real work", d: "See examples of our actual work." },
+  { t: "100% Honest Proof", d: "No hidden costs. No fake stock photos. What you see is exactly what you get." },
 ];
 
 export function WhyChooseUs() {
   return (
     <section className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
-      <Heading>Why customers show us first</Heading>
-      <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+      <Heading>WHY MUMBAI <span className="highlighter px-2 text-black">CHOOSES US.</span></Heading>
+      <div className="mt-14 flex flex-col gap-8 max-w-xl mx-auto">
         {reasons.map((r) => (
-          <div key={r.t} className="flex gap-3">
-            <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
+          <div key={r.t} className="flex gap-4 items-start group">
+            <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-accent drop-shadow-sm group-hover:scale-125 transition-transform" />
             <div>
-              <h3 className="text-base font-bold uppercase text-primary">{r.t}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{r.d}</p>
+              <h3 className="text-xl sm:text-2xl font-black uppercase text-primary font-display tracking-wide">{r.t}</h3>
+              <p className="mt-1.5 text-[16px] leading-relaxed text-slate-700 font-medium">{r.d}</p>
             </div>
           </div>
         ))}
@@ -601,13 +619,9 @@ export function ServiceAreas() {
   return (
     <section id="areas" className="reveal-section py-20 sm:py-28 overflow-hidden bg-background">
       <div className="mx-auto max-w-7xl px-4 text-center mb-10">
-        <h2 className="text-[1.85rem] font-extrabold uppercase leading-[1.02] tracking-[-0.03em] text-primary sm:text-5xl">
-          Window repair around Powai
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-          Serving customers in Powai, Hiranandani Gardens, Chandivali, IIT Powai,
-          Saki Vihar and nearby areas.
-        </p>
+        <Heading sub="Serving homeowners in Powai, Bandra, Worli, South Mumbai, and premium complexes everywhere in between.">
+          FAST, ON-SITE REPAIRS <br className="hidden sm:block" />ACROSS <span className="highlighter px-2 text-black">MUMBAI.</span>
+        </Heading>
       </div>
 
       <div className="mt-8 -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden relative flex flex-col gap-2">
@@ -744,11 +758,11 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
     <div className="w-[320px] shrink-0 rounded-xl border border-border bg-card p-5 shadow-sm flex flex-col justify-between text-left h-[260px]">
       <div>
         <div className="flex items-center gap-2 mb-3">
-          <span className="font-bold text-foreground text-base">{review.name}</span>
+          <span className="font-bold text-foreground text-[16px]">{review.name}</span>
           <div className="flex items-center justify-center rounded-full bg-green-500 w-4 h-4">
             <Check className="w-3 h-3 text-white" strokeWidth={4} />
           </div>
-          <span className="text-xs text-muted-foreground ml-1">Verified Reviewer</span>
+          <span className="text-[12px] text-muted-foreground ml-1">Verified Reviewer</span>
         </div>
         <div className="flex gap-1 mb-3">
           {[...Array(review.rating)].map((_, i) => (
@@ -757,11 +771,11 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
             </svg>
           ))}
         </div>
-        <h4 className="text-lg font-bold text-foreground mb-2 leading-tight">{review.title}</h4>
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">{review.text}</p>
+        <h4 className="text-[18px] font-bold text-foreground mb-2 leading-tight">{review.title}</h4>
+        <p className="text-[14px] text-muted-foreground leading-relaxed line-clamp-4">{review.text}</p>
       </div>
       <div className="mt-4 flex justify-end">
-        <span className="text-xs text-muted-foreground">{review.date}</span>
+        <span className="text-[12px] text-muted-foreground">{review.date}</span>
       </div>
     </div>
   );
@@ -817,21 +831,23 @@ export function Reviews() {
 
 export function Faq() {
   return (
-    <section id="faq" className="reveal-section bg-secondary/60 py-20 sm:py-28">
-      <div className="mx-auto max-w-3xl px-4">
-        <Heading>Questions people ask us</Heading>
+    <section id="faq" className="reveal-section bg-secondary/5 py-20 sm:py-28">
+      <div className="mx-auto max-w-4xl px-4">
+        <Heading sub="Read the answers to our most common questions before messaging us.">
+          YOUR QUESTIONS, <span className="highlighter px-2 text-black">ANSWERED.</span>
+        </Heading>
         <Accordion
           type="single"
           collapsible
-          className="mt-8"
+          className="mt-14"
           onValueChange={(v) => v && track("faq_opened", { question: v })}
         >
           {faqs.map((f) => (
-            <AccordionItem key={f.q} value={f.q}>
-              <AccordionTrigger className="text-left text-base font-semibold text-primary">
+            <AccordionItem key={f.q} value={f.q} className="border-primary/20 py-2">
+              <AccordionTrigger className="text-left text-xl sm:text-2xl font-black uppercase text-primary font-display hover:no-underline">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+              <AccordionContent className="text-[17px] leading-relaxed text-slate-700 font-medium pt-2 pb-6">
                 {f.a}
               </AccordionContent>
             </AccordionItem>
@@ -842,152 +858,7 @@ export function Faq() {
   );
 }
 
-/* ---------------- 20/21. SHORT LEAD FORM ---------------- */
 
-type Errors = Partial<Record<"name" | "phone" | "area" | "problem", string>>;
-
-export function LeadForm() {
-  const [started, setStarted] = useState(false);
-  const [errors, setErrors] = useState<Errors>({});
-  const [values, setValues] = useState({
-    name: "",
-    phone: "",
-    area: "",
-    problem: "",
-  });
-
-  const onFirstTouch = () => {
-    if (!started) {
-      setStarted(true);
-      track("form_started");
-    }
-  };
-
-  const set = (k: keyof typeof values) => (v: string) =>
-    setValues((prev) => ({ ...prev, [k]: v }));
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const next: Errors = {};
-    if (values.name.trim().length < 2) next.name = "Please enter your name.";
-    const digits = values.phone.replace(/[^\d]/g, "").replace(/^91(?=\d{10}$)/, "");
-    if (!/^[6-9]\d{9}$/.test(digits))
-      next.phone = "Please enter a valid 10-digit mobile number.";
-    if (!values.area.trim()) next.area = "Please select your area.";
-    if (!values.problem) next.problem = "Tell us what is happening with the window.";
-    setErrors(next);
-    if (Object.keys(next).length > 0) return;
-
-    track("form_submitted", { area: values.area, problem: values.problem });
-    track("whatsapp_click", { location: "lead_form" });
-    const msg = `Hi, I have a window problem.\nName: ${values.name}\nArea: ${values.area}\nProblem: ${values.problem}\nMy WhatsApp number: ${digits}\nI am sending a photo of the problem.`;
-    window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
-  };
-
-  const field =
-    "mt-1 w-full rounded-xl border border-input bg-card px-4 py-3 text-base text-foreground outline-none focus:border-whatsapp";
-
-  return (
-    <section className="reveal-section mx-auto max-w-xl px-4 pt-20 pb-32 sm:py-28 md:pb-28">
-      <Heading sub="Four quick details, then continue the chat on WhatsApp.">
-        Prefer to type it out?
-      </Heading>
-
-      <form onSubmit={submit} onFocus={onFirstTouch} className="mt-8 space-y-4" noValidate>
-        <div>
-          <label className="text-sm font-semibold text-primary" htmlFor="lf-name">
-            Name
-          </label>
-          <input
-            id="lf-name"
-            className={field}
-            value={values.name}
-            onChange={(e) => set("name")(e.target.value)}
-            autoComplete="name"
-          />
-          {errors.name && <p className="mt-1 text-sm text-destructive">{errors.name}</p>}
-        </div>
-
-        <div>
-          <label className="text-sm font-semibold text-primary" htmlFor="lf-phone">
-            WhatsApp Number
-          </label>
-          <input
-            id="lf-phone"
-            className={field}
-            inputMode="tel"
-            placeholder="9876543210"
-            value={values.phone}
-            onChange={(e) => set("phone")(e.target.value)}
-            autoComplete="tel"
-          />
-          {errors.phone && <p className="mt-1 text-sm text-destructive">{errors.phone}</p>}
-        </div>
-
-        <div>
-          <label className="text-sm font-semibold text-primary" htmlFor="lf-area">
-            Area
-          </label>
-          <select
-            id="lf-area"
-            className={field}
-            value={values.area}
-            onChange={(e) => {
-              set("area")(e.target.value);
-              if (e.target.value) track("area_selected", { area: e.target.value });
-            }}
-          >
-            <option value="">Select your area</option>
-            {business.serviceAreas.map((a) => (
-              <option key={a} value={a}>
-                {a}
-              </option>
-            ))}
-          </select>
-          {errors.area && <p className="mt-1 text-sm text-destructive">{errors.area}</p>}
-        </div>
-
-        <div>
-          <label className="text-sm font-semibold text-primary" htmlFor="lf-problem">
-            Problem
-          </label>
-          <select
-            id="lf-problem"
-            className={field}
-            value={values.problem}
-            onChange={(e) => {
-              set("problem")(e.target.value);
-              if (e.target.value)
-                track("problem_selected", { problem: e.target.value });
-            }}
-          >
-            <option value="">What is happening?</option>
-            {problemOptions.map((p) => (
-              <option key={p} value={p}>
-                {p}
-              </option>
-            ))}
-          </select>
-          {errors.problem && (
-            <p className="mt-1 text-sm text-destructive">{errors.problem}</p>
-          )}
-        </div>
-
-        <Button
-          type="submit"
-          className="min-h-[54px] w-full rounded-xl bg-whatsapp text-base font-bold text-whatsapp-foreground shadow-cta hover:bg-whatsapp/90"
-        >
-          <WhatsAppIcon className="h-5 w-5 text-white" />
-          CONTINUE ON WHATSAPP
-        </Button>
-        <p className="text-center text-xs text-muted-foreground">
-           <Camera aria-hidden="true" className="mr-1 inline h-4 w-4 align-text-bottom" />
-          You can attach your photo once WhatsApp opens.
-        </p>
-      </form>
-    </section>
-  );
-}
 
 
 /* ---------------- 18. US VS THEM ---------------- */
@@ -996,36 +867,36 @@ export function UsVsThem() {
   return (
     <section className="reveal-section bg-secondary/20 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4">
-        <Heading sub="Why residents in premium Mumbai complexes prefer our specialized approach.">
-          Vishwa Windows vs. The Local Handyman
+        <Heading sub="Why Mumbai families choose us instead of regular handymen.">
+          <span className="font-display font-black tracking-tight text-3xl sm:text-5xl uppercase">Vishwa Windows <span className="text-red-500 px-2 line-through">VS.</span> The Local Mistri</span>
         </Heading>
-        <div className="mt-12 overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+        <div className="mt-12 overflow-hidden rounded-3xl border-2 border-border bg-card shadow-xl shadow-accent/5">
           <div className="grid grid-cols-2 divide-x divide-border sm:grid-cols-3">
-            <div className="hidden bg-secondary/40 p-6 sm:block">
-              <p className="font-bold text-primary">Feature</p>
+            <div className="hidden bg-secondary/20 p-6 sm:flex items-center justify-center">
+              <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Feature</p>
             </div>
-            <div className="bg-destructive/10 p-6 text-center">
-              <p className="font-bold text-destructive">Local Handyman</p>
+            <div className="bg-red-50/80 p-5 sm:p-6 text-center border-b-2 border-red-100">
+              <p className="text-xl sm:text-2xl font-black text-red-600 font-display uppercase tracking-tight">Local Mistri</p>
             </div>
-            <div className="bg-accent/10 p-6 text-center">
-              <p className="font-bold text-accent">Vishwa Windows</p>
+            <div className="bg-orange-50/80 p-5 sm:p-6 text-center border-b-2 border-orange-200">
+              <p className="text-xl sm:text-2xl font-black text-yellow-600 font-display uppercase tracking-tight drop-shadow-sm">Vishwa Windows</p>
             </div>
           </div>
           <div className="divide-y divide-border">
             {[
               {
                 f: "Pricing",
-                bad: "Hidden fees, changes midway",
+                bad: "Quotes low, then adds charges for extra parts",
                 good: "Clear, upfront diagnosis",
               },
               {
                 f: "Approach",
-                bad: "Always recommends replacement",
+                bad: "Always tells you to change the whole frame",
                 good: "Repair-first (saves you money)",
               },
               {
                 f: "Guarantee",
-                bad: "No guarantee, stops picking up calls",
+                bad: "Does 'jugaad' fixes, then stops answering calls",
                 good: "'No Fix, No Fee' Promise",
               },
               {
@@ -1036,20 +907,20 @@ export function UsVsThem() {
             ].map((r) => (
               <div
                 key={r.f}
-                className="grid grid-cols-2 divide-x divide-border sm:grid-cols-3"
+                className="grid grid-cols-2 divide-x divide-border sm:grid-cols-3 group hover:bg-muted/30 transition-colors"
               >
-                <div className="hidden p-6 sm:block">
-                  <p className="text-sm font-semibold text-primary">{r.f}</p>
+                <div className="hidden p-6 sm:flex items-center justify-center">
+                  <p className="text-[13px] font-bold uppercase tracking-wider text-primary/60">{r.f}</p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-6 text-center">
-                  <span className="mb-2 sm:hidden text-xs font-semibold uppercase text-muted-foreground">{r.f}</span>
-                  <X className="mb-2 h-6 w-6 text-destructive" />
-                  <p className="text-sm text-muted-foreground">{r.bad}</p>
+                <div className="flex flex-col items-center justify-center p-6 text-center bg-red-50/20">
+                  <span className="mb-3 sm:hidden text-[11px] font-bold uppercase tracking-wider text-primary/50">{r.f}</span>
+                  <X className="mb-3 h-8 w-8 text-red-500 drop-shadow-sm" strokeWidth={2.5} />
+                  <p className="text-[14px] font-medium text-gray-500 leading-snug">{r.bad}</p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-6 text-center">
-                  <span className="mb-2 sm:hidden text-xs font-semibold uppercase text-muted-foreground">{r.f}</span>
-                  <Check className="mb-2 h-6 w-6 text-accent" />
-                  <p className="text-sm font-bold text-primary">{r.good}</p>
+                <div className="flex flex-col items-center justify-center p-6 text-center bg-orange-50/30">
+                  <span className="mb-3 sm:hidden text-[11px] font-bold uppercase tracking-wider text-primary/50">{r.f}</span>
+                  <Check className="mb-3 h-8 w-8 text-accent drop-shadow-md" strokeWidth={3.5} />
+                  <p className="text-[16px] font-black text-gray-900 leading-snug tracking-tight">{r.good}</p>
                 </div>
               </div>
             ))}
@@ -1064,11 +935,11 @@ export function UsVsThem() {
 
 export function Benefits() {
   return (
-    <section className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
+    <section className="reveal-section mx-auto max-w-3xl px-4 py-20 sm:py-28 bg-secondary/5 rounded-3xl my-10 border border-border/50">
       <Heading sub="We don't just fix windows and doors. We restore your peace of mind.">
         What happens after a repair?
       </Heading>
-      <div className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+      <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
         {[
           "Effortless Glide: Open heavy sliding doors or windows with just one finger.",
           "Save on AC Bills: We seal the tracks so your expensive cooling doesn't escape.",
@@ -1076,15 +947,20 @@ export function Benefits() {
           "Child Safety: Secure locks and sturdy tracks mean your kids are safe.",
           "Save ₹15,000+: By replacing the rollers instead of the entire frame.",
           "No Mess, No Stress: Professional service that doesn't leave your home looking like a construction site."
-        ].map((b, i) => (
-          <div key={i} className="flex gap-3">
-            <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-            <p className="text-sm font-semibold text-primary">{b}</p>
-          </div>
-        ))}
+        ].map((b, i) => {
+          const [title, desc] = b.split(": ");
+          return (
+            <div key={i} className="flex gap-4 items-start group">
+              <Check className="mt-0.5 h-6 w-6 shrink-0 text-accent drop-shadow-sm group-hover:scale-110 transition-transform" strokeWidth={3} />
+              <p className="text-[16px] leading-relaxed text-slate-700">
+                <strong className="font-bold text-slate-900">{title}:</strong> {desc}
+              </p>
+            </div>
+          );
+        })}
       </div>
-      <div className="mt-10 text-center">
-        <WhatsAppButton location="benefits" />
+      <div className="mt-12 text-center">
+        <WhatsAppButton location="benefits" className="cta-live scale-105" />
       </div>
     </section>
   );
@@ -1094,52 +970,60 @@ export function Benefits() {
 
 export function Disqualifiers() {
   return (
-    <section className="reveal-section bg-secondary/10 py-16 sm:py-24 border-y border-border">
-      <div className="mx-auto max-w-4xl px-4">
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div className="rounded-2xl border-2 border-accent/20 bg-card p-6 shadow-sm relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-16 h-16 bg-accent/10 rounded-bl-[100px] -z-10"></div>
-             <h3 className="text-xl font-extrabold text-primary mb-4 flex items-center gap-2">
-               <Check className="h-5 w-5 text-accent" />
-               Who This Is For
+    <section className="reveal-section bg-secondary/5 py-20 sm:py-28 border-y border-border/50">
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="grid gap-10 md:grid-cols-2">
+          
+          {/* Who This Is For Card */}
+          <div className="rounded-3xl border-[3px] border-[#22c55e]/40 bg-white p-8 shadow-xl relative overflow-hidden flex flex-col">
+             <div className="absolute top-0 right-0 w-24 h-24 bg-[#22c55e]/10 rounded-bl-[100px] -z-10"></div>
+             <h3 className="text-3xl sm:text-4xl font-black uppercase text-primary mb-8 font-display tracking-tight flex items-center gap-3 border-b-2 border-border/50 pb-4">
+               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#22c55e]/20 shrink-0">
+                 <Check className="h-7 w-7 text-[#16a34a]" strokeWidth={3} />
+               </span>
+               WHO IT'S FOR
              </h3>
-             <ul className="space-y-3 text-sm text-muted-foreground">
-               <li className="flex items-start gap-2">
-                 <span className="font-bold text-primary mt-0.5">•</span>
-                 Homeowners in Powai, Bandra, Worli & South Mumbai who value high-quality, professional work.
+             <ul className="space-y-6">
+               <li className="flex items-start gap-4">
+                 <Check className="h-7 w-7 text-[#16a34a] shrink-0 mt-0.5" strokeWidth={3} />
+                 <span className="text-[17px] leading-relaxed text-slate-700 font-medium">Homeowners in Powai, Bandra, Worli & South Mumbai who value premium, professional work.</span>
                </li>
-               <li className="flex items-start gap-2">
-                 <span className="font-bold text-primary mt-0.5">•</span>
-                 People who want a permanent fix that lasts for years, not weeks.
+               <li className="flex items-start gap-4">
+                 <Check className="h-7 w-7 text-[#16a34a] shrink-0 mt-0.5" strokeWidth={3} />
+                 <span className="text-[17px] leading-relaxed text-slate-700 font-medium">People who want a permanent fix that lasts for years, not weeks.</span>
                </li>
-               <li className="flex items-start gap-2">
-                 <span className="font-bold text-primary mt-0.5">•</span>
-                 Those who appreciate transparent pricing with no hidden surprises.
+               <li className="flex items-start gap-4">
+                 <Check className="h-7 w-7 text-[#16a34a] shrink-0 mt-0.5" strokeWidth={3} />
+                 <span className="text-[17px] leading-relaxed text-slate-700 font-medium">Those who appreciate 100% transparent pricing with zero hidden surprises.</span>
                </li>
              </ul>
           </div>
           
-          <div className="rounded-2xl border-2 border-destructive/20 bg-card p-6 shadow-sm relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-16 h-16 bg-destructive/10 rounded-bl-[100px] -z-10"></div>
-             <h3 className="text-xl font-extrabold text-primary mb-4 flex items-center gap-2">
-               <X className="h-5 w-5 text-destructive" />
-               Who This Is NOT For
+          {/* Who This Is NOT For Card */}
+          <div className="rounded-3xl border-[3px] border-[#ef4444]/40 bg-white p-8 shadow-xl relative overflow-hidden flex flex-col">
+             <div className="absolute top-0 right-0 w-24 h-24 bg-[#ef4444]/10 rounded-bl-[100px] -z-10"></div>
+             <h3 className="text-3xl sm:text-4xl font-black uppercase text-primary mb-8 font-display tracking-tight flex items-center gap-3 border-b-2 border-border/50 pb-4">
+               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ef4444]/20 shrink-0">
+                 <X className="h-7 w-7 text-[#dc2626]" strokeWidth={3} />
+               </span>
+               WHO IT'S NOT FOR
              </h3>
-             <ul className="space-y-3 text-sm text-muted-foreground">
-               <li className="flex items-start gap-2">
-                 <span className="font-bold text-primary mt-0.5">•</span>
-                 People looking for a cheap 'jugaad' (band-aid fix) from a local carpenter.
+             <ul className="space-y-6">
+               <li className="flex items-start gap-4">
+                 <X className="h-7 w-7 text-[#dc2626] shrink-0 mt-0.5" strokeWidth={3} />
+                 <span className="text-[17px] leading-relaxed text-slate-700 font-medium">People looking for a cheap 'jugaad' (band-aid fix) from a local carpenter.</span>
                </li>
-               <li className="flex items-start gap-2">
-                 <span className="font-bold text-primary mt-0.5">•</span>
-                 Those who don't care if cheap generic parts break again in a month.
+               <li className="flex items-start gap-4">
+                 <X className="h-7 w-7 text-[#dc2626] shrink-0 mt-0.5" strokeWidth={3} />
+                 <span className="text-[17px] leading-relaxed text-slate-700 font-medium">Those who don't care if cheap generic parts break again in a month.</span>
                </li>
-               <li className="flex items-start gap-2">
-                 <span className="font-bold text-primary mt-0.5">•</span>
-                 Landlords looking for the absolute cheapest fix just to pass an inspection.
+               <li className="flex items-start gap-4">
+                 <X className="h-7 w-7 text-[#dc2626] shrink-0 mt-0.5" strokeWidth={3} />
+                 <span className="text-[17px] leading-relaxed text-slate-700 font-medium">Landlords looking for the absolute cheapest fix just to pass an inspection.</span>
                </li>
              </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -1164,21 +1048,21 @@ export function FoundersStory() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-extrabold uppercase text-primary-foreground sm:text-4xl">
-              Why I started this
+            <h2 className="text-3xl font-black uppercase text-primary-foreground font-display sm:text-4xl">
+              <span className="highlighter px-2 text-black">WHY I STARTED THIS</span>
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-primary-foreground/90">
+            <div className="mt-8 space-y-6 text-[17px] leading-relaxed text-primary-foreground/90">
               <p>
-                "I was tired of seeing homeowners in premium complexes being tricked by local handymen. They would call someone to fix a simple stuck window or heavy sliding door, and the handyman would quote ₹15,000 to replace the entire aluminium frame."
+                "I was tired of seeing Mumbai families being tricked by local carpenters. They would call someone to fix a simple stuck window or heavy sliding door, and the mistri would quote <b className="text-red-400 font-black">₹15,000 to replace the whole aluminium frame.</b>"
               </p>
-              <p>
+              <p className="text-xl sm:text-2xl font-black text-white border-l-4 border-accent pl-5 py-1">
                 "The truth? 90% of the time, it's just a worn-out ₹500 roller or a bent track."
               </p>
               <p>
-                "I started Vishwa Windows with a simple mission: <b>Repair first, replace only when absolutely necessary.</b> We give you honest advice, upfront pricing, and a 'No Fix, No Fee' guarantee. It's how service should be."
+                "I started Vishwa Windows with a simple mission: <b className="text-accent font-black">Repair first, replace only when absolutely necessary.</b> We give you honest advice, upfront pricing, and a 'No Fix, No Fee' guarantee. It's how service should be."
               </p>
             </div>
-            <p className="mt-6 font-bold text-accent">— Vishwa, Founder</p>
+            <p className="mt-8 text-xl font-bold text-white font-display uppercase tracking-wider">— Vishwa, Founder</p>
           </div>
         </div>
       </div>
@@ -1193,56 +1077,47 @@ export function FinalCTA() {
   return (
     <section className="reveal-section bg-primary py-16 text-primary-foreground sm:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
-        <h2 className="text-3xl font-extrabold uppercase leading-[1.05] sm:text-5xl">
-          Got a window problem?
-          <br />
-          <span className="text-accent">Show us. Don't guess.</span>
+        <h2 className="text-4xl font-extrabold uppercase leading-tight sm:text-6xl font-display">
+          STOP STRUGGLING WITH <br />
+          <span className="text-accent">STUCK WINDOWS.</span>
         </h2>
-        <p className="mx-auto mt-5 max-w-lg text-primary-foreground/85">
-          Take a photo and send it on WhatsApp. We'll help you understand the next
-          step.
+        <p className="mx-auto mt-6 max-w-lg text-[18px] text-primary-foreground/90 font-medium">
+          Take a photo and send it on WhatsApp right now. We'll give you a free, honest diagnosis before you commit.
         </p>
         
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row items-center">
-          <div className="hidden sm:block">
-            <svg className="w-10 h-10 text-red-500 animate-bounce -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+        <div className="mt-10 flex flex-col justify-center gap-4">
+          <div className="w-full flex justify-center text-[40px] animate-bounce drop-shadow-sm">
+            👇
           </div>
-          <div className="sm:hidden w-full flex justify-center">
-             <svg className="w-10 h-10 text-red-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-             </svg>
-          </div>
-          <WhatsAppButton location="final_cta" className="cta-live w-full sm:w-auto" />
+          <WhatsAppButton location="final_cta" className="cta-live w-full" />
           <CallButton
             location="final_cta"
-            className="border-primary-foreground/30 bg-transparent text-primary-foreground w-full sm:w-auto"
+            className="border-primary-foreground/30 bg-transparent text-primary-foreground w-full"
           />
         </div>
         
-        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-wider text-primary-foreground/80">
+        <div className="mt-8 flex flex-wrap justify-center gap-4 text-[13px] font-bold uppercase tracking-wider text-primary-foreground/90">
           <div className="flex items-center gap-1.5">
-            <Check className="h-4 w-4 text-accent" />
+            <Check className="h-5 w-5 text-accent" strokeWidth={3} />
             <span>4.9/5 Google Rating</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <Check className="h-4 w-4 text-accent" />
+            <Check className="h-5 w-5 text-accent" strokeWidth={3} />
             <span>100% Risk-Free Guarantee</span>
           </div>
         </div>
 
-        <div className="mt-12 mx-auto max-w-2xl text-left">
-          <p className="text-base font-black text-accent mb-2 underline decoration-2 underline-offset-4">P.S.</p>
-          <p className="text-sm text-primary-foreground/85 leading-relaxed">
-            Don't forget, you have absolutely zero risk. Send us a photo right now, and if we come over and can't figure out the problem or fix your window, <span className="font-semibold text-primary-foreground">you don't pay a single rupee for the visit</span>. PLUS, if the exact same repair fails within 6 months, we will come back and fix it again entirely for FREE.
+        <div className="mt-14 mx-auto max-w-2xl text-left bg-primary-foreground/5 p-6 rounded-xl border border-primary-foreground/10">
+          <p className="text-xl mb-3"><span className="bg-accent px-2 py-0.5 text-black font-black font-display uppercase tracking-wider">MY PROMISE TO YOU:</span></p>
+          <p className="text-[16px] text-primary-foreground/90 leading-relaxed font-medium">
+            Don't forget, you have absolutely zero risk. Send us a photo right now, and if we come over and can't figure out the problem or fix your window, <span className="font-bold text-accent">you don't pay a single rupee for the visit</span>. PLUS, if the exact same repair fails within 6 months, we will come back and fix it again entirely for FREE.
           </p>
-          <p className="mt-3 text-sm text-primary-foreground/70 leading-relaxed">
+          <p className="mt-4 text-[15px] text-primary-foreground/70 leading-relaxed">
             We deliberately limit how many residential visits we take on each day so every repair gets proper attention. Tap the WhatsApp button above to lock in today's slot.
           </p>
         </div>
         
-        <p className="mt-8 text-xs text-primary-foreground/50 uppercase tracking-widest">{business.areaLine}</p>
+        <p className="mt-10 text-sm text-primary-foreground/50 font-bold uppercase tracking-widest">{business.areaLine}</p>
       </div>
     </section>
   );
@@ -1390,7 +1265,7 @@ export function RealWorkGallery() {
           <div 
             key={i} 
             onClick={() => setSelectedAsset(asset.url)}
-            className="flex-none w-[280px] h-[360px] md:w-[320px] md:h-[420px] relative rounded-2xl overflow-hidden border border-border shadow-md group cursor-pointer"
+            className="flex-none w-[280px] h-[360px] md:w-[320px] md:h-[420px] relative rounded-[32px] overflow-hidden border border-border/50 cursor-pointer"
           >
             {asset.url.match(/\.(mp4|mov)$/i) ? (
               <video src={asset.url} autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none" />
@@ -1404,9 +1279,9 @@ export function RealWorkGallery() {
     );
 
     return (
-      <div className="relative flex overflow-hidden w-full py-2">
+      <div className="relative flex overflow-hidden w-full py-6">
         <div 
-          className={`flex w-max gap-4 pause-on-hover ${direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'}`}
+          className={`flex w-max gap-5 pause-on-hover ${direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'}`}
           style={{ animationDuration: '60s' }}
         >
           {content}
@@ -1429,9 +1304,9 @@ export function RealWorkGallery() {
   }, [selectedAsset]);
 
   return (
-    <section className="reveal-section py-20 sm:py-28 overflow-hidden bg-secondary/30 relative">
-      <Heading sub="We document everything. Here is recent footage straight from our technicians' phones while out on the job in Mumbai.">
-        RAW, UNFILTERED PROOF FROM THE FIELD.
+    <section className="reveal-section py-20 sm:py-28 overflow-hidden bg-secondary/10 relative">
+      <Heading sub="No fake photos. Just real videos of our team fixing stuck windows, stopping rain leaks, and blocking out Mumbai dust—without breaking your walls.">
+        REAL, <span className="highlighter px-2 text-black">UNCUT PROOF</span> <br className="hidden sm:block" />FROM ACTUAL MUMBAI HOMES.
       </Heading>
 
       <div className="mt-12 flex flex-col gap-4">

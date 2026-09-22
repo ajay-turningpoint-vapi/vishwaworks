@@ -6,11 +6,16 @@ import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "./icons";
 
 const base =
-  "inline-flex min-h-[54px] items-center justify-center gap-2 rounded-xl px-6 text-base font-bold tracking-tight transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring";
+  "flex w-full min-h-[54px] items-center justify-center gap-2 rounded-xl px-6 text-base font-bold tracking-tight transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring";
 
 export function WhatsAppButton({
   location,
-  children = "Send a Photo on WhatsApp (Free Diagnosis)",
+  children = (
+    <span className="flex flex-col items-center leading-tight">
+      <span>Send a Photo on WhatsApp</span>
+      <span className="text-sm font-medium text-white/90">(Free 15-Minute Diagnosis)</span>
+    </span>
+  ),
   message = whatsappMessages.default,
   className,
   variant = "solid",

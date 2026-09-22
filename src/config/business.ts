@@ -60,11 +60,11 @@ export function whatsappLink(message: string = whatsappMessages.default) {
 }
 
 export const problems = [
-  { title: "Sliding Door Not Moving", desc: "Lifting a heavy 80kg balcony door just to walk through it? You'll ruin your back before you ruin the door." },
+  { title: "Sliding Door Not Moving", desc: "Lifting a heavy balcony door just to walk through it? You'll ruin your back." },
   { title: "Window Won't Slide", desc: "Forcing it everyday? One wrong push and the glass could shatter." },
   { title: "Window Is Stuck", desc: "Trapped in a stuffy room? Or worse, unable to lock it securely at night?" },
   { title: "Roller Is Damaged", desc: "That screeching noise isn't just annoying, it's destroying the track underneath." },
-  { title: "Track Is Damaged", desc: "Bent or dented? Your expensive AC cooling is probably leaking out through the gaps." },
+  { title: "Track Is Damaged", desc: "Bent tracks? Your expensive AC cooling is leaking out, and Powai dust is coming in." },
   { title: "Lock Is Not Working", desc: "A faulty latch means anyone can slide it open from the outside." },
   { title: "Handle Is Broken", desc: "Cutting your fingers or breaking your nails trying to slide a heavy panel?" },
   { title: "Glass Is Broken", desc: "A massive safety hazard waiting to fall. Specially dangerous with kids around." },
@@ -109,27 +109,27 @@ export const problemOptions = [
 
 export const faqs = [
   {
-    q: "Will you try to up-sell me an expensive replacement?",
-    a: "No. Our entire business model is built on repair-first. 90% of windows can be fixed with new rollers or tracks for a fraction of the cost. We only recommend replacement if the frame is completely destroyed.",
+    q: "Will you force me to buy expensive new windows?",
+    a: "No. Many Mumbai contractors love selling new windows because they make huge margins. We do the opposite. 90% of the time, we can repair your stuck windows with new rollers or tracks for a fraction of the cost. We only recommend replacement if the frame is completely destroyed.",
   },
   {
-    q: "Do I need to know the technical name of the broken part?",
-    a: "Not at all. That's exactly why we encourage you to send a photo. Just point your camera at the problem, and our technicians will figure it out.",
+    q: "I don't know what part is broken. Can I still contact you?",
+    a: "Yes! That's exactly why we use WhatsApp. You don't need to be a window expert. Just point your phone camera at the problem, record a 5-second video, and send it to us. Our technicians will figure it out instantly.",
   },
   {
-    q: "What if you come over and can't fix it?",
-    a: "Then you don't pay. Our 'No Fix, No Fee' guarantee means you have absolutely zero risk. If we can't figure out the problem or fix your window, you don't pay a single rupee for the visit.",
+    q: "What if you come to my house and can't fix it?",
+    a: "Then you don't pay. Our 'No Fix, No Fee' guarantee means you have absolutely zero risk. If our technicians can't solve the problem, you do not pay a single rupee for the visit.",
   },
   {
-    q: "Are there any hidden visiting charges?",
-    a: "No hidden fees. Once we see your photo on WhatsApp, we'll give you a clear idea of the potential costs. If a paid inspection is needed for a complex issue, we will tell you upfront before we ever leave the workshop.",
+    q: "Will you hit me with hidden charges after the work is done?",
+    a: "Absolutely not. Once we review your WhatsApp video, we give you a clear estimate. No sudden 'material costs' or hidden fees at the end of the job. You pay exactly what we agree on.",
   },
   {
-    q: "How fast can you fix my window?",
-    a: "Most sliding window repairs (like roller or track replacement) take less than 45 minutes once we arrive. We deliberately limit how many residential visits we take on each day so every repair gets proper attention, so we recommend messaging us early.",
+    q: "How long does it take? Will it make a huge mess in my home?",
+    a: "Most repairs take less than 45 minutes once we arrive. And because we specialize in hardware repairs, there is NO civil work, NO breaking walls, and NO cement dust left in your living room.",
   },
   {
-    q: "Do you serve my specific area?",
-    a: "We currently serve premium residential complexes across Mumbai, including Powai, Bandra, Worli, Cuffe Parade, Juhu and nearby posh localities.",
+    q: "Do you serve my area in Mumbai?",
+    a: "We serve premium residential complexes across all of Mumbai, including Powai, Bandra, Worli, South Mumbai, Juhu, and nearby areas. Just drop your location on WhatsApp to confirm.",
   },
 ] as const;

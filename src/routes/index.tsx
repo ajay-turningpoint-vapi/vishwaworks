@@ -7,7 +7,6 @@ import {
   FinalCTA,
   Footer,
   HowItWorks,
-  LeadForm,
   NoNeedToKnow,
   Offer,
   ProblemSelector,
@@ -106,7 +105,6 @@ function Index() {
         {/* Phase 5: Closing */}
         <ServiceAreas />
         <Faq />
-        <LeadForm />
         <FinalCTA />
       </main>
       <Footer />
