@@ -3,17 +3,17 @@ import { track } from "@/lib/analytics";
 import { WhatsAppIcon } from "./icons";
 
 const links = [
-  { label: "Services", href: "#services" },
-  { label: "Our Work", href: "#our-work" },
-  { label: "Areas", href: "#areas" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Services", href: "/#services" },
+  { label: "Our Work", href: "/#our-work" },
+  { label: "Areas", href: "/#areas" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <a href="#top" className="flex flex-col leading-none">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
+        <a href="/" className="flex flex-col leading-none">
           <span className="font-display text-lg font-extrabold text-primary">
             {business.name}
           </span>
@@ -22,14 +22,14 @@ export function Header() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Main">
-          {links.map((l) => (
+        <nav className="hidden items-center gap-6 md:flex">
+          {links.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={link.href}
+              href={link.href}
               className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
             >
-              {l.label}
+              {link.label}
             </a>
           ))}
         </nav>
@@ -45,21 +45,6 @@ export function Header() {
           <span className="hidden sm:inline">WhatsApp</span>
         </a>
       </div>
-
-      <nav
-        aria-label="Sections"
-        className="no-scrollbar flex snap-x snap-mandatory gap-2 overflow-x-auto border-t border-border/60 px-4 pb-2 pt-2 md:hidden"
-      >
-        {links.map((l) => (
-          <a
-            key={l.href}
-            href={l.href}
-            className="tap snap-start whitespace-nowrap rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-bold text-primary"
-          >
-            {l.label}
-          </a>
-        ))}
-      </nav>
     </header>
   );
 }

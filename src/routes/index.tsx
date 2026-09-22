@@ -18,12 +18,19 @@ import {
   WhyChooseUs,
   WorkGallery,
   WorkshopProof,
+  UsVsThem,
+  Disqualifiers,
+  Benefits,
+  FoundersStory,
+  RealWorkGallery,
 } from "@/components/site/Sections";
 import { business } from "@/config/business";
+import heroVideo from "@/assets/hero.mp4";
+import heroPoster from "@/assets/hero-poster.jpg";
 
-const title = "Window Repair in Powai | Sliding & Aluminium Window Repair";
+const title = "Sliding Window & Glass Door Repair Mumbai | Fix Jammed Tracks";
 const description =
-  "Need window repair in Powai? Send a photo of your window problem on WhatsApp and get help with the next step. Serving Powai, Hiranandani, Chandivali and nearby areas.";
+  "Expert sliding window and glass door repair in Mumbai. We fix jammed doors, replace broken rollers & tracks. 100% Guaranteed. Serving premium Mumbai high-rises.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,7 +43,11 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "video", href: heroVideo, type: "video/mp4" },
+      { rel: "preload", as: "image", href: heroPoster }
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -69,17 +80,31 @@ function Index() {
     <>
       <Header />
       <main>
+        {/* Phase 1: Hook, Agitation & The Epiphany */}
         <Hero />
         <ProblemSelector />
-        <NoNeedToKnow />
-        <HowItWorks />
-        <Services />
+        <FoundersStory />
+        <UsVsThem />
+        
+        {/* Phase 2: The Godfather Offer & Solution */}
         <Offer />
-        <WorkGallery />
-        <WorkshopProof />
-        <WhyChooseUs />
-        <ServiceAreas />
+        <Benefits />
+        <HowItWorks />
+        <NoNeedToKnow />
+
+        {/* Phase 3: Avalanche of Proof */}
+        <RealWorkGallery />
         <Reviews />
+        <WorkGallery />
+
+        {/* Phase 4: Logical Justification & Takeaway */}
+        <Services />
+        <WhyChooseUs />
+        <WorkshopProof />
+        <Disqualifiers />
+        
+        {/* Phase 5: Closing */}
+        <ServiceAreas />
         <Faq />
         <LeadForm />
         <FinalCTA />

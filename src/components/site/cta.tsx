@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Camera, Phone } from "lucide-react";
+import { Camera, Phone, Upload } from "lucide-react";
 import { business, whatsappLink, whatsappMessages } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ const base =
 
 export function WhatsAppButton({
   location,
-  children = "SEND PHOTO → GET HELP",
+  children = "Send a Photo on WhatsApp (Free Diagnosis)",
   message = whatsappMessages.default,
   className,
   variant = "solid",
@@ -36,8 +36,7 @@ export function WhatsAppButton({
       )}
     >
       <span className="flex items-center gap-1.5" aria-hidden="true">
-        <Camera className="h-5 w-5 shrink-0" strokeWidth={2.25} />
-        <WhatsAppIcon className="h-5 w-5 shrink-0" />
+        <Upload className="h-5 w-5 shrink-0" strokeWidth={2.25} />
       </span>
       {children}
     </a>

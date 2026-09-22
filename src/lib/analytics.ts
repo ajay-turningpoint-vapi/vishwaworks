@@ -13,7 +13,11 @@ type EventName =
   | "area_selected"
   | "service_clicked"
   | "faq_opened"
-  | "google_profile_click";
+  | "google_profile_click"
+  | "hero_video_play"
+  | "lead_magnet_submit"
+  | "exit_intent_triggered"
+  | "exit_intent_submit";
 
 type Payload = Record<string, string | number | boolean | undefined>;
 
