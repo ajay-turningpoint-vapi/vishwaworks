@@ -1041,7 +1041,7 @@ export function FoundersStory() {
             {/* Using a generated realistic image for the founder */}
             <img 
               src={founderImage} 
-              alt="Vishwa - Founder of Vishwa Windows" 
+              alt={`${business.founder} - Founder of ${business.name}`} 
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover object-top grayscale transition-all duration-700 hover:grayscale-0"
@@ -1062,7 +1062,7 @@ export function FoundersStory() {
                 "I started Vishwa Windows with a simple mission: <b className="text-accent font-black">Repair first, replace only when absolutely necessary.</b> We give you honest advice, upfront pricing, and a 'No Fix, No Fee' guarantee. It's how service should be."
               </p>
             </div>
-            <p className="mt-8 text-xl font-bold text-white font-display uppercase tracking-wider">— Vishwa, Founder</p>
+            <p className="mt-8 text-xl font-bold text-white font-display uppercase tracking-wider">— {business.founder}, Founder</p>
           </div>
         </div>
       </div>

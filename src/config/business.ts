@@ -6,6 +6,7 @@
 export const business = {
   // Placeholder name — replace with the confirmed business name.
   name: "Vishwa Windows",
+  founder: "Sumit Vishwakarma",
   tagline: "Show Us The Problem.",
 
   whatsappNumber: "919004515924",
