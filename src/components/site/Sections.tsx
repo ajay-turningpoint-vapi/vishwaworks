@@ -198,10 +198,25 @@ export function HowItWorks() {
 /* ---------------- 9. SERVICES ---------------- */
 
 export function Services() {
+  const serviceImages: Record<string, string> = {
+    "Sliding Glass Door Repair Mumbai": wsSkylineView,
+    "Aluminium Sliding Window Repair": rollerAfter,
+    "Sliding Window Roller Replacement": rollerAfter,
+    "Lock & Handle Replacement": lockAfter,
+    "Window Glass Replacement": glassAfter,
+    "Window Alignment & Maintenance": trackAfter,
+    "Soundproof Window Upgrades": soundproofAfter,
+    "Domal & Slim Domal Windows": wsFinishedCloseup,
+    "Pigeon & Mosquito Safety Nets": meshAfter,
+    "Rubber, Gasket & Silicone Sealing": soundproofAfter,
+    "Aluminium Partition & Shutter Repair": wsLargeInstallation,
+    "Custom Window Modification": wsImg4,
+  };
+
   return (
     <section id="services" className="reveal-section bg-secondary/5 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <Heading sub="From stuck sliding doors to brand new safety nets. We fix it all without the headache.">
+        <Heading sub="From stuck sliding doors to brand new safety nets and soundproof glass. We fix it all without the headache.">
           EVERYTHING <span className="highlighter px-2 text-black">WE FIX FOR YOU.</span>
         </Heading>
 
@@ -215,17 +230,28 @@ export function Services() {
                 {category.items.map((s) => (
                   <div
                     key={s.name}
-                    className="tap flex flex-col rounded-3xl border-2 border-border/60 bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl shadow-md"
+                    className="tap group flex flex-col rounded-3xl border-2 border-border/60 bg-white p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl shadow-md overflow-hidden"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/20">
+                    {serviceImages[s.name] && (
+                      <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-5 bg-secondary/30 border border-border/40">
+                        <img 
+                          src={serviceImages[s.name]} 
+                          alt={s.name} 
+                          loading="lazy" 
+                          decoding="async" 
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                      </div>
+                    )}
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/20">
                       <Wrench
                         aria-hidden="true"
-                        className="h-6 w-6 text-primary"
+                        className="h-5 w-5 text-primary"
                         strokeWidth={2.5}
                       />
                     </span>
-                    <h3 className="mt-5 text-[18px] font-black text-primary leading-tight tracking-wide">{s.name}</h3>
-                    <p className="mt-3 flex-1 text-[15px] font-medium leading-relaxed text-slate-600">
+                    <h3 className="mt-4 text-[18px] font-black text-primary leading-tight tracking-wide">{s.name}</h3>
+                    <p className="mt-2.5 flex-1 text-[14px] sm:text-[15px] font-medium leading-relaxed text-slate-600">
                       {s.desc}
                     </p>
                     <a
@@ -238,7 +264,7 @@ export function Services() {
                         track("service_clicked", { service: s.name });
                         track("whatsapp_click", { location: "services" });
                       }}
-                      className="mt-6 inline-flex min-h-[50px] items-center justify-center rounded-xl bg-whatsapp px-4 text-[15px] font-black tracking-wide text-whatsapp-foreground tap shadow-[var(--shadow-cta)] hover:bg-whatsapp/90 transition-colors"
+                      className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-whatsapp px-4 text-[14px] sm:text-[15px] font-black tracking-wide text-whatsapp-foreground tap shadow-[var(--shadow-cta)] hover:bg-whatsapp/90 transition-colors"
                     >
                       SEND A PHOTO ➔
                     </a>
@@ -328,6 +354,12 @@ import trackAfter from "@/assets/gallery/track-after.jpg";
 import glassBefore from "@/assets/gallery/glass-before.jpg";
 import glassDuring from "@/assets/gallery/glass-during.jpg";
 import glassAfter from "@/assets/gallery/glass-after.jpg";
+import meshBefore from "@/assets/gallery/mesh-before.jpg";
+import meshAfter from "@/assets/gallery/mesh-after.jpg";
+import lockBefore from "@/assets/gallery/lock-before.jpg";
+import lockAfter from "@/assets/gallery/lock-after.jpg";
+import soundproofBefore from "@/assets/gallery/soundproof-before.jpg";
+import soundproofAfter from "@/assets/gallery/soundproof-after.jpg";
 import wsSkylineView from "@/assets/workshop/real-skyline-view.jpg";
 import wsLargeInstallation from "@/assets/workshop/real-large-installation.jpg";
 import wsWorkshopShelf from "@/assets/workshop/real-workshop-shelf.jpg";
@@ -344,18 +376,54 @@ import wsImg8 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.18.jpeg
 import wsImg9 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.19 (1).jpeg";
 import founderImage from "@/assets/sumit_vishwakarma.png";
 
-const galleryItems: { title: string; stages: [string, string, string] }[] = [
+const galleryItems: { title: string; subtitle: string; before: string; after: string }[] = [
   {
     title: "Stuck Window ➔ Slides with 1 Finger",
-    stages: [rollerBefore, rollerDuring, rollerAfter],
+    subtitle: "Cracked nylon roller & grimy track replaced with heavy-duty brass ball-bearings",
+    before: rollerBefore,
+    after: rollerAfter,
   },
   {
-    title: "Broken Track ➔ Safe & Smooth",
-    stages: [trackBefore, trackDuring, trackAfter],
+    title: "Broken Lock & Handle ➔ Smooth Crescent Lock",
+    subtitle: "Snapped, loose lock replaced with premium black powder-coated aluminium sliding latch",
+    before: lockBefore,
+    after: lockAfter,
   },
   {
-    title: "Broken Glass ➔ Brand New Glass",
-    stages: [glassBefore, glassDuring, glassAfter],
+    title: "Bent Aluminium Track ➔ Restored & Smooth",
+    subtitle: "Dented, dust-clogged sliding track restored & leveled with stainless aluminium cap",
+    before: trackBefore,
+    after: trackAfter,
+  },
+  {
+    title: "Street Traffic Noise ➔ Soundproof Domal DGU Window",
+    subtitle: "Thin single pane upgraded to double-glazed acoustic insulated glass with airtight EPDM gaskets",
+    before: soundproofBefore,
+    after: soundproofAfter,
+  },
+  {
+    title: "Broken Window Glass ➔ Brand New Toughened Glass",
+    subtitle: "Shattered high-rise window pane replaced with crystal-clear 5mm toughened safety float glass",
+    before: glassBefore,
+    after: glassAfter,
+  },
+  {
+    title: "Torn Mosquito Net ➔ Heavy-Duty SS 304 Mesh",
+    subtitle: "Torn, sagging insect screen replaced with high-tension black stainless steel mosquito mesh",
+    before: meshBefore,
+    after: meshAfter,
+  },
+  {
+    title: "Standard Window ➔ Custom Chimney Duct Modification",
+    subtitle: "Custom fabricated aluminium utility window with precision exhaust pipe cutout & wire mesh",
+    before: wsImg6,
+    after: wsImg4,
+  },
+  {
+    title: "Dismantled Aluminium Frame ➔ Floor-to-Ceiling Glass Partition",
+    subtitle: "Custom multi-panel sliding glass door & partition installation completed on-site",
+    before: wsImg5,
+    after: wsLargeInstallation,
   },
 ];
 
@@ -410,18 +478,21 @@ function BeforeAfterSlider({ beforeImage, afterImage, label }: { beforeImage: st
 export function WorkGallery() {
   return (
     <section id="our-work" className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
-      <Heading sub="Slide to see how we fix stuck windows and make them slide with just one finger.">
+      <Heading sub="Slide to compare actual before & after repairs from real Mumbai apartments across Powai, Bandra, and Andheri.">
         THIS IS <span className="highlighter px-2 text-black">HOW WE FIX IT.</span>
       </Heading>
 
       <div className="mt-14 grid gap-16 grid-cols-1">
         {galleryItems.map((item) => (
-          <div key={item.title} className="flex flex-col gap-6">
-            <h3 className="text-2xl sm:text-3xl font-black uppercase text-primary text-center font-display tracking-wide">{item.title}</h3>
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 w-full">
+          <div key={item.title} className="flex flex-col gap-3">
+            <div className="text-center">
+              <h3 className="text-2xl sm:text-3xl font-black uppercase text-primary font-display tracking-wide">{item.title}</h3>
+              <p className="mt-1 text-sm sm:text-base text-slate-600 font-medium">{item.subtitle}</p>
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 w-full mt-3">
               <BeforeAfterSlider 
-                beforeImage={item.stages[0]} 
-                afterImage={item.stages[2]} 
+                beforeImage={item.before} 
+                afterImage={item.after} 
                 label={item.title} 
               />
             </div>
