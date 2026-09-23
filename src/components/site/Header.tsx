@@ -2,13 +2,6 @@ import { business, whatsappLink } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { WhatsAppIcon } from "./icons";
 
-const links = [
-  { label: "Services", href: "/#services" },
-  { label: "Our Work", href: "/#our-work" },
-  { label: "Areas", href: "/#areas" },
-  { label: "FAQ", href: "/#faq" },
-];
-
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
@@ -21,18 +14,6 @@ export function Header() {
             {business.tagline}
           </span>
         </a>
-
-        <nav className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
 
         <a
           href={whatsappLink()}
