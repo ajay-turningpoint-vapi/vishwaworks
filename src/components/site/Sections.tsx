@@ -333,6 +333,15 @@ import wsLargeInstallation from "@/assets/workshop/real-large-installation.jpg";
 import wsWorkshopShelf from "@/assets/workshop/real-workshop-shelf.jpg";
 import wsCornerWindow from "@/assets/workshop/real-corner-window.jpg";
 import wsFinishedCloseup from "@/assets/workshop/real-finished-closeup.jpg";
+import wsImg1 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.11 PM.jpeg";
+import wsImg2 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.13 PM.jpeg";
+import wsImg3 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.14 PM (1).jpeg";
+import wsImg4 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.14 PM.jpeg";
+import wsImg5 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.28 PM (3).jpeg";
+import wsImg6 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.15.jpeg";
+import wsImg7 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.17 (1).jpeg";
+import wsImg8 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.18.jpeg";
+import wsImg9 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.19 (1).jpeg";
 import founderImage from "@/assets/sumit_vishwakarma.png";
 
 const galleryItems: { title: string; stages: [string, string, string] }[] = [
@@ -423,67 +432,208 @@ export function WorkGallery() {
   );
 }
 
-export function WorkshopProof() {
-  const [activeIndex, setActiveIndex] = useState(0);
+interface WorkshopShotItem {
+  label: string;
+  src: string;
+  category: "all" | "workshop" | "sliding" | "ventilators";
+  tag: string;
+}
 
-  const shots: [string, string][] = [
-    ["Finished installation, Powai high-rise", wsSkylineView],
-    ["Large-scale sliding door installation", wsLargeInstallation],
-    ["Our workshop — aluminium profile stock", wsWorkshopShelf],
-    ["Corner window with safety net", wsCornerWindow],
-    ["Sliding window + pigeon net, completed", wsFinishedCloseup],
-  ];
+const workshopShots: WorkshopShotItem[] = [
+  {
+    label: "Powai workshop desk & aluminium section sample profile display",
+    src: wsWorkshopShelf,
+    category: "workshop",
+    tag: "Powai Workshop",
+  },
+  {
+    label: "Anodized bronze casement window frame shrink-wrapped for dispatch",
+    src: wsImg1,
+    category: "workshop",
+    tag: "Fabricated Frame",
+  },
+  {
+    label: "Bathroom ventilator window with exhaust fan cutout & glass louvers",
+    src: wsImg2,
+    category: "ventilators",
+    tag: "Ventilator & Louvers",
+  },
+  {
+    label: "3-track sliding balcony window with stainless steel mosquito mesh",
+    src: wsImg3,
+    category: "sliding",
+    tag: "3-Track Sliding",
+  },
+  {
+    label: "Kitchen utility window with chimney exhaust duct cutout & mesh",
+    src: wsImg4,
+    category: "ventilators",
+    tag: "Kitchen Exhaust",
+  },
+  {
+    label: "Fabricated aluminium sliding frames & glass panels ready on-site",
+    src: wsImg5,
+    category: "workshop",
+    tag: "On-Site Stacking",
+  },
+  {
+    label: "Slim frosted glass privacy ventilator window with black aluminium frame",
+    src: wsImg6,
+    category: "ventilators",
+    tag: "Slim Ventilator",
+  },
+  {
+    label: "Granite framed bathroom ventilator with exhaust cutout & frosted casement",
+    src: wsImg7,
+    category: "ventilators",
+    tag: "Exhaust Cutout",
+  },
+  {
+    label: "White powder-coated bathroom casement window with frosted glass",
+    src: wsImg8,
+    category: "ventilators",
+    tag: "White Casement",
+  },
+  {
+    label: "Custom circular arched window with fitted safety grill & mesh",
+    src: wsImg9,
+    category: "ventilators",
+    tag: "Circular Window",
+  },
+  {
+    label: "L-shaped corner sliding window with invisible safety grill wires",
+    src: wsCornerWindow,
+    category: "sliding",
+    tag: "Corner Window",
+  },
+  {
+    label: "Champagne anodized 3-track sliding window with marble sill & lock",
+    src: wsFinishedCloseup,
+    category: "sliding",
+    tag: "3-Track Sliding",
+  },
+  {
+    label: "5-panel floor-to-ceiling sliding glass partition & door installation",
+    src: wsLargeInstallation,
+    category: "sliding",
+    tag: "Glass Partition",
+  },
+  {
+    label: "Wooden-finish sliding balcony window with pigeon net, high-rise view",
+    src: wsSkylineView,
+    category: "sliding",
+    tag: "Wooden Finish Sliding",
+  },
+];
+
+export function WorkshopProof() {
+  const [activeTab, setActiveTab] = useState<"all" | "workshop" | "sliding" | "ventilators">("all");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxShot, setLightboxShot] = useState<WorkshopShotItem | null>(null);
+
+  const filteredShots = activeTab === "all" 
+    ? workshopShots 
+    : workshopShots.filter((s) => s.category === activeTab);
 
   const handlePrev = () => {
-    if (activeIndex > 0) setActiveIndex(activeIndex - 1);
+    setActiveIndex((prev) => (prev > 0 ? prev - 1 : filteredShots.length - 1));
   };
 
   const handleNext = () => {
-    if (activeIndex < shots.length - 1) setActiveIndex(activeIndex + 1);
+    setActiveIndex((prev) => (prev < filteredShots.length - 1 ? prev + 1 : 0));
   };
+
+  const handleTabChange = (tab: "all" | "workshop" | "sliding" | "ventilators") => {
+    setActiveTab(tab);
+    setActiveIndex(0);
+  };
+
+  // Prevent background scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxShot) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [lightboxShot]);
 
   return (
     <section className="reveal-section bg-secondary/10 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <Heading sub="Tired of apps sending random guys to your home? We have a real, physical workshop in Powai. You know exactly who is fixing your window.">
-          NO FACELESS APPS. <br className="hidden sm:block" />JUST <span className="highlighter px-2 text-black">REAL PEOPLE.</span>
+          NO FACELESS APPS. <br className="hidden sm:block" />JUST <span className="highlighter px-2 text-black">REAL PEOPLE & PROOF.</span>
         </Heading>
+
+        {/* Filter categories */}
+        <div className="mt-8 flex items-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pb-2 sm:pb-0 sm:flex-wrap sm:justify-center sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
+          {[
+            { id: "all", label: `All Photos (${workshopShots.length})` },
+            { id: "workshop", label: `Workshop & Stock (${workshopShots.filter(s => s.category === "workshop").length})` },
+            { id: "sliding", label: `Sliding & Balconies (${workshopShots.filter(s => s.category === "sliding").length})` },
+            { id: "ventilators", label: `Ventilators & Exhaust (${workshopShots.filter(s => s.category === "ventilators").length})` },
+          ].map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => handleTabChange(cat.id as any)}
+              className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-black transition-all ${
+                activeTab === cat.id
+                  ? "bg-primary text-white shadow-md scale-105"
+                  : "bg-white/80 text-foreground/80 hover:bg-white border border-border/60 hover:text-foreground"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
         
         {/* Stacked Carousel for Mobile */}
-        <div className="relative h-[320px] w-full overflow-hidden sm:hidden mt-10">
-          {shots.map(([label, src], idx) => {
+        <div className="relative h-[360px] w-full overflow-hidden sm:hidden mt-8">
+          {filteredShots.map((shot, idx) => {
             const offset = idx - activeIndex;
             // Render the active image and up to 3 next images
             if (offset < 0 || offset > 3) return null;
 
             return (
               <figure
-                key={label}
+                key={shot.label + idx}
                 className="absolute overflow-hidden rounded-2xl border border-border bg-card shadow-2xl transition-all duration-500 ease-out cursor-pointer"
                 style={{
-                  left: offset === 0 ? "0%" : `calc(72% + ${offset * 8}%)`,
-                  width: offset === 0 ? "80%" : "30%",
+                  left: offset === 0 ? "0%" : `calc(70% + ${offset * 8}%)`,
+                  width: offset === 0 ? "82%" : "30%",
                   height: offset === 0 ? "100%" : `${100 - offset * 6}%`,
                   top: offset === 0 ? "0%" : `${offset * 3}%`,
                   zIndex: 40 - offset,
                   opacity: offset === 3 ? 0 : 1,
                 }}
                 onClick={() => {
-                  if (offset > 0) handleNext();
+                  if (offset === 0) {
+                    setLightboxShot(shot);
+                  } else {
+                    handleNext();
+                  }
                 }}
               >
                 <img
-                  src={src}
-                  alt={label}
+                  src={shot.src}
+                  alt={shot.label}
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
                 />
+                <span className="absolute top-3 right-3 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
+                  {shot.tag}
+                </span>
                 {offset === 0 && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4">
                     <figcaption className="text-sm font-bold text-white leading-tight">
-                      {label}
+                      {shot.label}
                     </figcaption>
+                    <p className="text-[11px] text-white/70 mt-1 flex items-center gap-1 font-medium">
+                      <span>Tap to zoom</span> 🔍
+                    </p>
                   </div>
                 )}
               </figure>
@@ -491,46 +641,109 @@ export function WorkshopProof() {
           })}
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden sm:grid sm:grid-cols-3 gap-6 mt-12">
-          {shots.map(([label, src]) => (
-            <figure
-              key={label}
-              className="tap group overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all"
+        {/* Controller buttons for mobile */}
+        <div className="mt-5 flex items-center justify-between sm:hidden">
+          <div className="text-xs font-bold text-muted-foreground">
+            Photo {activeIndex + 1} of {filteredShots.length}
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={handlePrev}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground shadow-md transition-all hover:bg-secondary border border-border/80"
+              aria-label="Previous photo"
             >
-              <img
-                src={src}
-                alt={label}
-                loading="lazy"
-                decoding="async"
-                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-              <figcaption className="px-4 py-3 text-sm font-bold text-primary">
-                {label}
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white shadow-md transition-all hover:bg-primary/90"
+              aria-label="Next photo"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+          {filteredShots.map((shot) => (
+            <figure
+              key={shot.label}
+              onClick={() => setLightboxShot(shot)}
+              className="tap group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              <div className="relative aspect-square w-full overflow-hidden bg-secondary/30">
+                <img
+                  src={shot.src}
+                  alt={shot.label}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute top-3 right-3 bg-black/75 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                  {shot.tag}
+                </span>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm">
+                    Click to enlarge 🔍
+                  </span>
+                </div>
+              </div>
+              <figcaption className="p-4 text-[13px] font-bold text-primary leading-snug flex-1 flex items-center">
+                {shot.label}
               </figcaption>
             </figure>
           ))}
         </div>
 
-        {/* Controller buttons for mobile */}
-        <div className="mt-6 flex gap-3 sm:hidden">
-          <button
-            onClick={handlePrev}
-            disabled={activeIndex === 0}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/80 text-foreground transition-all hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Previous slide"
+        {/* Lightbox Modal for Full View */}
+        {lightboxShot && typeof document !== "undefined" && createPortal(
+          <div
+            className="fixed inset-0 z-[9999] bg-black/95 flex flex-col items-center justify-center p-4 cursor-pointer backdrop-blur-md"
+            onClick={() => setLightboxShot(null)}
           >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          <button
-            onClick={handleNext}
-            disabled={activeIndex === shots.length - 1}
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-accent bg-card text-foreground transition-all hover:bg-accent/10 disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
-        </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxShot(null);
+              }}
+              className="absolute top-6 right-6 z-[10000] flex items-center gap-2 text-white bg-white/15 hover:bg-white/30 px-4 py-2 rounded-full backdrop-blur-md transition-colors border border-white/20 shadow-2xl"
+            >
+              <span className="font-bold text-sm">Close</span>
+              <X className="w-5 h-5" />
+            </button>
+
+            <div
+              className="relative max-w-4xl max-h-[85vh] w-full flex flex-col items-center cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative max-h-[70vh] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black">
+                <img
+                  src={lightboxShot.src}
+                  alt={lightboxShot.label}
+                  className="max-h-[70vh] max-w-full object-contain"
+                />
+              </div>
+              <div className="mt-4 text-center max-w-2xl px-4">
+                <span className="inline-block bg-accent text-black font-black text-xs uppercase px-3 py-1 rounded-full mb-2">
+                  {lightboxShot.tag}
+                </span>
+                <p className="text-white text-base sm:text-lg font-bold">
+                  {lightboxShot.label}
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <WhatsAppButton 
+                    location="workshop_lightbox" 
+                    className="scale-95"
+                  >
+                    SEND A PHOTO ON WHATSAPP
+                  </WhatsAppButton>
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
       </div>
     </section>
   );
@@ -1247,14 +1460,16 @@ export function Footer() {
 }
 
 const newImagesGlob = import.meta.glob<{ default: string }>('@/assets/new images/*.{jpeg,jpg,png}', { eager: true });
+const workshopGlob = import.meta.glob<{ default: string }>('@/assets/workshop/*.{jpeg,jpg,png}', { eager: true });
 const newVideosGlob = import.meta.glob<{ default: string }>('@/assets/videos/*.{mov,mp4}', { eager: true });
 const newImages = Object.keys(newImagesGlob).map(key => ({ path: key, url: newImagesGlob[key].default }));
+const workshopImages = Object.keys(workshopGlob).map(key => ({ path: key, url: workshopGlob[key].default }));
 const newVideos = Object.keys(newVideosGlob).map(key => ({ path: key, url: newVideosGlob[key].default }));
 
 export function RealWorkGallery() {
   const [selectedAsset, setSelectedAsset] = useState<string | null>(null);
 
-  const allAssets = [...newVideos, ...newImages];
+  const allAssets = [...newVideos, ...newImages, ...workshopImages];
   const row1 = allAssets.slice(0, Math.ceil(allAssets.length / 2));
   const row2 = allAssets.slice(Math.ceil(allAssets.length / 2));
 
