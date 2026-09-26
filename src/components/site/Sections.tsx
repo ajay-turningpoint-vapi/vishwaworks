@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "@tanstack/react-router";
+import { getAreaByName } from "@/config/areas";
 import {
   ArrowRight,
   CalendarCheck,
@@ -857,25 +859,23 @@ export function WhyChooseUs() {
 /* ---------------- 14. SERVICE AREAS ---------------- */
 
 function AreaCard({ area }: { area: string }) {
+  const areaDetail = getAreaByName(area);
+  const targetPath = areaDetail ? areaDetail.path : "/window-repair-mumbai";
+
   return (
-    <a
-      href={whatsappLink(
-        `Hi, I have a window problem. My area is ${area}. Do you serve my area? I will send a photo.`,
-      )}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={targetPath}
       onClick={() => {
         track("area_selected", { area });
-        track("whatsapp_click", { location: "areas" });
       }}
-      className="shrink-0 -skew-x-[12deg] bg-[#e63c15] px-6 py-2 sm:px-8 sm:py-3 transition-transform hover:scale-105 shadow-sm"
+      className="shrink-0 -skew-x-[12deg] bg-[#e63c15] px-6 py-2 sm:px-8 sm:py-3 transition-transform hover:scale-105 shadow-sm block cursor-pointer"
     >
       <div className="skew-x-[12deg]">
         <span className="text-xl sm:text-2xl font-black italic uppercase tracking-wider text-white">
           {area}
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
 
