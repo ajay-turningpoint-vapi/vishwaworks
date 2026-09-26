@@ -200,21 +200,6 @@ export function HowItWorks() {
 /* ---------------- 9. SERVICES ---------------- */
 
 export function Services() {
-  const serviceImages: Record<string, string> = {
-    "Sliding Glass Door Repair Mumbai": wsSkylineView,
-    "Aluminium Sliding Window Repair": rollerAfter,
-    "Sliding Window Roller & Wheels Replacement": rollerAfter,
-    "Lock & Latch Replacement": lockAfter,
-    "Window Glass Replacement": glassAfter,
-    "Window Alignment & Maintenance": trackAfter,
-    "Soundproof Window Upgrades": soundproofAfter,
-    "Domal & Slim Domal Windows": wsFinishedCloseup,
-    "Pigeon & Mosquito Safety Nets": meshAfter,
-    "Rubber, Gasket & Silicone Sealing": soundproofAfter,
-    "Aluminium Partition & Shutter Repair": wsLargeInstallation,
-    "Custom Window Modification": wsImg4,
-  };
-
   return (
     <section id="services" className="reveal-section bg-secondary/5 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
@@ -234,17 +219,6 @@ export function Services() {
                     key={s.name}
                     className="tap group flex flex-col rounded-3xl border-2 border-border/60 bg-white p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl shadow-md overflow-hidden"
                   >
-                    {serviceImages[s.name] && (
-                      <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-5 bg-secondary/30 border border-border/40">
-                        <img 
-                          src={serviceImages[s.name]} 
-                          alt={s.name} 
-                          loading="lazy" 
-                          decoding="async" 
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                        />
-                      </div>
-                    )}
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/20">
                       <Wrench
                         aria-hidden="true"
