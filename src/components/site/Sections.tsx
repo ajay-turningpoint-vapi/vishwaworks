@@ -203,8 +203,8 @@ export function Services() {
   const serviceImages: Record<string, string> = {
     "Sliding Glass Door Repair Mumbai": wsSkylineView,
     "Aluminium Sliding Window Repair": rollerAfter,
-    "Sliding Window Roller Replacement": rollerAfter,
-    "Lock & Handle Replacement": lockAfter,
+    "Sliding Window Roller & Wheels Replacement": rollerAfter,
+    "Lock & Latch Replacement": lockAfter,
     "Window Glass Replacement": glassAfter,
     "Window Alignment & Maintenance": trackAfter,
     "Soundproof Window Upgrades": soundproofAfter,
@@ -347,36 +347,37 @@ export function Offer() {
 /* ---------------- 11 + 12. PROOF ---------------- */
 
 const galleryStages = ["Before", "During", "After"] as const;
-import rollerBefore from "@/assets/gallery/roller-before.jpg";
-import rollerDuring from "@/assets/gallery/roller-during.jpg";
-import rollerAfter from "@/assets/gallery/roller-after.jpg";
-import trackBefore from "@/assets/gallery/track-before.jpg";
-import trackDuring from "@/assets/gallery/track-during.jpg";
-import trackAfter from "@/assets/gallery/track-after.jpg";
-import glassBefore from "@/assets/gallery/glass-before.jpg";
-import glassDuring from "@/assets/gallery/glass-during.jpg";
-import glassAfter from "@/assets/gallery/glass-after.jpg";
-import meshBefore from "@/assets/gallery/mesh-before.jpg";
-import meshAfter from "@/assets/gallery/mesh-after.jpg";
-import lockBefore from "@/assets/gallery/lock-before.jpg";
-import lockAfter from "@/assets/gallery/lock-after.jpg";
-import soundproofBefore from "@/assets/gallery/soundproof-before.jpg";
-import soundproofAfter from "@/assets/gallery/soundproof-after.jpg";
-import wsSkylineView from "@/assets/workshop/real-skyline-view.jpg";
-import wsLargeInstallation from "@/assets/workshop/real-large-installation.jpg";
-import wsWorkshopShelf from "@/assets/workshop/real-workshop-shelf.jpg";
-import wsCornerWindow from "@/assets/workshop/real-corner-window.jpg";
-import wsFinishedCloseup from "@/assets/workshop/real-finished-closeup.jpg";
-import wsImg1 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.11 PM.jpeg";
-import wsImg2 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.13 PM.jpeg";
-import wsImg3 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.14 PM (1).jpeg";
-import wsImg4 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.14 PM.jpeg";
-import wsImg5 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 1.59.28 PM (3).jpeg";
-import wsImg6 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.15.jpeg";
-import wsImg7 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.17 (1).jpeg";
-import wsImg8 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.18.jpeg";
-import wsImg9 from "@/assets/workshop/WhatsApp Image 2026-09-05 at 13.59.19 (1).jpeg";
-import founderImage from "@/assets/sumit_vishwakarma.png";
+import rollerBefore from "@/assets/gallery/sliding-window-roller-repair-before.jpg";
+import rollerDuring from "@/assets/gallery/sliding-window-roller-repair-during.jpg";
+import rollerAfter from "@/assets/gallery/sliding-window-roller-repair-after.jpg";
+import trackBefore from "@/assets/gallery/sliding-glass-door-track-repair-before.jpg";
+import trackDuring from "@/assets/gallery/sliding-glass-door-track-repair-during.jpg";
+import trackAfter from "@/assets/gallery/sliding-glass-door-track-repair-after.jpg";
+import glassBefore from "@/assets/gallery/sliding-window-glass-replacement-before.jpg";
+import glassDuring from "@/assets/gallery/sliding-window-glass-replacement-during.jpg";
+import glassAfter from "@/assets/gallery/sliding-window-glass-replacement-after.jpg";
+import meshBefore from "@/assets/gallery/balcony-mosquito-pigeon-net-before.jpg";
+import meshAfter from "@/assets/gallery/balcony-mosquito-pigeon-net-after.jpg";
+import lockBefore from "@/assets/gallery/sliding-window-lock-repair-before.jpg";
+import lockAfter from "@/assets/gallery/sliding-window-lock-repair-after.jpg";
+import soundproofBefore from "@/assets/gallery/soundproof-window-glass-upgrade-before.jpg";
+import soundproofAfter from "@/assets/gallery/soundproof-window-glass-upgrade-after.jpg";
+
+import wsSkylineView from "@/assets/workshop/mumbai-highrise-sliding-window-repair.jpg";
+import wsLargeInstallation from "@/assets/workshop/aluminium-sliding-partition-installation.jpg";
+import wsWorkshopShelf from "@/assets/workshop/sliding-window-spare-parts-workshop.jpg";
+import wsCornerWindow from "@/assets/workshop/corner-sliding-window-repair-mumbai.jpg";
+import wsFinishedCloseup from "@/assets/workshop/domal-sliding-window-glide-closeup.jpg";
+import wsImg1 from "@/assets/workshop/sliding-window-repair-workshop-parts.jpg";
+import wsImg2 from "@/assets/workshop/aluminium-sliding-track-cutting-tools.jpg";
+import wsImg3 from "@/assets/workshop/balcony-sliding-door-hardware-repairs.jpg";
+import wsImg4 from "@/assets/workshop/custom-window-modification-workshop.jpg";
+import wsImg5 from "@/assets/workshop/aluminium-frame-fabrication-mumbai.jpg";
+import wsImg6 from "@/assets/workshop/sliding-window-bearing-roller-replacement.jpg";
+import wsImg7 from "@/assets/workshop/sliding-glass-door-repair-technician.jpg";
+import wsImg8 from "@/assets/workshop/sliding-window-lock-handle-hardware.jpg";
+import wsImg9 from "@/assets/workshop/window-glass-sealing-gasket-materials.jpg";
+import founderImage from "@/assets/sumit-vishwakarma-founder.jpg";
 
 const galleryItems: { title: string; subtitle: string; before: string; after: string }[] = [
   {

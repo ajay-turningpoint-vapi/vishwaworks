@@ -117,6 +117,7 @@ export function Hero() {
             ref={videoRef}
             src={heroVideo}
             poster={heroPoster}
+            preload="none"
             playsInline
             muted
             onPause={() => setPlaying(false)}

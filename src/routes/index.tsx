@@ -48,8 +48,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${liveUrl}/` },
-      { rel: "preload", as: "video", href: heroVideo, type: "video/mp4" },
-      { rel: "preload", as: "image", href: heroPoster }
+      { rel: "preload", as: "image", href: heroPoster, fetchPriority: "high" }
     ],
     scripts: [
       {
