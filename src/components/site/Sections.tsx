@@ -1619,7 +1619,7 @@ export function RealWorkGallery() {
       <div className="relative flex overflow-hidden w-full py-6">
         <div 
           className={`flex w-max gap-5 pause-on-hover ${direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'}`}
-          style={{ animationDuration: '60s' }}
+          style={{ animationDuration: '140s' }}
         >
           {content}
           {content}
