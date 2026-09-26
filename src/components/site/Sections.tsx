@@ -168,11 +168,10 @@ export function HowItWorks() {
       </Heading>
 
       <div className="mt-16 mx-auto max-w-md">
-        <ol className="relative">
-          <div className="absolute left-[27px] top-6 bottom-6 w-0.5 bg-border/80 hidden sm:block"></div>
-          <div className="absolute left-[27px] top-6 bottom-6 w-0.5 bg-border/80 sm:hidden"></div>
+        <div className="relative">
+          <div className="absolute left-[27px] top-6 bottom-6 w-0.5 bg-border/80" aria-hidden="true" />
           
-          <div className="space-y-12">
+          <ol className="space-y-12 list-none p-0 m-0">
             {steps.map((s, i) => (
               <li key={s.t} className="relative flex gap-6 sm:gap-8 items-start group">
                 <span className="relative z-10 flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-[#111827] text-white shadow-xl transition-transform duration-300 group-hover:scale-110 border-4 border-white">
@@ -187,8 +186,8 @@ export function HowItWorks() {
                 </div>
               </li>
             ))}
-          </div>
-        </ol>
+          </ol>
+        </div>
       </div>
 
       <div className="mt-16 text-center">
@@ -855,7 +854,7 @@ function AreaCard({ area }: { area: string }) {
   );
 }
 
-function AreaMarqueeRow({ items, direction = "left" }: { items: string[], direction?: "left" | "right" }) {
+function AreaMarqueeRow({ items, direction = "left" }: { items: readonly string[], direction?: "left" | "right" }) {
   const animationClass = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
   
   return (
@@ -1538,15 +1537,18 @@ export function Footer() {
   );
 }
 
-const newImagesGlob = import.meta.glob<{ default: string }>('@/assets/new images/*.{jpeg,jpg,png}', { eager: true });
-const workshopGlob = import.meta.glob<{ default: string }>('@/assets/workshop/*.{jpeg,jpg,png}', { eager: true });
-const newVideosGlob = import.meta.glob<{ default: string }>('@/assets/videos/*.{mov,mp4}', { eager: true });
-const videoPostersGlob = import.meta.glob<{ default: string }>('@/assets/video-posters/*.{jpeg,jpg,png}', { eager: true });
+const newImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/new images/*.{jpeg,jpg,png}', { eager: true });
+const workshopGlob: Record<string, { default: string }> = import.meta.glob('@/assets/workshop/*.{jpeg,jpg,png}', { eager: true });
+const newVideosGlob: Record<string, { default: string }> = import.meta.glob('@/assets/videos/*.{mov,mp4}', { eager: true });
+const videoPostersGlob: Record<string, { default: string }> = import.meta.glob('@/assets/video-posters/*.{jpeg,jpg,png}', { eager: true });
 
 const posterMap: Record<string, string> = {};
 Object.keys(videoPostersGlob).forEach((key) => {
   const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
-  posterMap[filename] = videoPostersGlob[key].default;
+  const item = videoPostersGlob[key];
+  if (item) {
+    posterMap[filename] = item.default;
+  }
 });
 
 type GalleryItem = {
@@ -1557,24 +1559,34 @@ type GalleryItem = {
 
 const newVideos: GalleryItem[] = Object.keys(newVideosGlob).map(key => {
   const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
+  const item = newVideosGlob[key];
+  const url = item ? item.default : "";
   return {
-    url: newVideosGlob[key].default,
-    poster: posterMap[filename] || newVideosGlob[key].default,
+    url,
+    poster: posterMap[filename] || url,
     isVideo: true,
   };
 });
 
-const newImages: GalleryItem[] = Object.keys(newImagesGlob).map(key => ({
-  url: newImagesGlob[key].default,
-  poster: newImagesGlob[key].default,
-  isVideo: false,
-}));
+const newImages: GalleryItem[] = Object.keys(newImagesGlob).map(key => {
+  const item = newImagesGlob[key];
+  const url = item ? item.default : "";
+  return {
+    url,
+    poster: url,
+    isVideo: false,
+  };
+});
 
-const workshopImages: GalleryItem[] = Object.keys(workshopGlob).map(key => ({
-  url: workshopGlob[key].default,
-  poster: workshopGlob[key].default,
-  isVideo: false,
-}));
+const workshopImages: GalleryItem[] = Object.keys(workshopGlob).map(key => {
+  const item = workshopGlob[key];
+  const url = item ? item.default : "";
+  return {
+    url,
+    poster: url,
+    isVideo: false,
+  };
+});
 
 export function RealWorkGallery() {
   const [selectedAsset, setSelectedAsset] = useState<GalleryItem | null>(null);
