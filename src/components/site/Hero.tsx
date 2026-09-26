@@ -24,12 +24,12 @@ export function Hero() {
     <section id="top" className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:py-24">
         <div>
-          <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur-sm sm:mb-6 border border-primary-foreground/30">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-red-500/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-red-300 backdrop-blur-sm sm:mb-6 border border-red-500/40">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
             </span>
-            <span className="tracking-wide">Located at IIT Market, Powai. 30-Min Dispatch.</span>
+            <span className="tracking-wide text-white font-black">⚠️ ATTENTION MUMBAI: BEFORE YOU REPLACE YOUR JAMMED WINDOWS...</span>
           </div>
           
           <h1 className="text-[2.6rem] font-extrabold leading-snug tracking-tight sm:text-6xl lg:text-[4.2rem]">
