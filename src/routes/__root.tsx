@@ -85,10 +85,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Window repair in Powai — sliding windows, aluminium windows, rollers, tracks, locks, handles and glass. Send a photo on WhatsApp.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Vishwa Windows" },
+      { property: "og:site_name", content: business.name },
       { property: "og:image", content: `${business.siteUrl}/og-image.jpg` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `${business.siteUrl}/og-image.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Vishwa Windows - Sliding Window & Glass Door Repair Mumbai" },
     ],
     links: [
       {
