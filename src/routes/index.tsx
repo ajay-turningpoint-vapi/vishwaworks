@@ -28,9 +28,9 @@ import { business } from "@/config/business";
 import heroVideo from "@/assets/hero.mp4";
 import heroPoster from "@/assets/hero-poster.jpg";
 
-const title = "Sliding Window Repair Mumbai | Aluminium & Glass Door Roller Replacement";
+const title = "Sliding Glass Door & Window Repair Near Me Mumbai | Rollers, Wheels & Track Fix";
 const description =
-  "Looking for sliding window repair near me in Mumbai? We fix jammed sliding windows, offer aluminium window repair, and sliding glass door roller replacement. 100% Guaranteed.";
+  "Searching for sliding glass door repair near me or aluminium sliding window repair in Mumbai? We fix jammed window sliders, replace rollers, wheels, tracks, locks & broken glass. Same-day doorstep service.";
 const liveUrl = business.siteUrl;
 
 export const Route = createFileRoute("/")({

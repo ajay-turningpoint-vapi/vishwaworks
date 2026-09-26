@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ServicePage, serviceHead } from "@/components/site/ServicePage";
 
-const title = "Window Lock & Handle Repair in Powai | Latches & Handles";
+const title = "Sliding Window Lock Repair & Latch Replacement Powai | Glass Door Locks";
 const description =
-  "Window lock not catching or handle broken in Powai? Send a close-up photo on WhatsApp so the right part can be identified.";
+  "Sliding window lock stuck, broken handle or faulty latch? We replace sliding glass door locks, aluminium latches and window handles in Powai & Mumbai.";
 
 export const Route = createFileRoute("/window-lock-repair-powai")({
   head: () =>
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/window-lock-repair-powai")({
       title,
       description,
       path: "/window-lock-repair-powai",
-      serviceName: "Window Lock and Handle Repair",
+      serviceName: "Sliding Window Lock & Latch Replacement",
     }),
   component: Page,
 });

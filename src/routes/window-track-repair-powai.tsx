@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ServicePage, serviceHead } from "@/components/site/ServicePage";
 
-const title = "Window Track Repair in Powai | Bent & Blocked Tracks";
+const title = "Sliding Window Track Repair Powai | Sliding Glass Door Track Fix";
 const description =
-  "Bent, worn or blocked window track in Powai? Send a photo of the track on WhatsApp and get help understanding whether it can be repaired.";
+  "Bent, worn or blocked sliding track in Powai? We repair sliding glass door tracks, realign aluminium window rails, and restore smooth sliding without replacing the frame.";
 
 export const Route = createFileRoute("/window-track-repair-powai")({
   head: () =>
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/window-track-repair-powai")({
       title,
       description,
       path: "/window-track-repair-powai",
-      serviceName: "Window Track Repair",
+      serviceName: "Sliding Window & Door Track Repair",
     }),
   component: Page,
 });

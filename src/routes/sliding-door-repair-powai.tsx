@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ServicePage, serviceHead } from "@/components/site/ServicePage";
 
-const title = "Sliding Door Repair in Powai | Heavy & Off-Track Doors";
+const title = "Sliding Glass Door Repair Near Me Powai | Balcony Door Roller & Track Fix";
 const description =
-  "Sliding door heavy, stuck or off the track in Powai? Send a photo or short video on WhatsApp and get help with the next step.";
+  "Looking for sliding glass door repair near me in Powai & Mumbai? We fix heavy, stuck or off-track balcony sliding doors, replace rollers, and repair bottom tracks.";
 
 export const Route = createFileRoute("/sliding-door-repair-powai")({
   head: () =>
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/sliding-door-repair-powai")({
       title,
       description,
       path: "/sliding-door-repair-powai",
-      serviceName: "Sliding Door Repair",
+      serviceName: "Sliding Glass Door Repair",
     }),
   component: Page,
 });

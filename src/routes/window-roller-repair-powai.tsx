@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ServicePage, serviceHead } from "@/components/site/ServicePage";
 
-const title = "Window Roller Replacement in Powai | Dragging Windows";
+const title = "Sliding Window Wheels & Roller Replacement Powai | Glass Door Rollers";
 const description =
-  "Window dragging, noisy or heavy to slide in Powai? Worn rollers are often the reason. Send a photo on WhatsApp and get help with the next step.";
+  "Window dragging or heavy to slide? We offer sliding window wheels replacement and new rollers for sliding glass doors in Powai & Mumbai. Same-day repair.";
 
 export const Route = createFileRoute("/window-roller-repair-powai")({
   head: () =>
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/window-roller-repair-powai")({
       title,
       description,
       path: "/window-roller-repair-powai",
-      serviceName: "Window Roller Replacement",
+      serviceName: "Sliding Window Roller & Wheels Replacement",
     }),
   component: Page,
 });
