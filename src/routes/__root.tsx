@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { business } from "../config/business";
 
 function NotFoundComponent() {
   return (
@@ -85,7 +86,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Vishwa Windows" },
+      { property: "og:image", content: `${business.siteUrl}/og-image.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${business.siteUrl}/og-image.jpg` },
     ],
     links: [
       {

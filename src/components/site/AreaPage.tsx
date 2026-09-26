@@ -170,7 +170,9 @@ export function areaHead({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: fullUrl },
+      { property: "og:image", content: `${business.siteUrl}/og-image.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${business.siteUrl}/og-image.jpg` },
     ],
     links: [{ rel: "canonical", href: fullUrl }],
     scripts: [
@@ -194,6 +196,27 @@ export function areaHead({
             addressRegion: "Maharashtra",
             addressCountry: "IN",
           },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${business.siteUrl}/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: `${areaName} Window Repair`,
+              item: fullUrl,
+            },
+          ],
         }),
       },
     ],

@@ -42,7 +42,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: liveUrl },
+      { property: "og:image", content: `${liveUrl}/og-image.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${liveUrl}/og-image.jpg` },
     ],
     links: [
       { rel: "canonical", href: `${liveUrl}/` },
