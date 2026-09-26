@@ -15,6 +15,7 @@ import {
   Wrench,
   Check,
   X,
+  Play,
 } from "lucide-react";
 import {
   Accordion,
@@ -1540,32 +1541,75 @@ export function Footer() {
 const newImagesGlob = import.meta.glob<{ default: string }>('@/assets/new images/*.{jpeg,jpg,png}', { eager: true });
 const workshopGlob = import.meta.glob<{ default: string }>('@/assets/workshop/*.{jpeg,jpg,png}', { eager: true });
 const newVideosGlob = import.meta.glob<{ default: string }>('@/assets/videos/*.{mov,mp4}', { eager: true });
-const newImages = Object.keys(newImagesGlob).map(key => ({ path: key, url: newImagesGlob[key].default }));
-const workshopImages = Object.keys(workshopGlob).map(key => ({ path: key, url: workshopGlob[key].default }));
-const newVideos = Object.keys(newVideosGlob).map(key => ({ path: key, url: newVideosGlob[key].default }));
+const videoPostersGlob = import.meta.glob<{ default: string }>('@/assets/video-posters/*.{jpeg,jpg,png}', { eager: true });
+
+const posterMap: Record<string, string> = {};
+Object.keys(videoPostersGlob).forEach((key) => {
+  const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
+  posterMap[filename] = videoPostersGlob[key].default;
+});
+
+type GalleryItem = {
+  url: string;
+  poster: string;
+  isVideo: boolean;
+};
+
+const newVideos: GalleryItem[] = Object.keys(newVideosGlob).map(key => {
+  const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
+  return {
+    url: newVideosGlob[key].default,
+    poster: posterMap[filename] || newVideosGlob[key].default,
+    isVideo: true,
+  };
+});
+
+const newImages: GalleryItem[] = Object.keys(newImagesGlob).map(key => ({
+  url: newImagesGlob[key].default,
+  poster: newImagesGlob[key].default,
+  isVideo: false,
+}));
+
+const workshopImages: GalleryItem[] = Object.keys(workshopGlob).map(key => ({
+  url: workshopGlob[key].default,
+  poster: workshopGlob[key].default,
+  isVideo: false,
+}));
 
 export function RealWorkGallery() {
-  const [selectedAsset, setSelectedAsset] = useState<string | null>(null);
+  const [selectedAsset, setSelectedAsset] = useState<GalleryItem | null>(null);
 
   const allAssets = [...newVideos, ...newImages, ...workshopImages];
   const row1 = allAssets.slice(0, Math.ceil(allAssets.length / 2));
   const row2 = allAssets.slice(Math.ceil(allAssets.length / 2));
 
-  const MarqueeRow = ({ items, direction = "left" }: { items: any[], direction?: "left" | "right" }) => {
+  const MarqueeRow = ({ items, direction = "left" }: { items: GalleryItem[], direction?: "left" | "right" }) => {
     const content = (
       <>
         {items.map((asset, i) => (
           <div 
             key={i} 
-            onClick={() => setSelectedAsset(asset.url)}
-            className="flex-none w-[280px] h-[360px] md:w-[320px] md:h-[420px] relative rounded-[32px] overflow-hidden border border-border/50 cursor-pointer"
+            onClick={() => setSelectedAsset(asset)}
+            className="flex-none w-[280px] h-[360px] md:w-[320px] md:h-[420px] relative rounded-[32px] overflow-hidden border border-border/50 cursor-pointer group bg-black/10"
           >
-            {asset.url.match(/\.(mp4|mov)$/i) ? (
-              <video src={asset.url} autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none" />
-            ) : (
-              <img src={asset.url} alt={`Recent sliding window repair work in Powai ${i}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none" loading="lazy" decoding="async" />
+            <img 
+              src={asset.poster} 
+              alt={`Sliding window repair work in Mumbai proof ${i + 1}`} 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none" 
+              loading="lazy" 
+              decoding="async" 
+            />
+            {asset.isVideo && (
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-black/70 text-white shadow-xl backdrop-blur-sm border border-white/30 group-hover:scale-110 group-hover:bg-red-600 transition-all duration-300">
+                  <Play className="h-6 w-6 fill-current ml-0.5 text-white" />
+                </div>
+                <span className="absolute top-4 right-4 rounded-full bg-red-600/90 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-white shadow-lg backdrop-blur-sm">
+                  ▶ Video Proof
+                </span>
+              </div>
             )}
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
           </div>
         ))}
       </>
@@ -1624,29 +1668,24 @@ export function RealWorkGallery() {
           </button>
 
           <div 
-            className="relative max-w-6xl max-h-[85vh] w-full h-full flex items-center justify-center cursor-default mt-10 sm:mt-0"
+            className="relative max-w-4xl max-h-[85vh] w-full h-full flex items-center justify-center cursor-default mt-10 sm:mt-0"
             onClick={(e) => e.stopPropagation()}
           >
-            {selectedAsset.match(/\.(mp4|mov)$/i) ? (
+            {selectedAsset.isVideo ? (
               <video 
-                src={selectedAsset} 
+                src={selectedAsset.url} 
                 autoPlay 
+                controls
                 loop 
-                muted 
                 playsInline 
-                preload="metadata"
-                className="max-w-full max-h-[85vh] object-contain rounded-lg cursor-pointer shadow-2xl"
-                onClick={(e) => {
-                  const v = e.currentTarget;
-                  if (v.paused) v.play();
-                  else v.pause();
-                }}
+                preload="auto"
+                className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
               />
             ) : (
               <img 
-                src={selectedAsset} 
-                alt="Enlarged view" 
-                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                src={selectedAsset.url} 
+                alt="Enlarged proof" 
+                className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
               />
             )}
           </div>
