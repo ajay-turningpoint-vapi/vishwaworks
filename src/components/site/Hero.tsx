@@ -22,14 +22,14 @@ export function Hero() {
 
   return (
     <section id="top" className="bg-primary text-primary-foreground">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pt-6 pb-12 sm:px-5 sm:py-16 md:grid-cols-2 md:gap-16 md:py-24">
         <div>
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-red-500/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-red-300 backdrop-blur-sm sm:mb-6 border border-red-500/40">
-            <span className="relative flex h-2 w-2">
+          <div className="mb-3 sm:mb-6 inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-red-500/20 px-2.5 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wide text-red-300 backdrop-blur-sm border border-red-500/40 max-w-full text-left">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
             </span>
-            <span className="tracking-wide text-white font-black">⚠️ ATTENTION MUMBAI: BEFORE YOU REPLACE YOUR JAMMED WINDOWS...</span>
+            <span className="tracking-wide text-white font-black text-[11px] sm:text-xs leading-tight">⚠️ ATTENTION MUMBAI: BEFORE YOU REPLACE YOUR JAMMED WINDOWS...</span>
           </div>
           
           <h1 className="text-[2.6rem] font-extrabold leading-snug tracking-tight sm:text-6xl lg:text-[4.2rem]">
