@@ -153,6 +153,8 @@ export function serviceHead({
             "@type": "LocalBusiness",
             name: business.name,
             telephone: business.phone,
+            hasMap: business.googleBusinessProfileUrl,
+            sameAs: [business.googleBusinessProfileUrl],
           },
         }),
       },

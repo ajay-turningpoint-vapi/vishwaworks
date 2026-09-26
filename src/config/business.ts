@@ -19,7 +19,7 @@ export const business = {
   address: "Shop no S/159/160 IIT MARKET, Near IIT Mumbai College, Jyotiba Phule Nagar, Powai, Mumbai 400076",
   // Paste the Google Business Profile short link here once the listing is live
   // (looks like https://g.page/r/XXXXXXXX or https://maps.app.goo.gl/XXXXXXXX).
-  googleBusinessProfileUrl: "",
+  googleBusinessProfileUrl: "https://share.google/p8c3DynNOqm6K92OM",
   // Shown until the profile link above is added.
   googleMapsSearchUrl:
     "https://www.google.com/maps/search/?api=1&query=Vishwa+Windows+window+repair+Powai+Mumbai",

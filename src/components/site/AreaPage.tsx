@@ -198,6 +198,8 @@ export function areaHead({
             addressRegion: "Maharashtra",
             addressCountry: "IN",
           },
+          hasMap: business.googleBusinessProfileUrl,
+          sameAs: [business.googleBusinessProfileUrl],
         }),
       },
       {

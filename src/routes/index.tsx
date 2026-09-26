@@ -75,10 +75,18 @@ export const Route = createFileRoute("/")({
           })),
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Powai, Mumbai",
-            addressRegion: "Maharashtra",
-            addressCountry: "IN",
+            "streetAddress": business.address,
+            "addressLocality": "Powai, Mumbai",
+            "addressRegion": "Maharashtra",
+            "postalCode": "400076",
+            "addressCountry": "IN",
           },
+          hasMap: business.googleBusinessProfileUrl,
+          sameAs: [
+            business.googleBusinessProfileUrl,
+            "https://www.facebook.com/vishwawindows",
+            "https://www.instagram.com/vishwawindows"
+          ],
           ...(business.hours ? { openingHours: business.hours } : {}),
         }),
       },
