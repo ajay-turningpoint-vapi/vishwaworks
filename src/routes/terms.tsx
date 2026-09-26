@@ -13,10 +13,10 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: `${business.siteUrl}/terms` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: `${business.siteUrl}/terms` }],
   }),
   component: TermsPage,
 });

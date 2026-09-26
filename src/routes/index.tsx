@@ -31,7 +31,7 @@ import heroPoster from "@/assets/hero-poster.jpg";
 const title = "Sliding Window Repair Mumbai | Aluminium & Glass Door Roller Replacement";
 const description =
   "Looking for sliding window repair near me in Mumbai? We fix jammed sliding windows, offer aluminium window repair, and sliding glass door roller replacement. 100% Guaranteed.";
-const liveUrl = "https://vishwawindows.in";
+const liveUrl = business.siteUrl;
 
 export const Route = createFileRoute("/")({
   head: () => ({

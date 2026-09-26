@@ -4,10 +4,11 @@
  */
 
 export const business = {
-  // Placeholder name — replace with the confirmed business name.
+  // Business details
   name: "Vishwa Windows",
   founder: "Sumit Vishwakarma",
   tagline: "Show Us The Problem.",
+  siteUrl: "https://vishwaworks.vercel.app",
 
   whatsappNumber: "919004515924",
   // Phone number used for the CALL NOW buttons

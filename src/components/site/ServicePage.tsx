@@ -120,6 +120,7 @@ export function serviceHead({
   path: string;
   serviceName: string;
 }) {
+  const fullUrl = `${business.siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
   return {
     meta: [
       { title },
@@ -127,10 +128,10 @@ export function serviceHead({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: path },
+      { property: "og:url", content: fullUrl },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: path }],
+    links: [{ rel: "canonical", href: fullUrl }],
     scripts: [
       {
         type: "application/ld+json",
@@ -139,6 +140,7 @@ export function serviceHead({
           "@type": "Service",
           name: serviceName,
           description,
+          url: fullUrl,
           areaServed: business.serviceAreas.map((a) => ({
             "@type": "Place",
             name: `${a}, Mumbai`,
