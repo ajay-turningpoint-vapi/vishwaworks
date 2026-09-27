@@ -1691,7 +1691,7 @@ export function RealWorkGallery() {
 
       {selectedAsset && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-[9999] bg-black/95 flex flex-col items-center justify-center p-4 cursor-pointer backdrop-blur-sm"
+          className="fixed inset-0 z-[9999] bg-black/95 flex flex-col items-center justify-center p-4 cursor-pointer backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setSelectedAsset(null)}
         >
           <button 
@@ -1699,14 +1699,14 @@ export function RealWorkGallery() {
               e.stopPropagation();
               setSelectedAsset(null);
             }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:bottom-auto sm:top-6 sm:right-8 z-[10000] flex items-center gap-2 text-white bg-black/80 sm:bg-white/10 hover:bg-white/25 px-6 py-3 sm:px-4 sm:py-2 rounded-full backdrop-blur-md transition-colors shadow-2xl border border-white/20 whitespace-nowrap"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:bottom-auto sm:top-6 sm:right-8 z-[10000] flex items-center gap-2 text-white bg-black/80 sm:bg-white/10 hover:bg-white/25 px-6 py-3 sm:px-4 sm:py-2 rounded-full backdrop-blur-md transition-all shadow-2xl border border-white/20 whitespace-nowrap active:scale-95"
           >
             <span className="font-bold tracking-wide text-sm sm:text-base">Close</span>
             <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           <div 
-            className="relative max-w-4xl max-h-[85vh] w-full h-full flex items-center justify-center cursor-default mt-10 sm:mt-0"
+            className="relative max-w-4xl max-h-[85vh] w-full h-full flex items-center justify-center cursor-default mt-10 sm:mt-0 animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {selectedAsset.isVideo ? (

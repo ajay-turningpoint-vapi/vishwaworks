@@ -116,10 +116,32 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
 @keyframes section-reveal {
   from {
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 0.3;
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -127,21 +149,23 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .reveal-section {
-    animation: section-reveal 0.7s ease-out both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 28%;
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-section {
+      animation: section-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 22%;
+    }
   }
 }
 
 @keyframes cta-glow {
   0%,
   100% {
-    box-shadow: 0 10px 24px -8px color-mix(in oklab, var(--whatsapp) 45%, transparent);
+    box-shadow: 0 8px 20px -6px color-mix(in oklab, var(--whatsapp) 45%, transparent);
   }
   50% {
-    box-shadow: 0 14px 34px -6px color-mix(in oklab, var(--whatsapp) 75%, transparent);
+    box-shadow: 0 14px 30px -4px color-mix(in oklab, var(--whatsapp) 75%, transparent);
   }
 }
 
@@ -160,37 +184,45 @@
 }
 
 @keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 0.5rem)); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(calc(-50% - 0.5rem), 0, 0); }
 }
 
 @keyframes marquee-right {
-  0% { transform: translateX(calc(-50% - 0.5rem)); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(calc(-50% - 0.5rem), 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 @utility animate-marquee-left {
-  animation: marquee-left 240s linear infinite;
+  animation: marquee-left 140s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @utility animate-marquee-right {
-  animation: marquee-right 240s linear infinite;
+  animation: marquee-right 140s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @utility pause-on-hover {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   &:hover {
     animation-play-state: paused;
   }
 }
 
 @utility safe-bottom {
-  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
 @utility tap {
   transition:
-    transform 0.18s ease,
-    box-shadow 0.25s ease;
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
   &:active {
     transform: scale(0.975);
   }
@@ -244,7 +276,11 @@
 
 @layer base {
   html {
-    font-size: 112.5%; /* Scales up all rem values (text, padding, etc) making everything larger */
+    font-size: 112.5%;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   * {
@@ -256,6 +292,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
   }
 
   h1,
@@ -282,3 +319,4 @@
     scroll-margin-top: 5rem;
   }
 }
+
