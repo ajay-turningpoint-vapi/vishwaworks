@@ -31,10 +31,13 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("whatsapp_click", { location: "header" })}
-            className="inline-flex h-10 sm:h-11 items-center gap-2 rounded-xl bg-whatsapp px-3.5 sm:px-5 text-xs sm:text-sm font-black text-white shadow-[var(--shadow-cta)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105"
+            className="inline-flex h-10 sm:h-11 items-center gap-1.5 sm:gap-2 rounded-xl bg-whatsapp px-3 sm:px-5 text-xs sm:text-sm font-black text-white shadow-[var(--shadow-cta)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 shrink-0"
           >
             <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white fill-current shrink-0" />
-            <span className="font-display uppercase tracking-wide">FREE 15-MIN DIAGNOSIS ➔</span>
+            <span className="font-display uppercase tracking-wide">
+              <span className="sm:hidden">FREE DIAGNOSIS ➔</span>
+              <span className="hidden sm:inline">FREE 15-MIN DIAGNOSIS ➔</span>
+            </span>
           </a>
         </div>
       </div>
