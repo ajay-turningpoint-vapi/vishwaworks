@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="112" fill="#0B132B"/>
+  <text x="256" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Oswald', 'Montserrat', 'Arial Black', sans-serif" font-size="240" font-weight="900" text-anchor="middle" letter-spacing="-8">
+    <tspan fill="#FFFFFF">V</tspan><tspan fill="#F59E0B">W</tspan>
+  </text>
+</svg>
