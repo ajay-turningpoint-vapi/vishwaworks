@@ -46,10 +46,18 @@ export function AreaPage({
               <WhatsAppButton
                 location={content.locationKey}
                 message={content.whatsappMessage}
+                className="cta-live"
               >
-                SEND PHOTO → GET ESTIMATE
+                <span className="flex flex-col items-center leading-tight">
+                  <span className="text-sm sm:text-base font-black tracking-tight uppercase text-white font-display">
+                    GET FREE ESTIMATE IN {content.areaName.toUpperCase()} ➔
+                  </span>
+                  <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+                    Send Photo • 100% Free • No Fix, No Fee
+                  </span>
+                </span>
               </WhatsAppButton>
-              <CallButton location={content.locationKey} variant="outline" />
+              <CallButton location={content.locationKey} variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:border-primary-foreground/60" />
             </div>
 
             <div className="mt-6 flex flex-wrap gap-4 text-xs sm:text-sm text-primary-foreground/75">
@@ -109,8 +117,16 @@ export function AreaPage({
                 <WhatsAppButton
                   location={`${content.locationKey}_photo_box`}
                   message={content.whatsappMessage}
+                  className="cta-live"
                 >
-                  SEND PHOTO ON WHATSAPP
+                  <span className="flex flex-col items-center leading-tight">
+                    <span className="text-sm sm:text-base font-black tracking-tight uppercase text-white font-display">
+                      SEND MY PHOTO ON WHATSAPP ➔
+                    </span>
+                    <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+                      Instant Diagnosis & Upfront Fixed Price
+                    </span>
+                  </span>
                 </WhatsAppButton>
               </div>
             </div>

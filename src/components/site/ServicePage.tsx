@@ -38,14 +38,21 @@ export function ServicePage({
               <WhatsAppButton
                 location={content.locationKey}
                 message={content.whatsappMessage}
+                className="cta-live"
               >
-                SEND PHOTO → GET HELP
+                <span className="flex flex-col items-center leading-tight">
+                  <span className="text-sm sm:text-base font-black tracking-tight uppercase text-white font-display">
+                    GET MY FREE 15-MIN DIAGNOSIS ➔
+                  </span>
+                  <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+                    Send Photo/Video • 100% Free • No Fix, No Fee
+                  </span>
+                </span>
               </WhatsAppButton>
-              <CallButton location={content.locationKey} variant="outline" />
+              <CallButton location={content.locationKey} variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:border-primary-foreground/60" />
             </div>
-            <p className="mt-4 text-sm text-primary-foreground/70">
-              You don't need to know the technical name of the part. Just show us the
-              problem.
+            <p className="mt-4 text-xs sm:text-sm text-primary-foreground/75 font-medium">
+              ✅ No technical knowledge needed. Just show us the problem on WhatsApp.
             </p>
           </div>
         </section>
@@ -75,8 +82,16 @@ export function ServicePage({
                 <WhatsAppButton
                   location={`${content.locationKey}_photo_tip`}
                   message={content.whatsappMessage}
+                  className="cta-live"
                 >
-                  SEND PHOTO ON WHATSAPP
+                  <span className="flex flex-col items-center leading-tight">
+                    <span className="text-sm sm:text-base font-black tracking-tight uppercase text-white font-display">
+                      SEND MY PHOTO ON WHATSAPP ➔
+                    </span>
+                    <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+                      Get Instant Technical Opinion
+                    </span>
+                  </span>
                 </WhatsAppButton>
               </div>
             </div>
