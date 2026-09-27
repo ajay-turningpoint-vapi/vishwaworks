@@ -1,19 +1,23 @@
 import type { ReactNode } from "react";
-import { Camera, Phone, Upload } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import { business, whatsappLink, whatsappMessages } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "./icons";
 
 const base =
-  "flex w-full min-h-[54px] items-center justify-center gap-2 rounded-xl px-6 text-base font-bold tracking-tight transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring";
+  "flex w-full min-h-[58px] items-center justify-center gap-2.5 rounded-2xl px-6 py-3 text-base font-black tracking-tight transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring text-center";
 
 export function WhatsAppButton({
   location,
   children = (
     <span className="flex flex-col items-center leading-tight">
-      <span>Send a Photo on WhatsApp</span>
-      <span className="text-sm font-medium text-white/90">(Free 15-Minute Diagnosis)</span>
+      <span className="text-[15px] sm:text-[17px] font-black tracking-tight uppercase text-white font-display">
+        GET MY FREE 15-MIN DIAGNOSIS ➔
+      </span>
+      <span className="text-xs font-semibold text-white/90 mt-0.5">
+        Send Photo/Video • 100% Free • No Fix, No Fee
+      </span>
     </span>
   ),
   message = whatsappMessages.default,
@@ -35,13 +39,13 @@ export function WhatsAppButton({
       className={cn(
         base,
         variant === "solid"
-          ? "bg-whatsapp text-whatsapp-foreground shadow-cta hover:brightness-105"
+          ? "bg-whatsapp text-white shadow-[var(--shadow-cta)] hover:brightness-105"
           : "border-2 border-whatsapp text-whatsapp hover:bg-whatsapp/10",
         className,
       )}
     >
-      <span className="flex items-center gap-1.5" aria-hidden="true">
-        <Upload className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+      <span className="flex items-center shrink-0" aria-hidden="true">
+        <WhatsAppIcon className="h-6 w-6 text-white shrink-0 fill-current" />
       </span>
       {children}
     </a>
@@ -50,7 +54,11 @@ export function WhatsAppButton({
 
 export function CallButton({
   location,
-  children = "CALL NOW",
+  children = (
+    <span className="text-sm sm:text-base font-extrabold uppercase tracking-wide">
+      📞 CALL: {business.phone}
+    </span>
+  ),
   className,
   variant = "outline",
 }: {
@@ -76,3 +84,4 @@ export function CallButton({
     </a>
   );
 }
+

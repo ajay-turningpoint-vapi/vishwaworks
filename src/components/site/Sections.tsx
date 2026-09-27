@@ -191,7 +191,16 @@ export function HowItWorks() {
       </div>
 
       <div className="mt-16 text-center">
-        <WhatsAppButton location="how_it_works" className="cta-live scale-105">SEND MY PHOTO</WhatsAppButton>
+        <WhatsAppButton location="how_it_works" className="cta-live scale-105">
+          <span className="flex flex-col items-center leading-tight">
+            <span className="text-[15px] sm:text-[17px] font-black tracking-tight uppercase text-white font-display">
+              SEND MY PHOTO ON WHATSAPP ➔
+            </span>
+            <span className="text-xs font-semibold text-white/90 mt-0.5">
+              Takes 15 Seconds • Free Diagnosis • No Technical Words Needed
+            </span>
+          </span>
+        </WhatsAppButton>
       </div>
     </section>
   );
@@ -240,9 +249,10 @@ export function Services() {
                         track("service_clicked", { service: s.name });
                         track("whatsapp_click", { location: "services" });
                       }}
-                      className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-whatsapp px-4 text-[14px] sm:text-[15px] font-black tracking-wide text-whatsapp-foreground tap shadow-[var(--shadow-cta)] hover:bg-whatsapp/90 transition-colors"
+                      className="mt-6 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 text-[14px] sm:text-[15px] font-black tracking-wide text-white tap shadow-[var(--shadow-cta)] hover:brightness-105 transition-all font-display uppercase"
                     >
-                      SEND A PHOTO ➔
+                      <WhatsAppIcon className="h-4 w-4 text-white fill-current shrink-0" />
+                      <span>GET FREE ESTIMATE ➔</span>
                     </a>
                   </div>
                 ))}
@@ -1386,20 +1396,33 @@ export function FinalCTA() {
 
 export function StickyMobileCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/20 bg-card/95 p-3 safe-bottom backdrop-blur md:hidden shadow-[0_-10px_20px_-10px_rgba(37,211,102,0.3)]">
-      <div className="flex flex-col gap-1 text-center mb-2">
-        <span className="text-xs font-extrabold text-red-500">⏳ LIMITED SAME-DAY SLOTS — MESSAGE NOW</span>
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/30 bg-card/95 p-2.5 safe-bottom backdrop-blur md:hidden shadow-[0_-10px_25px_-5px_rgba(37,211,102,0.4)]">
+      <div className="flex items-center justify-between px-1 mb-1.5 text-[11px] font-black uppercase tracking-wider">
+        <span className="text-red-500 animate-pulse flex items-center gap-1">
+          <span className="h-2 w-2 rounded-full bg-red-500"></span> ⏳ LIMITED SAME-DAY SLOTS
+        </span>
+        <span className="text-emerald-600 font-bold">⚡ Replies in 5m</span>
       </div>
-      <a
-        href={whatsappLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
-        className="tap cta-live flex min-h-[56px] w-full items-center justify-center gap-2 rounded-xl bg-whatsapp text-sm font-extrabold text-white shadow-cta"
-      >
-        <WhatsAppIcon className="h-5 w-5 text-white" />
-        SEND A PHOTO (FREE DIAGNOSIS)
-      </a>
+      <div className="grid grid-cols-[1fr_2.4fr] gap-2">
+        <a
+          href={business.phoneHref}
+          onClick={() => track("call_click", { location: "sticky_mobile" })}
+          className="tap flex min-h-[50px] items-center justify-center gap-1.5 rounded-xl border-2 border-primary bg-primary/5 text-primary text-xs font-black uppercase tracking-wide active:scale-95 transition-transform"
+        >
+          <Phone className="h-4 w-4 shrink-0" />
+          <span>CALL</span>
+        </a>
+        <a
+          href={whatsappLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
+          className="tap cta-live flex min-h-[50px] items-center justify-center gap-2 rounded-xl bg-whatsapp text-[13px] font-black text-white shadow-[var(--shadow-cta)] active:scale-95 transition-transform font-display tracking-wide uppercase"
+        >
+          <WhatsAppIcon className="h-5 w-5 text-white fill-current shrink-0" />
+          <span>FREE DIAGNOSIS ➔</span>
+        </a>
+      </div>
     </div>
   );
 }
