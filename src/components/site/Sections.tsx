@@ -1537,7 +1537,7 @@ export function Footer() {
   );
 }
 
-const newImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/new images/*.{jpeg,jpg,png}', { eager: true });
+const newImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/proof-photos/*.{jpeg,jpg,png}', { eager: true });
 const workshopGlob: Record<string, { default: string }> = import.meta.glob('@/assets/workshop/*.{jpeg,jpg,png}', { eager: true });
 const newVideosGlob: Record<string, { default: string }> = import.meta.glob('@/assets/videos/*.{mov,mp4}', { eager: true });
 const videoPostersGlob: Record<string, { default: string }> = import.meta.glob('@/assets/video-posters/*.{jpeg,jpg,png}', { eager: true });
