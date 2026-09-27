@@ -94,10 +94,20 @@ export const serviceCategories = [
       { name: "Aluminium Partition & Shutter Repair", desc: "Fix loose, jammed or damaged commercial office partitions, floor springs, and aluminium frames." },
       { name: "Custom Window Modification", desc: "Upgrade old windows with custom sizing, extra mosquito tracks, and modern security hardware." },
     ]
+  },
+  {
+    category: "New Window Fabrication & Installation",
+    items: [
+      { name: "Brand New Aluminium Sliding Windows", desc: "Custom designed, fabricated & installed from our Powai workshop. High-grade Jindal aluminium, smooth-glide rollers, and premium powder-coated finishes." },
+      { name: "New Domal & Slim Profile Systems", desc: "Heavy-duty luxury Domal sliding systems for high-rises and large balcony openings. Maximum wind resistance and acoustic sound isolation." },
+      { name: "Custom French Windows & Balcony Enclosures", desc: "Transform your balcony or living space with full-height floor-to-ceiling glass, custom partitions, and sliding folding systems." },
+      { name: "Double-Glazed Soundproof Window Installation", desc: "Brand new acoustic double-glazed (DGU) window systems engineered to eliminate 80%+ of Mumbai traffic and street noise." },
+    ]
   }
 ] as const;
 
 export const problemOptions = [
+  "Need Brand New Windows / Installation",
   "Sliding door problem",
   "Window stuck",
   "Won't slide",

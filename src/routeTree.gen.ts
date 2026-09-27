@@ -14,6 +14,7 @@ import { Route as AluminiumPartitionRepairMumbaiRouteImport } from './routes/alu
 import { Route as AluminiumWindowRepairPowaiRouteImport } from './routes/aluminium-window-repair-powai'
 import { Route as CustomWindowModificationMumbaiRouteImport } from './routes/custom-window-modification-mumbai'
 import { Route as DomalWindowRepairMumbaiRouteImport } from './routes/domal-window-repair-mumbai'
+import { Route as NewWindowInstallationMumbaiRouteImport } from './routes/new-window-installation-mumbai'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RubberGasketSealingMumbaiRouteImport } from './routes/rubber-gasket-sealing-mumbai'
 import { Route as SafetyNetsInstallationMumbaiRouteImport } from './routes/safety-nets-installation-mumbai'
@@ -71,6 +72,12 @@ const DomalWindowRepairMumbaiRoute = DomalWindowRepairMumbaiRouteImport.update({
   path: '/domal-window-repair-mumbai',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewWindowInstallationMumbaiRoute =
+  NewWindowInstallationMumbaiRouteImport.update({
+    id: '/new-window-installation-mumbai',
+    path: '/new-window-installation-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -233,6 +240,7 @@ export interface FileRoutesByFullPath {
   '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/custom-window-modification-mumbai': typeof CustomWindowModificationMumbaiRoute
   '/domal-window-repair-mumbai': typeof DomalWindowRepairMumbaiRoute
+  '/new-window-installation-mumbai': typeof NewWindowInstallationMumbaiRoute
   '/privacy': typeof PrivacyRoute
   '/rubber-gasket-sealing-mumbai': typeof RubberGasketSealingMumbaiRoute
   '/safety-nets-installation-mumbai': typeof SafetyNetsInstallationMumbaiRoute
@@ -268,6 +276,7 @@ export interface FileRoutesByTo {
   '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/custom-window-modification-mumbai': typeof CustomWindowModificationMumbaiRoute
   '/domal-window-repair-mumbai': typeof DomalWindowRepairMumbaiRoute
+  '/new-window-installation-mumbai': typeof NewWindowInstallationMumbaiRoute
   '/privacy': typeof PrivacyRoute
   '/rubber-gasket-sealing-mumbai': typeof RubberGasketSealingMumbaiRoute
   '/safety-nets-installation-mumbai': typeof SafetyNetsInstallationMumbaiRoute
@@ -304,6 +313,7 @@ export interface FileRoutesById {
   '/aluminium-window-repair-powai': typeof AluminiumWindowRepairPowaiRoute
   '/custom-window-modification-mumbai': typeof CustomWindowModificationMumbaiRoute
   '/domal-window-repair-mumbai': typeof DomalWindowRepairMumbaiRoute
+  '/new-window-installation-mumbai': typeof NewWindowInstallationMumbaiRoute
   '/privacy': typeof PrivacyRoute
   '/rubber-gasket-sealing-mumbai': typeof RubberGasketSealingMumbaiRoute
   '/safety-nets-installation-mumbai': typeof SafetyNetsInstallationMumbaiRoute
@@ -341,6 +351,7 @@ export interface FileRouteTypes {
     | '/aluminium-window-repair-powai'
     | '/custom-window-modification-mumbai'
     | '/domal-window-repair-mumbai'
+    | '/new-window-installation-mumbai'
     | '/privacy'
     | '/rubber-gasket-sealing-mumbai'
     | '/safety-nets-installation-mumbai'
@@ -376,6 +387,7 @@ export interface FileRouteTypes {
     | '/aluminium-window-repair-powai'
     | '/custom-window-modification-mumbai'
     | '/domal-window-repair-mumbai'
+    | '/new-window-installation-mumbai'
     | '/privacy'
     | '/rubber-gasket-sealing-mumbai'
     | '/safety-nets-installation-mumbai'
@@ -411,6 +423,7 @@ export interface FileRouteTypes {
     | '/aluminium-window-repair-powai'
     | '/custom-window-modification-mumbai'
     | '/domal-window-repair-mumbai'
+    | '/new-window-installation-mumbai'
     | '/privacy'
     | '/rubber-gasket-sealing-mumbai'
     | '/safety-nets-installation-mumbai'
@@ -447,6 +460,7 @@ export interface RootRouteChildren {
   AluminiumWindowRepairPowaiRoute: typeof AluminiumWindowRepairPowaiRoute
   CustomWindowModificationMumbaiRoute: typeof CustomWindowModificationMumbaiRoute
   DomalWindowRepairMumbaiRoute: typeof DomalWindowRepairMumbaiRoute
+  NewWindowInstallationMumbaiRoute: typeof NewWindowInstallationMumbaiRoute
   PrivacyRoute: typeof PrivacyRoute
   RubberGasketSealingMumbaiRoute: typeof RubberGasketSealingMumbaiRoute
   SafetyNetsInstallationMumbaiRoute: typeof SafetyNetsInstallationMumbaiRoute
@@ -512,6 +526,13 @@ declare module '@tanstack/react-router' {
       path: '/domal-window-repair-mumbai'
       fullPath: '/domal-window-repair-mumbai'
       preLoaderRoute: typeof DomalWindowRepairMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-window-installation-mumbai': {
+      id: '/new-window-installation-mumbai'
+      path: '/new-window-installation-mumbai'
+      fullPath: '/new-window-installation-mumbai'
+      preLoaderRoute: typeof NewWindowInstallationMumbaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -719,6 +740,7 @@ const rootRouteChildren: RootRouteChildren = {
   AluminiumWindowRepairPowaiRoute: AluminiumWindowRepairPowaiRoute,
   CustomWindowModificationMumbaiRoute: CustomWindowModificationMumbaiRoute,
   DomalWindowRepairMumbaiRoute: DomalWindowRepairMumbaiRoute,
+  NewWindowInstallationMumbaiRoute: NewWindowInstallationMumbaiRoute,
   PrivacyRoute: PrivacyRoute,
   RubberGasketSealingMumbaiRoute: RubberGasketSealingMumbaiRoute,
   SafetyNetsInstallationMumbaiRoute: SafetyNetsInstallationMumbaiRoute,

@@ -1522,6 +1522,9 @@ export function Footer() {
               <a href="/sliding-door-repair-powai">Sliding Door Repair</a>
             </li>
             <li>
+              <a href="/new-window-installation-mumbai">New Window Installation</a>
+            </li>
+            <li>
               <a href="/privacy">Privacy Policy</a>
             </li>
             <li>

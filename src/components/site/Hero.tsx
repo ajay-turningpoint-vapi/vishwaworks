@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import heroVideo from "@/assets/hero.mp4";
 import heroPoster from "@/assets/hero-poster.jpg";
 import { business } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { CallButton, WhatsAppButton } from "./cta";
-import { ShieldCheck, Star } from "lucide-react";
+import { ShieldCheck, Star, Sparkles } from "lucide-react";
 import wreathLeft from "@/assets/wreath-left.Dhid9-Kp_1emOdB.avif";
 import wreathRight from "@/assets/wreath-right.6OR3ntW6_Z1oK18L.avif";
 
@@ -58,6 +59,19 @@ export function Hero() {
             <span className="w-1 h-1 rounded-full bg-primary-foreground/30"></span>
             <span>Replies in 5 mins</span>
           </div>
+
+          <div className="mt-5 rounded-xl bg-white/10 border border-white/20 p-3 text-left">
+            <Link
+              to="/new-window-installation-mumbai"
+              className="group flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-accent transition-colors"
+            >
+              <Sparkles className="w-4 h-4 text-accent shrink-0 animate-pulse" />
+              <span>
+                <b>Need Brand New Windows or Renovations?</b> We custom-fabricate Jindal Aluminium & Domal systems. <span className="underline underline-offset-2 font-bold group-hover:text-accent">Learn more →</span>
+              </span>
+            </Link>
+          </div>
+
           <div className="mt-6 flex flex-col gap-3">
             <div className="mx-auto flex items-start gap-2 max-w-sm rounded-lg bg-black/20 p-3 border-2 border-dashed border-red-500/50 backdrop-blur-sm text-left">
               <span className="text-sm font-bold text-red-500 mt-0.5">⚠️</span>
