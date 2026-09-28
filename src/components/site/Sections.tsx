@@ -916,137 +916,183 @@ export function ServiceAreas() {
 
 const reviews = [
   {
+    name: "Sachin Yadav",
+    badge: "Local Guide",
+    profileUrl: "https://www.google.com/maps/contrib/100261712605790778672/reviews?hl=en-GB",
+    title: "Excellent service and very good quality work!",
+    text: "Vishwakarma Works provided professional and reliable service for aluminium window work. The finishing was neat, the material quality was good, and the work was completed properly. They also have good options for window repair, mosquito nets, glass replacement and other aluminium window-related services. The staff was polite and cooperative. Highly recommended for anyone looking for quality window and aluminium work in Mumbai. 👍",
+    rating: 5,
+    date: "Google Review"
+  },
+  {
+    name: "Trupti Panchal",
+    badge: "Verified Google Review",
+    profileUrl: "https://www.google.com/maps/contrib/112973445929969713425/reviews?hl=en-GB",
+    title: "Very neatly done with perfect finishing",
+    text: "Excellent work. Window fitting done very neatly with perfect finishing and alignment. Fully satisfied. Worth the money paid.",
+    rating: 5,
+    date: "Google Review"
+  },
+  {
+    name: "Strike Speed",
+    badge: "Verified Google Review",
+    profileUrl: "https://www.google.com/maps/contrib/101064963363802525497/reviews?hl=en-GB",
+    title: "Professional, punctual and clean work",
+    text: "Very happy with the window fitting service. Workmanship is excellent, alignment and finishing is perfect. Professional, punctual and clean work. Highly recommended!",
+    rating: 5,
+    date: "Google Review"
+  },
+  {
+    name: "Tanzim Farooqui",
+    badge: "Verified Google Review",
+    profileUrl: "https://www.google.com/maps/contrib/109709504412982859201/reviews?hl=en-GB",
+    title: "Good service & reasonable price",
+    text: "Overall Good Service & at a very reasonable price.",
+    rating: 5,
+    date: "Google Review"
+  },
+  {
     name: "Rahul M.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Saved me ₹15,000!",
     text: "My sliding window was stuck for months. Two local carpenters said I had to replace the entire frame (quoted ₹15k). Vishwa Windows replaced the rollers in 45 minutes for a fraction of the cost.",
     rating: 5,
-    date: "12/08/26"
+    date: "Powai, Mumbai"
   },
   {
     name: "Sneha P.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Super fast and clean",
     text: "Sent a photo on WhatsApp, got a quote in 10 mins. The technician arrived the same day and fixed the broken track. Super professional. They didn't even leave a mess.",
     rating: 5,
-    date: "25/08/26"
+    date: "Hiranandani"
   },
   {
     name: "Vikram S.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Finally, actual experts",
     text: "Finally, a service that knows what they are doing. Replaced my broken locks perfectly. The 'No Fix No Fee' guarantee gave me the confidence to call them.",
     rating: 5,
-    date: "01/09/26"
+    date: "Chandivali"
   },
   {
     name: "Pooja K.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "No more noise!",
     text: "The street noise was unbearable until they fixed the sealing on my bedroom windows. I can finally sleep in peace. Highly recommended for anyone in Powai.",
     rating: 5,
-    date: "14/07/26"
+    date: "Powai"
   },
   {
     name: "Amit D.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Excellent WhatsApp support",
     text: "Loved the fact that I didn't have to explain technical terms. Just sent a video of my jammed balcony door and they knew exactly what was wrong.",
     rating: 5,
-    date: "30/08/26"
+    date: "Bandra West"
   },
   {
     name: "Neha R.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Honest and transparent",
     text: "I thought the glass needed replacement, but their technician honestly told me it was just a track alignment issue. Saved me a lot of money.",
     rating: 5,
-    date: "05/09/26"
+    date: "Andheri"
   },
   {
     name: "Karan T.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Best in Hiranandani",
     text: "Tried three different handymen before finding Vishwa Windows. They had the exact branded rollers my premium windows needed.",
     rating: 5,
-    date: "18/06/26"
+    date: "Hiranandani Gardens"
   },
   {
     name: "Meera V.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Very professional team",
     text: "The team arrived on time, wearing uniforms, and carried all necessary tools. Fixed our French windows effortlessly. Will definitely use again.",
     rating: 5,
-    date: "22/08/26"
+    date: "Worli"
   },
   {
     name: "Siddharth B.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Smooth like butter",
     text: "My heavy balcony doors were a nightmare to open. After they changed the bearings, I can slide them with one finger!",
     rating: 5,
-    date: "09/09/26"
-  },
-  {
-    name: "Anjali M.",
-    title: "Highly responsive",
-    text: "Messaged them on a Sunday evening and got a reply instantly. They booked an appointment for Monday morning and sorted out the lock issue.",
-    rating: 5,
-    date: "11/09/26"
-  },
-  {
-    name: "Rohan J.",
-    title: "Great value for money",
-    text: "You pay a slight premium compared to local guys, but the peace of mind and quality of parts is 100% worth it. The 6-month warranty is a big plus.",
-    rating: 5,
-    date: "02/08/26"
+    date: "South Mumbai"
   },
   {
     name: "Shalini G.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Fixed my pigeon net too",
     text: "They not only repaired the window mesh but also installed a proper pigeon net outside. Very convenient to get both done together.",
     rating: 5,
-    date: "28/07/26"
-  },
-  {
-    name: "Arjun C.",
-    title: "Brilliant execution",
-    text: "The tracks were completely bent out of shape. They managed to reshape and align everything without needing to break the surrounding plaster.",
-    rating: 5,
-    date: "15/09/26"
-  },
-  {
-    name: "Divya N.",
-    title: "Trustworthy service",
-    text: "As a senior citizen living alone, I am very careful about who I let in. The technician was very polite, respectful, and did his job quietly.",
-    rating: 5,
-    date: "04/09/26"
+    date: "Ghatkopar"
   },
   {
     name: "Tarun K.",
+    badge: "Verified Customer",
+    profileUrl: business.googleBusinessProfileUrl,
     title: "Quick and painless",
     text: "Whole process took less than an hour. The WhatsApp booking makes things so much easier than calling and following up multiple times.",
     rating: 5,
-    date: "19/08/26"
+    date: "Vikhroli"
   }
 ];
 
 function ReviewCard({ review }: { review: typeof reviews[0] }) {
   return (
-    <div className="w-[320px] shrink-0 rounded-xl border border-border bg-card p-5 shadow-sm flex flex-col justify-between text-left h-[260px]">
+    <a
+      href={review.profileUrl || business.googleBusinessProfileUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="tap group w-[340px] shrink-0 rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between text-left min-h-[260px] cursor-pointer"
+    >
       <div>
-        <div className="flex items-center gap-2 mb-3">
-          <span className="font-bold text-foreground text-[16px]">{review.name}</span>
-          <div className="flex items-center justify-center rounded-full bg-green-500 w-4 h-4">
-            <Check className="w-3 h-3 text-white" strokeWidth={4} />
+        <div className="flex items-center justify-between gap-2 mb-2.5">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-foreground text-[15px]">{review.name}</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 border border-emerald-500/20">
+              <Check className="w-2.5 h-2.5 text-emerald-600" strokeWidth={3} />
+              {review.badge || "Verified"}
+            </span>
           </div>
-          <span className="text-[12px] text-muted-foreground ml-1">Verified Reviewer</span>
+          <svg className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
         </div>
-        <div className="flex gap-1 mb-3">
+        <div className="flex gap-1 mb-2.5">
           {[...Array(review.rating)].map((_, i) => (
-            <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <svg key={i} className="h-4 w-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
           ))}
         </div>
-        <h4 className="text-[18px] font-bold text-foreground mb-2 leading-tight">{review.title}</h4>
-        <p className="text-[14px] text-muted-foreground leading-relaxed line-clamp-4">{review.text}</p>
+        <h4 className="text-[16px] font-extrabold text-foreground mb-1.5 leading-snug font-display uppercase tracking-tight">{review.title}</h4>
+        <p className="text-[13.5px] text-muted-foreground leading-relaxed line-clamp-4">{review.text}</p>
       </div>
-      <div className="mt-4 flex justify-end">
-        <span className="text-[12px] text-muted-foreground">{review.date}</span>
+      <div className="mt-3.5 pt-2.5 border-t border-border/50 flex justify-between items-center text-[11px] text-muted-foreground">
+        <span className="flex items-center gap-1">
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+          </svg>
+          Google Maps Review
+        </span>
+        <span className="font-medium text-slate-500">{review.date}</span>
       </div>
-    </div>
+    </a>
   );
 }
 
