@@ -1069,30 +1069,12 @@ export function Reviews() {
   const row2 = reviews.slice(5, 10);
   const row3 = reviews.slice(10, 15);
 
-  useEffect(() => {
-    // Ensure Elfsight platform script initializes properly on client navigation
-    if (typeof window !== "undefined") {
-      const existingScript = document.querySelector('script[src="https://elfsightcdn.com/platform.js"]');
-      if (!existingScript) {
-        const script = document.createElement("script");
-        script.src = "https://elfsightcdn.com/platform.js";
-        script.async = true;
-        document.head.appendChild(script);
-      }
-    }
-  }, []);
-
   return (
     <section className="reveal-section bg-secondary/30 w-full py-20 sm:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4">
-        <Heading sub="Live verified ratings directly from our Google Business Profile">
-          REAL GOOGLE <span className="highlighter px-2 text-black">CUSTOMER REVIEWS</span>
+        <Heading sub="Real verified feedback from Mumbai homeowners">
+          WHAT OUR <span className="highlighter px-2 text-black">CUSTOMERS SAY</span>
         </Heading>
-        
-        {/* Live Elfsight Google Reviews Widget */}
-        <div className="mt-10 min-h-[140px] max-w-5xl mx-auto">
-          <div className="elfsight-app-981ea1ee-95d9-4254-af06-1758d4d1e4e6" data-elfsight-app-lazy />
-        </div>
 
         {/* Continuous High-Speed Proof Marquee */}
         <div className="mt-12 -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden relative flex flex-col gap-2">
