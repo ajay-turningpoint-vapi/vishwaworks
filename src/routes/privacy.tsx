@@ -3,7 +3,7 @@ import { business } from "@/config/business";
 
 const title = `Privacy Policy | ${business.name} Window Repair Powai`;
 const description =
-  "How Vishwa Windows handles the details you share when you send a window repair enquiry on WhatsApp or through the enquiry form.";
+  "How Vishwa Works handles the details you share when you send a window repair enquiry on WhatsApp or through the enquiry form.";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({

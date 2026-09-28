@@ -3,7 +3,7 @@ import { business } from "@/config/business";
 
 const title = `Terms of Use | ${business.name} Window Repair Powai`;
 const description =
-  "Terms for using the Vishwa Windows website and for window repair enquiries sent on WhatsApp from Powai and nearby areas.";
+  "Terms for using the Vishwa Works website and for window repair enquiries sent on WhatsApp from Powai and nearby areas.";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({

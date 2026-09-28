@@ -5,7 +5,7 @@
 
 export const business = {
   // Business details
-  name: "Vishwa Windows",
+  name: "Vishwa Works",
   founder: "Sumit Vishwakarma",
   tagline: "Show Us The Problem.",
   siteUrl: "https://vishwaworks.vercel.app",

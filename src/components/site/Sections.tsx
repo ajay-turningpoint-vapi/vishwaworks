@@ -946,7 +946,7 @@ const reviews = [
   {
     name: "Rahul M.",
     title: "Saved me ₹15,000!",
-    text: "My sliding window was stuck for months. Two local carpenters said I had to replace the entire frame (quoted ₹15k). Vishwa Windows replaced the rollers in 45 minutes for a fraction of the cost.",
+    text: "My sliding window was stuck for months. Two local carpenters said I had to replace the entire frame (quoted ₹15k). Vishwa Works replaced the rollers in 45 minutes for a fraction of the cost.",
     rating: 5,
     date: "Google Review"
   },
@@ -988,7 +988,7 @@ const reviews = [
   {
     name: "Karan T.",
     title: "Best in Hiranandani",
-    text: "Tried three different handymen before finding Vishwa Windows. They had the exact branded rollers my premium windows needed.",
+    text: "Tried three different handymen before finding Vishwa Works. They had the exact branded rollers my premium windows needed.",
     rating: 5,
     date: "Google Review"
   },
@@ -1140,7 +1140,7 @@ export function UsVsThem() {
     <section className="reveal-section bg-secondary/20 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4">
         <Heading sub="Why Mumbai families choose us instead of regular handymen.">
-          <span className="font-display font-black tracking-tight text-3xl sm:text-5xl uppercase">Vishwa Windows <span className="text-red-500 px-2 line-through">VS.</span> The Local Mistri</span>
+          <span className="font-display font-black tracking-tight text-3xl sm:text-5xl uppercase">Vishwa Works <span className="text-red-500 px-2 line-through">VS.</span> The Local Mistri</span>
         </Heading>
         <div className="mt-12 overflow-hidden rounded-3xl border-2 border-border bg-card shadow-xl shadow-accent/5">
           <div className="grid grid-cols-2 divide-x divide-border sm:grid-cols-3">
@@ -1151,7 +1151,7 @@ export function UsVsThem() {
               <p className="text-xl sm:text-2xl font-black text-red-600 font-display uppercase tracking-tight">Local Mistri</p>
             </div>
             <div className="bg-orange-50/80 p-5 sm:p-6 text-center border-b-2 border-orange-200">
-              <p className="text-xl sm:text-2xl font-black text-yellow-600 font-display uppercase tracking-tight drop-shadow-sm">Vishwa Windows</p>
+              <p className="text-xl sm:text-2xl font-black text-yellow-600 font-display uppercase tracking-tight drop-shadow-sm">Vishwa Works</p>
             </div>
           </div>
           <div className="divide-y divide-border">
@@ -1331,7 +1331,7 @@ export function FoundersStory() {
                 "The truth? 90% of the time, it's just a worn-out ₹500 roller or a bent track."
               </p>
               <p>
-                "I started Vishwa Windows with a simple mission: <b className="text-accent font-black">Repair first, replace only when absolutely necessary.</b> We give you honest advice, upfront pricing, and a 'No Fix, No Fee' guarantee. It's how service should be."
+                "I started Vishwa Works with a simple mission: <b className="text-accent font-black">Repair first, replace only when absolutely necessary.</b> We give you honest advice, upfront pricing, and a 'No Fix, No Fee' guarantee. It's how service should be."
               </p>
             </div>
             <p className="mt-8 text-xl font-bold text-white font-display uppercase tracking-wider">— {business.founder}, Founder</p>
