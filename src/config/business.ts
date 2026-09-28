@@ -9,6 +9,7 @@ export const business = {
   founder: "Sumit Vishwakarma",
   tagline: "Show Us The Problem.",
   siteUrl: "https://vishwaworks.vercel.app",
+  googleAnalyticsId: "G-SGTEKGVKG5",
 
   whatsappNumber: "919004515924",
   // Phone number used for the CALL NOW buttons
