@@ -1069,11 +1069,32 @@ export function Reviews() {
   const row2 = reviews.slice(5, 10);
   const row3 = reviews.slice(10, 15);
 
+  useEffect(() => {
+    // Ensure Elfsight platform script initializes properly on client navigation
+    if (typeof window !== "undefined") {
+      const existingScript = document.querySelector('script[src="https://elfsightcdn.com/platform.js"]');
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = "https://elfsightcdn.com/platform.js";
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    }
+  }, []);
+
   return (
     <section className="reveal-section bg-secondary/30 w-full py-20 sm:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4">
-        <Heading sub="Don't just take our word for it.">What our customers say</Heading>
+        <Heading sub="Live verified ratings directly from our Google Business Profile">
+          REAL GOOGLE <span className="highlighter px-2 text-black">CUSTOMER REVIEWS</span>
+        </Heading>
         
+        {/* Live Elfsight Google Reviews Widget */}
+        <div className="mt-10 min-h-[140px] max-w-5xl mx-auto">
+          <div className="elfsight-app-981ea1ee-95d9-4254-af06-1758d4d1e4e6" data-elfsight-app-lazy />
+        </div>
+
+        {/* Continuous High-Speed Proof Marquee */}
         <div className="mt-12 -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden relative flex flex-col gap-2">
           <MarqueeRow items={row1} direction="left" />
           <MarqueeRow items={row2} direction="right" />
@@ -1086,9 +1107,9 @@ export function Reviews() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("google_profile_click", { location: "reviews" })}
-            className="text-sm font-bold text-primary underline underline-offset-4 hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm sm:text-base font-bold text-primary shadow-md hover:shadow-lg hover:text-accent transition-all border border-border/80"
           >
-            See all our reviews on Google →
+            <span>⭐️⭐️⭐️⭐️⭐️ See all 120+ verified reviews on Google Maps →</span>
           </a>
         </div>
       </div>
