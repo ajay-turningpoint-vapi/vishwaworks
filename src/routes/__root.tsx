@@ -96,29 +96,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "/fonts/oswald-bold.woff2",
         crossOrigin: "anonymous",
       },
       {
         rel: "preload",
         as: "font",
         type: "font/woff2",
-        href: "https://fonts.gstatic.com/s/oswald/v57/TK3IWkUHHAIjg75cFRf3bXL8LICs1_Fv40pKlN4NNSeSASz7FmlYHYjMdZwlou4.woff2",
+        href: "/fonts/inter-regular.woff2",
         crossOrigin: "anonymous",
-      },
-      {
-        rel: "preload",
-        as: "font",
-        type: "font/woff2",
-        href: "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
-        crossOrigin: "anonymous",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@600;700;800&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
@@ -140,12 +130,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
-          />
-        </noscript>
         {/* Google tag (gtag.js) - High-Performance Interaction & Engagement Loader */}
         <script
           dangerouslySetInnerHTML={{

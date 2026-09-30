@@ -19,6 +19,38 @@
  */
 
 @font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url('/fonts/oswald-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/oswald-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/inter-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600 700 800;
+  font-display: swap;
+  src: url('/fonts/inter-bold.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Oswald-Fallback';
   src: local('Arial Narrow'), local('Franklin Gothic Medium'), local('Arial');
   ascent-override: 95%;
