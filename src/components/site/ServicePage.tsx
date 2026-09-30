@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Header } from "@/components/site/Header";
-import { Faq, Footer, ServiceAreas, StickyMobileCTA } from "@/components/site/Sections";
+import { Faq, Footer, Reviews, ServiceAreas, Services, StickyMobileCTA } from "@/components/site/Sections";
 import { CallButton, WhatsAppButton } from "@/components/site/cta";
 import { business } from "@/config/business";
 
@@ -100,6 +100,8 @@ export function ServicePage({
           </div>
         </section>
 
+        <Services />
+        <Reviews />
         <ServiceAreas />
         <Faq />
 
