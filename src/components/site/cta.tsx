@@ -15,7 +15,7 @@ export function WhatsAppButton({
       <span className="text-sm sm:text-[16px] md:text-[17px] font-black tracking-tight uppercase text-white font-display">
         GET MY FREE 15-MIN DIAGNOSIS ➔
       </span>
-      <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+      <span className="text-[11px] sm:text-xs font-bold text-white mt-0.5">
         Send Photo/Video • 100% Free • No Fix, No Fee
       </span>
     </span>

@@ -298,8 +298,8 @@ export function Offer() {
               </div>
             </li>
             <li className="flex justify-between items-center pb-4 border-b border-border/60">
-              <span className="text-[15px] font-black text-green-600">✅ The "No Fix, No Fee"<br/>Guarantee</span>
-              <span className="text-[15px] font-black text-accent drop-shadow-sm">PRICELESS</span>
+              <span className="text-[15px] font-black text-emerald-800">✅ The "No Fix, No Fee"<br/>Guarantee</span>
+              <span className="text-[15px] font-black text-amber-950 bg-amber-100/90 px-2.5 py-0.5 rounded-md border border-amber-300">PRICELESS</span>
             </li>
             <li className="flex justify-between items-center pt-2">
               <span className="text-[17px] font-black text-primary">Total Value:</span>
@@ -1156,10 +1156,10 @@ export function UsVsThem() {
               <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Feature</p>
             </div>
             <div className="bg-red-50/80 p-5 sm:p-6 text-center border-b-2 border-red-100">
-              <p className="text-xl sm:text-2xl font-black text-red-600 font-display uppercase tracking-tight">Local Mistri</p>
+              <p className="text-xl sm:text-2xl font-black text-red-700 font-display uppercase tracking-tight">Local Mistri</p>
             </div>
             <div className="bg-orange-50/80 p-5 sm:p-6 text-center border-b-2 border-orange-200">
-              <p className="text-xl sm:text-2xl font-black text-yellow-600 font-display uppercase tracking-tight drop-shadow-sm">Vishwa Works</p>
+              <p className="text-xl sm:text-2xl font-black text-amber-950 font-display uppercase tracking-tight">Vishwa Works</p>
             </div>
           </div>
           <div className="divide-y divide-border">
@@ -1190,16 +1190,16 @@ export function UsVsThem() {
                 className="grid grid-cols-2 divide-x divide-border sm:grid-cols-3 group hover:bg-muted/30 transition-colors"
               >
                 <div className="hidden p-6 sm:flex items-center justify-center">
-                  <p className="text-[13px] font-bold uppercase tracking-wider text-primary/60">{r.f}</p>
+                  <p className="text-[13px] font-black uppercase tracking-wider text-slate-800">{r.f}</p>
                 </div>
                 <div className="flex flex-col items-center justify-center p-6 text-center bg-red-50/20">
-                  <span className="mb-3 sm:hidden text-[11px] font-bold uppercase tracking-wider text-primary/50">{r.f}</span>
-                  <X className="mb-3 h-8 w-8 text-red-500 drop-shadow-sm" strokeWidth={2.5} />
-                  <p className="text-[14px] font-medium text-gray-500 leading-snug">{r.bad}</p>
+                  <span className="mb-3 sm:hidden text-[11px] font-black uppercase tracking-wider text-slate-800">{r.f}</span>
+                  <X className="mb-3 h-8 w-8 text-red-600 drop-shadow-sm" strokeWidth={2.5} />
+                  <p className="text-[14px] font-semibold text-slate-700 leading-snug">{r.bad}</p>
                 </div>
                 <div className="flex flex-col items-center justify-center p-6 text-center bg-orange-50/30">
-                  <span className="mb-3 sm:hidden text-[11px] font-bold uppercase tracking-wider text-primary/50">{r.f}</span>
-                  <Check className="mb-3 h-8 w-8 text-accent drop-shadow-md" strokeWidth={3.5} />
+                  <span className="mb-3 sm:hidden text-[11px] font-black uppercase tracking-wider text-slate-800">{r.f}</span>
+                  <Check className="mb-3 h-8 w-8 text-emerald-700 drop-shadow-md" strokeWidth={3.5} />
                   <p className="text-[16px] font-black text-gray-900 leading-snug tracking-tight">{r.good}</p>
                 </div>
               </div>
