@@ -163,7 +163,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="reveal-section mx-auto max-w-5xl px-4 py-20 sm:py-28 bg-card rounded-3xl my-10 border border-border/80 shadow-sm">
+    <section className="reveal-section mx-auto max-w-5xl px-4 py-20 sm:py-28 bg-white rounded-3xl my-10 border border-border/80 shadow-sm">
       <Heading>
         Get help without knowing <span className="highlighter px-2 text-black">fancy technical words.</span>
       </Heading>
@@ -182,8 +182,8 @@ export function HowItWorks() {
                   </span>
                 </span>
                 <div className="pt-2 sm:pt-3">
-                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-foreground font-display uppercase">{s.t}</h3>
-                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-900 font-medium">{s.d}</p>
+                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-950 font-display uppercase">{s.t}</h3>
+                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-950 font-medium">{s.d}</p>
                 </div>
               </li>
             ))}

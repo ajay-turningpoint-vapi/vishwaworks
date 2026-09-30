@@ -138,7 +138,15 @@ export function Hero() {
             onPause={() => setPlaying(false)}
             onEnded={() => setPlaying(false)}
             className="absolute inset-0 h-full w-full object-cover"
-          />
+          >
+            <track
+              kind="captions"
+              src="/captions.vtt"
+              srcLang="en"
+              label="English"
+              default
+            />
+          </video>
           {!playing ? (
             <button
               type="button"
