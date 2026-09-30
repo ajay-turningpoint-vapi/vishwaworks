@@ -38,6 +38,7 @@ export function ServicePage({
               <WhatsAppButton
                 location={content.locationKey}
                 message={content.whatsappMessage}
+                ariaLabel={`Get free diagnosis for ${content.title} on WhatsApp`}
                 className="cta-live"
               >
                 <span className="flex flex-col items-center leading-tight">
@@ -82,6 +83,7 @@ export function ServicePage({
                 <WhatsAppButton
                   location={`${content.locationKey}_photo_tip`}
                   message={content.whatsappMessage}
+                  ariaLabel={`Get free diagnosis for ${content.title} on WhatsApp`}
                   className="cta-live"
                 >
                   <span className="flex flex-col items-center leading-tight">
@@ -114,6 +116,7 @@ export function ServicePage({
               <WhatsAppButton
                 location={`${content.locationKey}_final`}
                 message={content.whatsappMessage}
+                ariaLabel={`Get free diagnosis for ${content.title} on WhatsApp`}
               />
               <CallButton location={`${content.locationKey}_final`} />
             </div>

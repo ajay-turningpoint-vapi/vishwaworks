@@ -46,6 +46,7 @@ export function AreaPage({
               <WhatsAppButton
                 location={content.locationKey}
                 message={content.whatsappMessage}
+                ariaLabel={`Get free window repair diagnosis in ${content.areaName} on WhatsApp`}
                 className="cta-live"
               >
                 <span className="flex flex-col items-center leading-tight">
@@ -117,6 +118,7 @@ export function AreaPage({
                 <WhatsAppButton
                   location={`${content.locationKey}_photo_box`}
                   message={content.whatsappMessage}
+                  ariaLabel={`Get free window repair diagnosis in ${content.areaName} on WhatsApp`}
                   className="cta-live"
                 >
                   <span className="flex flex-col items-center leading-tight">
@@ -155,6 +157,7 @@ export function AreaPage({
               <WhatsAppButton
                 location={`${content.locationKey}_bottom_cta`}
                 message={content.whatsappMessage}
+                ariaLabel={`Get free window repair diagnosis in ${content.areaName} on WhatsApp`}
               />
               <CallButton location={`${content.locationKey}_bottom_cta`} />
             </div>

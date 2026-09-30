@@ -19,6 +19,7 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={business.phoneHref}
+            aria-label={`Call Vishwa Works Window Repair at ${business.phone}`}
             onClick={() => track("call_click", { location: "header" })}
             className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-primary hover:bg-secondary/20 transition-colors"
           >
@@ -30,6 +31,7 @@ export function Header() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"
             onClick={() => track("whatsapp_click", { location: "header" })}
             className="inline-flex h-10 sm:h-11 items-center gap-1.5 sm:gap-2 rounded-xl bg-whatsapp px-3 sm:px-5 text-xs sm:text-sm font-black text-white shadow-[var(--shadow-cta)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 shrink-0"
           >

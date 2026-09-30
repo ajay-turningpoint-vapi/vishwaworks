@@ -74,6 +74,7 @@ export function ProblemSelector() {
               track("problem_selected", { problem: p.title });
               track("whatsapp_click", { location: "problem_section" });
             }}
+            aria-label={`Get free diagnosis for ${p.title} problem on WhatsApp`}
             className="tap group rounded-2xl border-2 border-red-500/10 bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-xl hover:shadow-red-500/10 sm:p-5"
           >
             <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-red-500/10 text-xl sm:text-2xl transition-transform group-hover:scale-110 group-hover:bg-red-500/20">
@@ -909,7 +910,11 @@ export function ServiceAreas() {
       </div>
 
       <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row px-4 text-center items-center">
-        <WhatsAppButton location="areas_cta" message={whatsappMessages.area}>
+        <WhatsAppButton
+          location="areas_cta"
+          message={whatsappMessages.area}
+          ariaLabel="Check if Vishwa Works serves your area on WhatsApp"
+        >
           CHECK IF WE SERVE YOUR AREA
         </WhatsAppButton>
         <CallButton
@@ -1097,6 +1102,7 @@ export function Reviews() {
             href={business.googleBusinessProfileUrl || business.googleMapsSearchUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View Vishwa Works 4.9-star customer reviews on Google Maps"
             onClick={() => track("google_profile_click", { location: "reviews" })}
             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm sm:text-base font-bold text-primary shadow-md hover:shadow-lg hover:text-accent transition-all border border-border/80"
           >
@@ -1420,6 +1426,7 @@ export function StickyMobileCTA() {
       <div className="grid grid-cols-[1fr_2.4fr] gap-2">
         <a
           href={business.phoneHref}
+          aria-label={`Call Vishwa Works Window Repair at ${business.phone}`}
           onClick={() => track("call_click", { location: "sticky_mobile" })}
           className="tap flex min-h-[50px] items-center justify-center gap-1.5 rounded-xl border-2 border-primary bg-primary/5 text-primary text-xs font-black uppercase tracking-wide active:scale-95 transition-transform"
         >
@@ -1430,6 +1437,7 @@ export function StickyMobileCTA() {
           href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"
           onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
           className="tap cta-live flex min-h-[50px] items-center justify-center gap-2 rounded-xl bg-whatsapp text-[13px] font-black text-white shadow-[var(--shadow-cta)] active:scale-95 transition-transform font-display tracking-wide uppercase"
         >
@@ -1466,10 +1474,20 @@ export function Footer() {
         <div className="text-sm text-primary-foreground/80">
           <p className="font-bold uppercase text-primary-foreground">Contact</p>
           <p className="mt-2">
-            <a href={business.phoneHref}>{business.phone}</a>
+            <a
+              href={business.phoneHref}
+              aria-label={`Call Vishwa Works Window Repair at ${business.phone}`}
+            >
+              {business.phone}
+            </a>
           </p>
           <p className="mt-1">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"
+            >
               WhatsApp us
             </a>
           </p>
@@ -1482,6 +1500,7 @@ export function Footer() {
               }
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Vishwa Works 4.9-star customer reviews on Google Maps"
               onClick={() => track("google_profile_click", { location: "footer" })}
               className="underline underline-offset-4"
             >
@@ -1495,7 +1514,7 @@ export function Footer() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="WhatsApp"
+                aria-label="Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 hover:bg-whatsapp hover:text-white transition-colors"
               >
                 <WhatsAppIcon className="h-5 w-5" />

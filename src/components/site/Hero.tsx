@@ -84,6 +84,7 @@ export function Hero() {
               href={googleProfileUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Vishwa Works 4.9-star customer reviews on Google Maps"
               onClick={() => track("google_profile_click", { location: "hero" })}
               className="mt-4 mx-auto flex w-fit items-center justify-center gap-2 sm:gap-3 rounded-full bg-gradient-to-b from-gray-50 to-gray-200 px-4 py-2 sm:px-6 sm:py-2.5 shadow-md transition-transform hover:scale-[1.02]"
             >

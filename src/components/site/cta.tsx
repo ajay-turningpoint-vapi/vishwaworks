@@ -37,7 +37,12 @@ export function WhatsAppButton({
       href={whatsappLink(message)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={ariaLabel || "Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"}
+      aria-label={
+        ariaLabel ||
+        (message === whatsappMessages.default
+          ? "Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"
+          : undefined)
+      }
       onClick={() => track("whatsapp_click", { location })}
       className={cn(
         base,
