@@ -52,7 +52,7 @@ export function AreaPage({
                   <span className="text-sm sm:text-base font-black tracking-tight uppercase text-white font-display">
                     GET FREE ESTIMATE IN {content.areaName.toUpperCase()} ➔
                   </span>
-                  <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+                  <span className="text-[11px] sm:text-xs font-bold text-white mt-0.5">
                     Send Photo • 100% Free • No Fix, No Fee
                   </span>
                 </span>
@@ -123,7 +123,7 @@ export function AreaPage({
                     <span className="text-sm sm:text-base font-black tracking-tight uppercase text-white font-display">
                       SEND MY PHOTO ON WHATSAPP ➔
                     </span>
-                    <span className="text-[11px] sm:text-xs font-semibold text-white/90 mt-0.5">
+                    <span className="text-[11px] sm:text-xs font-bold text-white mt-0.5">
                       Instant Diagnosis & Upfront Fixed Price
                     </span>
                   </span>

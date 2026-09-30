@@ -182,7 +182,7 @@ export function HowItWorks() {
                 </span>
                 <div className="pt-2 sm:pt-3">
                   <h3 className="text-xl sm:text-2xl font-black tracking-tight text-primary font-display uppercase">{s.t}</h3>
-                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-600 font-medium">{s.d}</p>
+                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-800 font-medium">{s.d}</p>
                 </div>
               </li>
             ))}
@@ -196,7 +196,7 @@ export function HowItWorks() {
             <span className="text-[15px] sm:text-[17px] font-black tracking-tight uppercase text-white font-display">
               SEND MY PHOTO ON WHATSAPP ➔
             </span>
-            <span className="text-xs font-semibold text-white/90 mt-0.5">
+            <span className="text-xs font-bold text-white mt-0.5">
               Takes 15 Seconds • Free Diagnosis • No Technical Words Needed
             </span>
           </span>
@@ -236,7 +236,7 @@ export function Services() {
                       />
                     </span>
                     <h4 className="mt-4 text-[18px] font-black text-primary leading-tight tracking-wide font-display">{s.name}</h4>
-                    <p className="mt-2.5 flex-1 text-[14px] sm:text-[15px] font-medium leading-relaxed text-slate-600">
+                    <p className="mt-2.5 flex-1 text-[14px] sm:text-[15px] font-medium leading-relaxed text-slate-800">
                       {s.desc}
                     </p>
                     <a
@@ -476,7 +476,7 @@ export function WorkGallery() {
           <div key={item.title} className="flex flex-col gap-3">
             <div className="text-center">
               <h3 className="text-2xl sm:text-3xl font-black uppercase text-primary font-display tracking-wide">{item.title}</h3>
-              <p className="mt-1 text-sm sm:text-base text-slate-600 font-medium">{item.subtitle}</p>
+              <p className="mt-1 text-sm sm:text-base text-slate-800 font-medium">{item.subtitle}</p>
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 w-full mt-3">
               <BeforeAfterSlider 
@@ -1411,10 +1411,10 @@ export function StickyMobileCTA() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/30 bg-card/95 p-2.5 safe-bottom backdrop-blur md:hidden shadow-[0_-10px_25px_-5px_rgba(37,211,102,0.4)]">
       <div className="flex items-center justify-between px-1 mb-1.5 text-[11px] font-black uppercase tracking-wider">
-        <span className="text-red-500 animate-pulse flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-red-500"></span> ⏳ LIMITED SAME-DAY SLOTS
+        <span className="text-red-700 font-black flex items-center gap-1">
+          <span className="h-2 w-2 rounded-full bg-red-600"></span> ⏳ LIMITED SAME-DAY SLOTS
         </span>
-        <span className="text-emerald-600 font-bold">⚡ Replies in 5m</span>
+        <span className="text-emerald-950 font-black">⚡ Replies in 5m</span>
       </div>
       <div className="grid grid-cols-[1fr_2.4fr] gap-2">
         <a
