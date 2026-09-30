@@ -1375,7 +1375,7 @@ export function FinalCTA() {
         </p>
         
         <div className="mt-10 flex flex-col justify-center gap-4">
-          <div className="w-full flex justify-center text-[40px] animate-bounce drop-shadow-sm">
+          <div className="w-full flex justify-center text-[40px] animate-bounce">
             👇
           </div>
           <WhatsAppButton location="final_cta" className="cta-live w-full" />
