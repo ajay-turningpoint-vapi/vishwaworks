@@ -34,13 +34,13 @@ export function Hero() {
           </div>
           
           <h1 className="hero-h1 max-w-2xl font-extrabold uppercase tracking-tight text-white font-display">
-            How 1,200+ Mumbai Families Saved <span className="highlighter px-1 sm:px-2">₹15,000</span> With Our <span className="text-red-500">Aluminium Sliding Window Repair</span> Instead of Replacing Them
+            How 1,200+ Mumbai Families Saved <span className="highlighter">₹15,000</span> With Our <span className="text-red-500">Aluminium Sliding Window Repair</span> Instead of Replacing Them
           </h1>
           <p className="hero-sub mt-4 sm:mt-6 max-w-lg text-base sm:text-lg md:text-xl font-medium leading-relaxed text-primary-foreground/90">
             Are your sliding doors too heavy for you or your maid to open? We can <b>fix jammed sliding windows</b> and provide expert sliding glass door roller replacement! <b>EVEN IF</b> the tracks look ruined and local mistris said it can't be done.
           </p>
           <p className="hero-sub mt-3 sm:mt-4 max-w-lg text-base sm:text-lg md:text-xl font-semibold leading-relaxed text-primary-foreground">
-            Send us a photo on WhatsApp for a <span className="highlighter px-1 sm:px-2">Free 15-Minute Diagnosis</span>. No fix, no fee.
+            Send us a photo on WhatsApp for a <span className="highlighter">Free 15-Minute Diagnosis</span>. No fix, no fee.
           </p>
 
           <div className="mt-6 flex justify-center sm:justify-start text-[40px] animate-bounce drop-shadow-md">
