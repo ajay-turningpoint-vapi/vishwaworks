@@ -57,8 +57,8 @@ function Heading({ children, sub }: { children: React.ReactNode; sub?: string })
 export function ProblemSelector() {
   return (
     <section className="reveal-section mx-auto max-w-6xl px-4 py-20 sm:py-28">
-      <Heading sub="Does any of this sound familiar?">
-        IS YOUR WINDOW OR SLIDING DOOR <span className="highlighter px-2 text-black">DOING THIS?</span>
+      <Heading sub="You shouldn't need gym strength or both hands just to open a balcony window. Tap your headache below for an instant WhatsApp diagnosis:">
+        WHICH OF THESE DAILY HEADACHES <br className="hidden sm:block" />IS <span className="highlighter px-2 text-black">DRIVING YOU CRAZY?</span>
       </Heading>
 
       <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
@@ -66,7 +66,7 @@ export function ProblemSelector() {
           <a
             key={p.title}
             href={whatsappLink(
-              `Hi, I have a window problem in Powai. Problem: ${p.title}. I am sending a photo of the problem. Please help me understand what may be wrong.`,
+              `Hi, I have a window problem in Mumbai. Problem: ${p.title}. I am sending a photo of the problem. Please help me understand what may be wrong.`,
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export function ProblemSelector() {
             className="tap group rounded-2xl border-2 border-red-500/10 bg-card p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-xl hover:shadow-red-500/10 sm:p-5"
           >
             <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-red-500/10 text-xl sm:text-2xl transition-transform group-hover:scale-110 group-hover:bg-red-500/20">
-              ❌
+              {(p as any).icon || "❌"}
             </span>
             <h3 className="mt-3 text-sm font-black text-primary font-display uppercase tracking-tight sm:text-base">
               {p.title}
@@ -97,7 +97,7 @@ export function ProblemSelector() {
         <p className="text-lg sm:text-xl font-bold mb-8">
           <span className="highlighter px-2 text-black">That's completely fine.</span> 👇
         </p>
-        <WhatsAppButton location="problem_section" className="cta-live shadow-[var(--shadow-cta)] transform hover:scale-105 transition-transform" />
+        <WhatsAppButton location="problem_section" className="max-w-md mx-auto cta-live" />
       </div>
     </section>
   );
@@ -130,7 +130,7 @@ export function NoNeedToKnow() {
             </div>
           ))}
         </div>
-        <WhatsAppButton location="uncertainty" className="mt-10 cta-live scale-105" />
+        <WhatsAppButton location="uncertainty" className="mt-10 max-w-md mx-auto cta-live" />
       </div>
     </section>
   );
@@ -191,8 +191,8 @@ export function HowItWorks() {
         </div>
       </div>
 
-      <div className="mt-16 text-center">
-        <WhatsAppButton location="how_it_works" className="cta-live scale-105">
+      <div className="mt-16 text-center max-w-md mx-auto">
+        <WhatsAppButton location="how_it_works" className="cta-live">
           <span className="flex flex-col items-center leading-tight">
             <span className="text-[15px] sm:text-[17px] font-black tracking-tight uppercase text-white font-display">
               SEND MY PHOTO ON WHATSAPP ➔
@@ -324,7 +324,7 @@ export function Offer() {
         <div className="flex justify-center mt-6 text-[40px] animate-bounce drop-shadow-sm">
           👇
         </div>
-        <WhatsAppButton location="offer" className="mt-2 scale-105 cta-live" />
+        <WhatsAppButton location="offer" className="mt-2 max-w-md mx-auto cta-live" />
       </div>
     </section>
   );
@@ -363,6 +363,11 @@ import wsImg6 from "@/assets/workshop/sliding-window-bearing-roller-replacement.
 import wsImg7 from "@/assets/workshop/sliding-glass-door-repair-technician.jpg";
 import wsImg8 from "@/assets/workshop/sliding-window-lock-handle-hardware.jpg";
 import wsImg9 from "@/assets/workshop/window-glass-sealing-gasket-materials.jpg";
+import wsKitchenBalcony from "@/assets/workshop/unnamed.webp";
+import wsTechnicianMultiTrack from "@/assets/workshop/unnamed (1).webp";
+import wsHighriseWindowWork from "@/assets/workshop/unnamed (2).webp";
+import wsBalconySlidingTrackFix from "@/assets/workshop/unnamed (3).webp";
+import wsWhitePowderCoatedSliding from "@/assets/workshop/WhatsApp Image 2026-09-30 at 5.14.03 PM.jpeg";
 import founderImage from "@/assets/sumit-vishwakarma-founder.jpg";
 
 const galleryItems: { title: string; subtitle: string; before: string; after: string }[] = [
@@ -586,6 +591,36 @@ const workshopShots: WorkshopShotItem[] = [
     category: "sliding",
     tag: "Wooden Finish Sliding",
   },
+  {
+    label: "Vishwa Works technicians aligning high-rise sliding windows with safety net",
+    src: wsHighriseWindowWork,
+    category: "sliding",
+    tag: "On-Site Highrise",
+  },
+  {
+    label: "Balcony sliding door track repair & roller alignment in Mumbai apartment",
+    src: wsBalconySlidingTrackFix,
+    category: "sliding",
+    tag: "Balcony Door Fix",
+  },
+  {
+    label: "Technician testing smooth glide on multi-track sliding window with grill",
+    src: wsTechnicianMultiTrack,
+    category: "sliding",
+    tag: "Track & Grill Check",
+  },
+  {
+    label: "Bronze anodized sliding glass door installed for kitchen dry balcony",
+    src: wsKitchenBalcony,
+    category: "sliding",
+    tag: "Kitchen Balcony",
+  },
+  {
+    label: "White powder-coated sliding window panel with flush lock & 1-finger glide",
+    src: wsWhitePowderCoatedSliding,
+    category: "sliding",
+    tag: "Smooth Glide",
+  },
 ];
 
 export function WorkshopProof() {
@@ -626,7 +661,7 @@ export function WorkshopProof() {
     <section className="reveal-section bg-secondary/10 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <Heading sub="Tired of apps sending random guys to your home? We have a real, physical workshop in Powai. You know exactly who is fixing your window.">
-          NO FACELESS APPS. <br className="hidden sm:block" />JUST <span className="highlighter px-2 text-black">REAL PEOPLE & PROOF.</span>
+          <br className="hidden sm:block" />JUST <span className="highlighter px-2 text-black">REAL PEOPLE & PROOF.</span>
         </Heading>
 
         {/* Filter categories */}
@@ -1120,7 +1155,7 @@ export function Faq() {
   return (
     <section id="faq" className="reveal-section bg-secondary/5 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4">
-        <Heading sub="Read the answers to our most common questions before messaging us.">
+        <Heading sub="Got doubts before messaging us? Here is everything you need to know upfront:">
           YOUR QUESTIONS, <span className="highlighter px-2 text-black">ANSWERED.</span>
         </Heading>
         <Accordion
@@ -1228,12 +1263,12 @@ export function Benefits() {
       </Heading>
       <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
         {[
-          "Effortless Glide: Open heavy sliding doors or windows with just one finger.",
-          "Save on AC Bills: We seal the tracks so your expensive cooling doesn't escape.",
-          "Sleep Peacefully: No more annoying rattling sounds during monsoon winds.",
-          "Child Safety: Secure locks and sturdy tracks mean your kids are safe.",
-          "Save ₹15,000+: By replacing the rollers instead of the entire frame.",
-          "No Mess, No Stress: Professional service that doesn't leave your home looking like a construction site."
+          "The 1-Finger Glide: Push even heavy balcony sliding doors with one single finger. No gym strength needed.",
+          "Keep ₹15,000 to ₹20,000 In Your Pocket: Local mistris say 'pura window badalna padega'. We fix just the broken parts.",
+          "Cut Down Your AC Bills: Airtight sealing stops your expensive air conditioning from escaping into Mumbai heat.",
+          "Pin-Drop Quiet Nights: No more ear-piercing screeching noises or rattling glass during heavy monsoon winds.",
+          "100% Balcony & Child Safety: Snapped locks replaced with heavy-duty latches so panels never wobble or fall off.",
+          "Zero Civil Mess In Your Home: 45-minute clean doorstep repair. No broken tiles, no cement, and no construction dust."
         ].map((b, i) => {
           const [title, desc] = b.split(": ");
           return (
@@ -1246,8 +1281,11 @@ export function Benefits() {
           );
         })}
       </div>
-      <div className="mt-12 text-center">
-        <WhatsAppButton location="benefits" className="cta-live scale-105" />
+      <div className="mt-12 text-center max-w-md mx-auto">
+        <WhatsAppButton location="benefits" className="cta-live" />
+        <p className="mt-4 text-xs font-semibold text-slate-700">
+          Replies in 5 mins • 100% Doorstep Service Anywhere in Mumbai • No Fix, No Fee
+        </p>
       </div>
     </section>
   );
@@ -1416,7 +1454,7 @@ export function FinalCTA() {
 
 export function StickyMobileCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/30 bg-card/95 p-2.5 safe-bottom backdrop-blur">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/30 bg-card/95 p-2.5 safe-bottom backdrop-blur md:hidden shadow-[0_-10px_25px_-5px_rgba(37,211,102,0.4)]">
       <div className="flex items-center justify-between px-1 mb-1.5 text-[11px] font-black uppercase tracking-wider">
         <span className="text-red-700 font-black flex items-center gap-1.5">
           <span className="relative flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#521616] border border-[#782222]">
@@ -1600,10 +1638,10 @@ export function Footer() {
   );
 }
 
-const newImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/proof-photos/*.{jpeg,jpg,png}', { eager: true });
-const workshopGlob: Record<string, { default: string }> = import.meta.glob('@/assets/workshop/*.{jpeg,jpg,png}', { eager: true });
+const newImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/proof-photos/*.{jpeg,jpg,png,webp}', { eager: true });
+const workshopGlob: Record<string, { default: string }> = import.meta.glob('@/assets/workshop/*.{jpeg,jpg,png,webp}', { eager: true });
 const newVideosGlob: Record<string, { default: string }> = import.meta.glob('@/assets/videos/*.{mov,mp4}', { eager: true });
-const videoPostersGlob: Record<string, { default: string }> = import.meta.glob('@/assets/video-posters/*.{jpeg,jpg,png}', { eager: true });
+const videoPostersGlob: Record<string, { default: string }> = import.meta.glob('@/assets/video-posters/*.{jpeg,jpg,png,webp}', { eager: true });
 
 const posterMap: Record<string, string> = {};
 Object.keys(videoPostersGlob).forEach((key) => {

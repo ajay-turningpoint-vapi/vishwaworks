@@ -63,14 +63,18 @@ export function whatsappLink(message: string = whatsappMessages.default) {
 }
 
 export const problems = [
-  { title: "Sliding Glass Door Not Moving", desc: "Lifting a heavy balcony door just to walk through it? You'll ruin your back." },
-  { title: "Window Won't Slide or Stuck", desc: "Forcing it everyday? One wrong push and the glass could shatter." },
-  { title: "Window Slider Is Jammed", desc: "Trapped in a stuffy room? Or worse, unable to lock it securely at night?" },
-  { title: "Rollers & Wheels Damaged", desc: "That screeching noise isn't just annoying, it's destroying the bottom track underneath." },
-  { title: "Sliding Track Is Damaged", desc: "Bent tracks? Your expensive AC cooling is leaking out, and Mumbai dust is coming in." },
-  { title: "Lock & Latch Not Working", desc: "A faulty or stuck latch means anyone can slide it open from the outside." },
-  { title: "Handle Is Broken", desc: "Cutting your fingers or breaking your nails trying to slide a heavy panel?" },
-  { title: "Window Glass Is Broken", desc: "A massive safety hazard waiting to fall. Specially dangerous with kids around." },
+  { title: "Sliding Glass Door Not Moving", desc: "Lifting a heavy balcony door with both hands just to walk out? Ruining your back every day.", icon: "🚪" },
+  { title: "Window Won't Slide Or Jammed", desc: "Stuck halfway? Pushing with all your strength and worrying the glass panel might shatter.", icon: "🪟" },
+  { title: "Crushed Rollers & Screeching Sound", desc: "Horrible grinding noise every time you touch it. Flattened wheels are cutting into the track.", icon: "⚙️" },
+  { title: "Bent Track Or Window Jumping Off", desc: "Track is dented, warped, or full of grime. Window wobbles and jumps off the channel.", icon: "📏" },
+  { title: "Broken Lock, Latch Or Handle", desc: "Can't lock it securely at night? Or broken handles cutting your fingers every time you pull.", icon: "🔒" },
+  { title: "Cracked Or Broken Window Glass", desc: "Dangerous safety hazard waiting to fall, especially in high-rise winds and around kids.", icon: "💥" },
+  { title: "Monsoon Rain Leakage & Drafts", desc: "Water pooling on the sill during heavy Mumbai rains, or expensive AC cooling escaping.", icon: "🌧️" },
+  { title: "Loud Street Traffic & Rattling Noise", desc: "Traffic horns and construction noise keeping you awake. Single glass window rattles in the wind.", icon: "📢" },
+  { title: "Torn Mosquito Net Or Bird Menace", desc: "Mosquitoes entering your home every evening, or pigeons nesting on your balcony tracks.", icon: "🦟" },
+  { title: "Kitchen Exhaust Duct Or Ventilator", desc: "Chimney duct won't fit through the glass, or bathroom ventilator louvers need repair.", icon: "🍳" },
+  { title: "Heavy Domal Sliding Door Issues", desc: "Heavy luxury Domal panel tilted, dragging on the marble frame, or extremely stiff to slide.", icon: "🏢" },
+  { title: "Need Brand New Custom Windows", desc: "Old wooden/iron frames are rusted. Want brand new Jindal aluminium sliding windows custom fitted.", icon: "🔨" },
 ] as const;
 
 export const serviceCategories = [
@@ -122,31 +126,31 @@ export const problemOptions = [
 
 export const faqs = [
   {
-    q: "What is the cost to replace rollers and wheels on a sliding glass door or window?",
-    a: "The cost depends on the size of the panel (e.g. heavy balcony glass door vs. standard bedroom window) and the type of bearing required (heavy-duty nylon, stainless steel, or Domal tandem rollers). When you send a 5-second video on WhatsApp, we identify the exact roller type and give you an upfront, fixed price before visiting. No hidden charges.",
+    q: "A local mistri told me I must replace the whole window for ₹20,000. Is that true?",
+    a: "95% of the time, NO. When your window gets stuck or screechy, the aluminium frame inside your wall is completely fine! Only the cheap bottom nylon wheels have crushed, or dirt has clogged the track. Replacing just the wheels and bearings in 45 minutes restores 1-finger glide and saves you ₹15,000+ in cold hard cash.",
   },
   {
-    q: "How do you fix a jammed sliding window or stuck sliding glass door?",
-    a: "90% of jammed sliding windows are caused by broken roller bearings, misaligned sashes, or debris flattened into the bottom track channel. Our technicians lift the sash, remove the broken wheels, clean and realign the track, install precision heavy-duty rollers, and lubricate the system for effortless one-finger sliding — all completed in 45 minutes on-site.",
+    q: "How much will my repair cost? Are there any hidden fees?",
+    a: "Zero hidden fees. Costs depend on whether it's a standard bedroom window or a heavy 70kg balcony sliding door. When you send a 5-second video on WhatsApp, our technicians see the exact roller size and give you an upfront, fixed price before visiting. What we quote is what you pay.",
   },
   {
-    q: "Will you force me to buy expensive new windows?",
-    a: "No. Many contractors push homeowners to replace the entire window frame (costing ₹15,000+). We do the exact opposite. We specialize in hardware restoration — replacing only the worn-out rollers, tracks, locks, or glass for a fraction of the cost.",
+    q: "What if you come to my house and cannot fix the problem?",
+    a: "You pay ₹0. Zero. Nada. We operate on a strict 'No Fix, No Fee' guarantee. If our technicians cannot get your sliding window or door to glide smoothly, you do not owe us a single rupee for the visit. All the risk is on us.",
   },
   {
-    q: "I don't know what part is broken. Can I still contact you?",
-    a: "Yes! That's exactly why we use WhatsApp. You don't need to be a window expert. Just point your phone camera at the problem, record a 5-second video, and send it to us. Our technicians will diagnose it instantly.",
+    q: "I don't know what's broken or what technical words to use. How do I get help?",
+    a: "You don't need any technical words at all. Forget terms like 'tandem rollers' or 'interlock'. Just point your phone, take a 5-second video or photo of the problem, and send it to our WhatsApp. We will diagnose it and tell you exactly what's wrong within 5 minutes.",
   },
   {
-    q: "What if you come to my house and can't fix it?",
-    a: "Then you don't pay. Our 'No Fix, No Fee' guarantee means you have absolutely zero risk. If our technicians can't solve the problem, you do not pay a single rupee for the visit.",
+    q: "Will the repair make a mess, break tiles, or leave cement dust in my home?",
+    a: "Zero civil mess. We are precision hardware restoration specialists, not wall-breakers. We lift the sliding shutter, replace the worn-out rollers, service the track, and put it right back. The entire job takes 45 minutes with no broken tiles, no cement, and no dust on your furniture.",
   },
   {
-    q: "How long does the repair take? Will it make a mess in my home?",
-    a: "Most sliding window and door repairs take less than 45 minutes. Because we work directly on the sash and track hardware, there is NO civil work, NO breaking walls, and NO cement dust left in your home.",
+    q: "Which areas in Mumbai do you cover, and how quickly can you visit?",
+    a: "We provide 100% doorstep service anywhere in Mumbai — Powai, Bandra, Andheri, Worli, South Mumbai, Chembur, Ghatkopar, Goregaon, Malad, Mulund, and surrounding suburbs. Because our service vans carry heavy-duty replacement parts, we offer same-day doorstep visits. Message us early to lock in today's slot.",
   },
   {
-    q: "Do you provide sliding window and door repair near me across Mumbai?",
-    a: "Yes! We provide on-site doorstep repairs across all Mumbai residential societies and high-rises including Powai, Bandra, Andheri, Worli, South Mumbai, Ghatkopar, Chandivali, Chembur, Mulund, Goregaon, and nearby areas.",
+    q: "What if I actually need brand new windows or soundproof glass?",
+    a: "We do that too! If you are renovating or your old wooden/iron frames are completely rusted, we custom-fabricate brand new Jindal Aluminium, luxury Domal sliding systems, and acoustic soundproof DGU glass directly from our Powai workshop.",
   },
 ] as const;

@@ -31,18 +31,18 @@ export function Hero() {
               <span className="relative inline-flex h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full bg-[#e84141] shadow-[0_0_8px_rgba(232,65,65,0.8)]"></span>
             </span>
             <span className="tracking-wide sm:tracking-wider text-white font-extrabold text-[11px] sm:text-xs md:text-sm uppercase leading-tight font-sans">
-              ATTENTION MUMBAI: BEFORE YOU REPLACE YOUR JAMMED WINDOWS...
+              ATTENTION MUMBAI: STUCK SLIDING WINDOW? READ THIS.
             </span>
           </div>
           
           <h1 className="hero-h1 max-w-2xl font-extrabold uppercase tracking-tight text-white font-display">
-            How 1,200+ Mumbai Families Saved <span className="highlighter">₹15,000</span> With Our <span className="text-red-500">Aluminium Sliding Window Repair</span> Instead of Replacing Them
+            Don't Pay <span className="highlighter">₹20,000</span> For New Windows When Your Old Ones Just Need A <span className="text-red-500">45-Minute Fix</span>
           </h1>
           <p className="hero-sub mt-4 sm:mt-6 max-w-lg font-medium text-primary-foreground/90">
-            Are your sliding doors too heavy for you or your maid to open? We can <b>fix jammed sliding windows</b> and provide expert sliding glass door roller replacement! <b>EVEN IF</b> the tracks look ruined and local mistris said it can't be done.
+            Is your sliding door stuck? Does your maid need both hands just to move it 2 inches? Local mistris say: <i>"Pura window change karna padega."</i> <b>Don't believe them.</b>
           </p>
           <p className="hero-sub mt-3 sm:mt-4 max-w-lg font-semibold text-primary-foreground">
-            Send us a photo on WhatsApp for a <span className="highlighter">Free 15-Minute Diagnosis</span>. No fix, no fee.
+            We replace crushed bottom wheels with heavy-duty steel bearings so your windows glide with <span className="highlighter">One Single Finger</span>. No fix, no fee.
           </p>
 
           <div className="mt-6 flex justify-center sm:justify-start text-[40px] animate-bounce">
@@ -56,10 +56,12 @@ export function Hero() {
               className="w-full border-primary-foreground/30 bg-transparent text-primary-foreground hover:border-primary-foreground/60"
             />
           </div>
-          <div className="mt-4 mx-auto flex items-center justify-center sm:justify-start gap-3 text-xs font-medium text-primary-foreground/70">
-            <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 100% Free Quote</span>
-            <span className="w-1 h-1 rounded-full bg-primary-foreground/30"></span>
-            <span>Replies in 5 mins</span>
+          <div className="mt-4 mx-auto flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3 text-xs font-medium text-primary-foreground/75 flex-wrap">
+            <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 100% Free Diagnosis</span>
+            <span className="w-1 h-1 rounded-full bg-primary-foreground/30 hidden sm:inline-block"></span>
+            <span>⚡ Replies in 5 mins</span>
+            <span className="w-1 h-1 rounded-full bg-primary-foreground/30 hidden sm:inline-block"></span>
+            <span>✅ Zero Civil Work</span>
           </div>
 
           <div className="mt-5 rounded-xl bg-white/10 border border-white/20 p-3 text-left">
