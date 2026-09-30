@@ -1416,10 +1416,14 @@ export function FinalCTA() {
 
 export function StickyMobileCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/30 bg-card/95 p-2.5 safe-bottom backdrop-blur md:hidden shadow-[0_-10px_25px_-5px_rgba(37,211,102,0.4)]">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-whatsapp/30 bg-card/95 p-2.5 safe-bottom backdrop-blur">
       <div className="flex items-center justify-between px-1 mb-1.5 text-[11px] font-black uppercase tracking-wider">
-        <span className="text-red-700 font-black flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-red-600"></span> ⏳ LIMITED SAME-DAY SLOTS
+        <span className="text-red-700 font-black flex items-center gap-1.5">
+          <span className="relative flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#521616] border border-[#782222]">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/40 opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#e84141] shadow-[0_0_6px_rgba(232,65,65,0.9)]"></span>
+          </span>
+          <span>⏳ LIMITED SAME-DAY SLOTS</span>
         </span>
         <span className="text-emerald-950 font-black">⚡ Replies in 5m</span>
       </div>
