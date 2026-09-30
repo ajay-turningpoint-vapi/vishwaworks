@@ -35,10 +35,10 @@ export function AreaPage({
               <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
               Serving {content.areaName}, Mumbai
             </div>
-            <h1 className="font-display text-3xl font-extrabold leading-tight sm:text-5xl text-white">
+            <h1 className="hero-h1 text-white">
               {content.h1}
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-primary-foreground/85 leading-relaxed max-w-2xl">
+            <p className="hero-sub mt-4 text-base sm:text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-2xl">
               {content.intro}
             </p>
 
@@ -79,7 +79,7 @@ export function AreaPage({
         <section className="px-4 py-14 bg-background">
           <div className="mx-auto max-w-4xl">
             <div className="text-center sm:text-left">
-              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-foreground">
+              <h2 className="section-h2 text-foreground">
                 Common Window & Door Problems We Solve in {content.areaName}
               </h2>
               <p className="mt-2 text-sm sm:text-base text-muted-foreground">
@@ -147,7 +147,7 @@ export function AreaPage({
         {/* Final CTA */}
         <section className="bg-navy px-4 py-16 text-primary-foreground text-center">
           <div className="mx-auto max-w-3xl">
-            <h2 className="font-display text-2xl font-extrabold sm:text-4xl">
+            <h2 className="section-h2 text-white">
               NEED WINDOW REPAIR IN {content.areaName.toUpperCase()}?
             </h2>
             <p className="mt-3 text-base text-primary-foreground/80">

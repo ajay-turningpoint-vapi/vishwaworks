@@ -279,11 +279,17 @@
 
 @layer base {
   html {
-    font-size: 112.5%;
+    font-size: 100%;
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 48rem) {
+    html {
+      font-size: 106.25%;
+    }
   }
 
   * {
@@ -296,23 +302,129 @@
     font-family: var(--font-sans);
     -webkit-tap-highlight-color: transparent;
     -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
   }
 
+  /* Headings typography system - Inspired by selllikecrazy.co */
   h1,
   h2,
   h3,
   h4,
+  h5,
+  h6,
   .font-display {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
-    font-weight: 700 !important;
+    font-weight: 700;
+    line-height: 1.04;
+    text-transform: uppercase;
+  }
+
+  /* Hero / Main H1 */
+  h1, .hero-h1 {
+    font-size: clamp(1.95rem, 5.5vw + 0.5rem, 4.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+  }
+
+  @media (min-width: 40rem) {
+    h1, .hero-h1 {
+      font-size: 2.75rem;
+      line-height: 1.03;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    h1, .hero-h1 {
+      font-size: 3.5rem;
+      line-height: 1.02;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    h1, .hero-h1 {
+      font-size: 4.25rem;
+      line-height: 1.02;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    h1, .hero-h1 {
+      font-size: 5rem;
+      line-height: 1.01;
+    }
+  }
+
+  /* Section Titles H2 */
+  h2, .section-h2 {
+    font-size: clamp(1.65rem, 4.2vw + 0.4rem, 3.75rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 40rem) {
+    h2, .section-h2 {
+      font-size: 2.35rem;
+      line-height: 1.05;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    h2, .section-h2 {
+      font-size: 3rem;
+      line-height: 1.03;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    h2, .section-h2 {
+      font-size: 3.6rem;
+      line-height: 1.02;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    h2, .section-h2 {
+      font-size: 4.25rem;
+      line-height: 1.02;
+    }
+  }
+
+  /* Subheadings & Cards H3 */
+  h3, .card-h3 {
+    font-size: clamp(1.2rem, 2.5vw + 0.4rem, 2rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 48rem) {
+    h3, .card-h3 {
+      font-size: 1.65rem;
+      line-height: 1.1;
+    }
+  }
+
+  /* Desktop viewport height adjustments matching selllikecrazy */
+  @media (min-width: 1024px) and (max-height: 900px) {
+    .hero-h1 {
+      font-size: 3.85rem;
+    }
+  }
+  @media (min-width: 1024px) and (max-height: 820px) {
+    .hero-h1 {
+      font-size: 3.4rem;
+    }
   }
 
   .highlighter {
     background-color: theme('colors.yellow.300');
     color: theme('colors.black');
     padding: 0 0.2em;
-    
     font-weight: 900;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;

@@ -39,12 +39,12 @@ import { WhatsAppIcon } from "./icons";
 
 function Heading({ children, sub }: { children: React.ReactNode; sub?: string }) {
   return (
-    <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-4xl font-black uppercase leading-[1.25] tracking-tight text-primary font-display sm:text-6xl drop-shadow-sm pb-1">
+    <div className="mx-auto max-w-3xl text-center px-2">
+      <h2 className="section-h2 text-primary drop-shadow-sm pb-1">
         {children}
       </h2>
       {sub ? (
-        <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+        <p className="mx-auto mt-3 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground font-medium">
           {sub}
         </p>
       ) : null}
@@ -109,7 +109,7 @@ export function NoNeedToKnow() {
   return (
     <section className="reveal-section bg-primary py-16 text-primary-foreground sm:py-24">
       <div className="mx-auto max-w-2xl px-4 text-center">
-        <h2 className="text-4xl font-black uppercase leading-[1.1] tracking-tight font-display sm:text-6xl text-white">
+        <h2 className="section-h2 text-white">
           You don't need to know
           <br />
           <span className="text-accent drop-shadow-md">what's broken.</span>
@@ -274,7 +274,7 @@ export function Offer() {
     <section className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
       <div className="rounded-3xl border-4 border-red-500 bg-yellow-50/50 p-6 text-center sm:p-12 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 bg-red-600 text-white px-4 py-1.5 font-bold text-xs sm:text-sm uppercase tracking-widest rounded-bl-xl shadow-md">Risk-Free</div>
-        <h2 className="text-4xl font-black uppercase leading-[1.1] text-black font-display sm:text-6xl tracking-tight mt-4 sm:mt-0">
+        <h2 className="section-h2 text-black mt-4 sm:mt-0">
           The "No Fix, No Fee" <br className="hidden sm:block" /><span className="text-red-600 drop-shadow-sm">Iron-Clad Guarantee</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-slate-800 sm:text-[19px] font-medium">
@@ -1337,7 +1337,7 @@ export function FoundersStory() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-black uppercase text-primary-foreground font-display sm:text-4xl">
+            <h2 className="section-h2 text-primary-foreground">
               <span className="highlighter px-2 text-black">WHY I STARTED THIS</span>
             </h2>
             <div className="mt-8 space-y-6 text-[17px] leading-relaxed text-primary-foreground/90">
@@ -1366,7 +1366,7 @@ export function FinalCTA() {
   return (
     <section className="reveal-section bg-primary py-16 text-primary-foreground sm:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
-        <h2 className="text-4xl font-extrabold uppercase leading-tight sm:text-6xl font-display">
+        <h2 className="section-h2 text-white">
           STOP STRUGGLING WITH <br />
           <span className="text-accent">STUCK WINDOWS.</span>
         </h2>

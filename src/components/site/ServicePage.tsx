@@ -30,10 +30,10 @@ export function ServicePage({
             <p className="text-xs font-bold uppercase tracking-widest text-accent">
               {business.areaLine}
             </p>
-            <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+            <h1 className="hero-h1 mt-3 text-white">
               {content.h1}
             </h1>
-            <p className="mt-4 text-base text-primary-foreground/80">{content.intro}</p>
+            <p className="hero-sub mt-4 text-base sm:text-lg md:text-xl text-primary-foreground/90">{content.intro}</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <WhatsAppButton
                 location={content.locationKey}
@@ -60,7 +60,7 @@ export function ServicePage({
 
         <section className="px-4 py-12">
           <div className="mx-auto max-w-3xl">
-            <h2 className="font-display text-2xl font-extrabold">
+            <h2 className="section-h2 text-foreground">
               Signs you may need this repair
             </h2>
             <ul className="mt-5 space-y-3">
@@ -109,7 +109,7 @@ export function ServicePage({
 
         <section className="bg-navy px-4 py-14 text-primary-foreground">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+            <h2 className="section-h2 text-white">
               GOT A WINDOW PROBLEM? SHOW US. DON'T GUESS.
             </h2>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
