@@ -84,7 +84,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Window repair in Powai — sliding windows, aluminium windows, rollers, tracks, locks, handles and glass. Send a photo on WhatsApp.",
       },
-      { name: "theme-color", content: "#0B1F33" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: business.name },
       { property: "og:image", content: `${business.siteUrl}/og-image.jpg` },
@@ -96,6 +95,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
       },
       {
         rel: "stylesheet",
@@ -120,14 +125,11 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#0B1F33" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <HeadContent />
         <noscript>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
           />
         </noscript>
         {/* Google tag (gtag.js) - High-Performance Interaction & Engagement Loader */}
@@ -178,7 +180,7 @@ function RootShell({ children }: { children: ReactNode }) {
           }}
         />
       </head>
-      <body className="bg-primary text-foreground">
+      <body>
         {children}
         <Scripts />
       </body>
