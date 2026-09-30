@@ -420,12 +420,14 @@ function BeforeAfterSlider({ beforeImage, afterImage, label }: { beforeImage: st
   return (
     <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border group shadow-sm bg-secondary">
       {/* Base Image: After */}
-      <img src={afterImage} alt={`After ${label}`} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={afterImage} alt={`After ${label}`} width={640} height={480} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
       
       {/* Top Image: Before (Clipped) */}
       <img 
         src={beforeImage} 
         alt={`Before ${label}`} 
+        width={640}
+        height={480}
         loading="lazy" 
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
@@ -677,6 +679,8 @@ export function WorkshopProof() {
                 <img
                   src={shot.src}
                   alt={shot.label}
+                  width={400}
+                  height={400}
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
@@ -734,6 +738,8 @@ export function WorkshopProof() {
                 <img
                   src={shot.src}
                   alt={shot.label}
+                  width={400}
+                  height={400}
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -779,6 +785,8 @@ export function WorkshopProof() {
                 <img
                   src={lightboxShot.src}
                   alt={lightboxShot.label}
+                  width={800}
+                  height={600}
                   className="max-h-[70vh] max-w-full object-contain"
                 />
               </div>
@@ -1314,6 +1322,8 @@ export function FoundersStory() {
             <img 
               src={founderImage} 
               alt={`${business.founder} - Founder of ${business.name}`} 
+              width={320}
+              height={320}
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover object-top grayscale transition-all duration-700 hover:grayscale-0"
@@ -1636,6 +1646,8 @@ export function RealWorkGallery() {
             <img 
               src={asset.poster} 
               alt={`Sliding window repair work in Mumbai proof ${i + 1}`} 
+              width={320}
+              height={420}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none" 
               loading="lazy" 
               decoding="async" 
@@ -1726,6 +1738,8 @@ export function RealWorkGallery() {
               <img 
                 src={selectedAsset.url} 
                 alt="Enlarged proof" 
+                width={800}
+                height={600}
                 className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
               />
             )}

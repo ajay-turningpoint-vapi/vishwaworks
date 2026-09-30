@@ -141,12 +141,16 @@
 @keyframes section-reveal {
   from {
     opacity: 0.3;
-    transform: translateY(16px);
+    transform: translate3d(0, 16px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
+}
+
+.reveal-section {
+  will-change: transform, opacity;
 }
 
 @supports (animation-timeline: view()) {

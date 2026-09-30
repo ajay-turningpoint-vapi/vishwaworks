@@ -87,7 +87,7 @@ export function Hero() {
               onClick={() => track("google_profile_click", { location: "hero" })}
               className="mt-4 mx-auto flex w-fit items-center justify-center gap-2 sm:gap-3 rounded-full bg-gradient-to-b from-gray-50 to-gray-200 px-4 py-2 sm:px-6 sm:py-2.5 shadow-md transition-transform hover:scale-[1.02]"
             >
-              <img src={wreathLeft} alt="" className="h-6 w-auto sm:h-8 opacity-80" aria-hidden="true" />
+              <img src={wreathLeft} alt="" width={32} height={32} className="h-6 w-auto sm:h-8 opacity-80" aria-hidden="true" />
               <div className="flex text-yellow-500 drop-shadow-sm">
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
@@ -98,7 +98,7 @@ export function Hero() {
               <span className="text-[15px] sm:text-[18px] font-black uppercase tracking-tight text-gray-900 font-display pt-0.5">
                 4.9 OUT OF 120+ REVIEWS
               </span>
-              <img src={wreathRight} alt="" className="h-6 w-auto sm:h-8 opacity-80" aria-hidden="true" />
+              <img src={wreathRight} alt="" width={32} height={32} className="h-6 w-auto sm:h-8 opacity-80" aria-hidden="true" />
             </a>
           </div>
 
