@@ -235,7 +235,7 @@ export function Services() {
                         strokeWidth={2.5}
                       />
                     </span>
-                    <h3 className="mt-4 text-[18px] font-black text-primary leading-tight tracking-wide">{s.name}</h3>
+                    <h4 className="mt-4 text-[18px] font-black text-primary leading-tight tracking-wide font-display">{s.name}</h4>
                     <p className="mt-2.5 flex-1 text-[14px] sm:text-[15px] font-medium leading-relaxed text-slate-600">
                       {s.desc}
                     </p>
@@ -1048,7 +1048,7 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
             </svg>
           ))}
         </div>
-        <h4 className="text-[18px] font-bold text-foreground mb-2 leading-tight">{review.title}</h4>
+        <h3 className="text-[18px] font-bold text-foreground mb-2 leading-tight font-display">{review.title}</h3>
         <p className="text-[14px] text-muted-foreground leading-relaxed line-clamp-4">{review.text}</p>
       </div>
       <div className="mt-4 flex justify-end">

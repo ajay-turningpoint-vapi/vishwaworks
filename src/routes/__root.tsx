@@ -139,8 +139,7 @@ function RootShell({ children }: { children: ReactNode }) {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
           />
         </noscript>
-        {/* Google tag (gtag.js) */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${business.googleAnalyticsId}`} />
+        {/* Google tag (gtag.js) - High-Performance Deferred Loader */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -149,6 +148,24 @@ function RootShell({ children }: { children: ReactNode }) {
               gtag('js', new Date());
               gtag('config', '${business.googleAnalyticsId}', {
                 page_path: window.location.pathname,
+              });
+
+              function loadGA() {
+                if (window._gaLoaded) return;
+                window._gaLoaded = true;
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=${business.googleAnalyticsId}';
+                document.head.appendChild(s);
+              }
+
+              if ('requestIdleCallback' in window) {
+                requestIdleCallback(function() { setTimeout(loadGA, 1500); });
+              } else {
+                setTimeout(loadGA, 2000);
+              }
+              ['pointerdown', 'scroll', 'touchstart', 'keydown'].forEach(function(e) {
+                window.addEventListener(e, loadGA, { once: true, passive: true });
               });
             `,
           }}

@@ -11,7 +11,7 @@ export function Header() {
           <span className="font-display text-lg sm:text-xl font-extrabold text-primary tracking-tight">
             {business.name}
           </span>
-          <span className="text-[11px] font-semibold text-emerald-600">
+          <span className="text-[11px] font-bold text-emerald-900">
             ⚡ Same-Day Mumbai Service
           </span>
         </a>
