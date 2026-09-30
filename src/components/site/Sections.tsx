@@ -162,7 +162,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="reveal-section mx-auto max-w-5xl px-4 py-20 sm:py-28 bg-secondary/5 rounded-3xl my-10 border border-border/50">
+    <section className="reveal-section mx-auto max-w-5xl px-4 py-20 sm:py-28 bg-card rounded-3xl my-10 border border-border/80 shadow-sm">
       <Heading>
         Get help without knowing <span className="highlighter px-2 text-black">fancy technical words.</span>
       </Heading>
@@ -181,8 +181,8 @@ export function HowItWorks() {
                   </span>
                 </span>
                 <div className="pt-2 sm:pt-3">
-                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-primary font-display uppercase">{s.t}</h3>
-                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-800 font-medium">{s.d}</p>
+                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-foreground font-display uppercase">{s.t}</h3>
+                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-foreground/90 font-medium">{s.d}</p>
                 </div>
               </li>
             ))}
@@ -1215,7 +1215,7 @@ export function UsVsThem() {
 
 export function Benefits() {
   return (
-    <section className="reveal-section mx-auto max-w-3xl px-4 py-20 sm:py-28 bg-secondary/5 rounded-3xl my-10 border border-border/50">
+    <section className="reveal-section mx-auto max-w-3xl px-4 py-20 sm:py-28 bg-card rounded-3xl my-10 border border-border/80 shadow-sm">
       <Heading sub="We don't just fix windows and doors. We restore your peace of mind.">
         What happens after a repair?
       </Heading>
@@ -1231,9 +1231,9 @@ export function Benefits() {
           const [title, desc] = b.split(": ");
           return (
             <div key={i} className="flex gap-4 items-start group">
-              <Check className="mt-0.5 h-6 w-6 shrink-0 text-accent drop-shadow-sm group-hover:scale-110 transition-transform" strokeWidth={3} />
-              <p className="text-[16px] leading-relaxed text-slate-700">
-                <strong className="font-bold text-slate-900">{title}:</strong> {desc}
+              <Check className="mt-0.5 h-6 w-6 shrink-0 text-emerald-700 drop-shadow-sm group-hover:scale-110 transition-transform" strokeWidth={3} />
+              <p className="text-[16px] leading-relaxed text-foreground/90 font-medium">
+                <strong className="font-bold text-foreground">{title}:</strong> {desc}
               </p>
             </div>
           );
