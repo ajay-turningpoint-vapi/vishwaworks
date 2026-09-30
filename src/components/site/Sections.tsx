@@ -44,7 +44,7 @@ function Heading({ children, sub }: { children: React.ReactNode; sub?: string })
         {children}
       </h2>
       {sub ? (
-        <p className="mx-auto mt-3 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground font-medium">
+        <p className="section-sub mx-auto mt-3 max-w-xl text-muted-foreground font-medium">
           {sub}
         </p>
       ) : null}
@@ -91,7 +91,7 @@ export function ProblemSelector() {
       </div>
 
       <div className="mt-16 text-center flex flex-col items-center">
-        <h3 className="text-xl sm:text-2xl font-black uppercase text-primary font-display mb-2">
+        <h3 className="card-h3 text-primary font-display mb-2">
           Not sure what the exact problem is?
         </h3>
         <p className="text-lg sm:text-xl font-bold mb-8">
@@ -220,7 +220,7 @@ export function Services() {
         <div className="mt-16 space-y-20">
           {serviceCategories.map((category) => (
             <div key={category.category}>
-              <h3 className="mb-8 text-[26px] sm:text-[32px] font-black uppercase tracking-tight text-primary font-display border-b-4 border-accent pb-2 inline-block drop-shadow-sm">
+              <h3 className="card-h3 mb-6 text-primary font-display border-b-4 border-accent pb-2 inline-block drop-shadow-sm">
                 {category.category}
               </h3>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -477,7 +477,7 @@ export function WorkGallery() {
         {galleryItems.map((item) => (
           <div key={item.title} className="flex flex-col gap-3">
             <div className="text-center">
-              <h3 className="text-2xl sm:text-3xl font-black uppercase text-primary font-display tracking-wide">{item.title}</h3>
+              <h3 className="card-h3 text-primary font-display tracking-wide">{item.title}</h3>
               <p className="mt-1 text-sm sm:text-base text-slate-800 font-medium">{item.subtitle}</p>
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 w-full mt-3">
@@ -1264,9 +1264,9 @@ export function Disqualifiers() {
           {/* Who This Is For Card */}
           <div className="rounded-3xl border-[3px] border-[#22c55e]/40 bg-white p-8 shadow-xl relative overflow-hidden flex flex-col">
              <div className="absolute top-0 right-0 w-24 h-24 bg-[#22c55e]/10 rounded-bl-[100px] -z-10"></div>
-             <h3 className="text-3xl sm:text-4xl font-black uppercase text-primary mb-8 font-display tracking-tight flex items-center gap-3 border-b-2 border-border/50 pb-4">
-               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#22c55e]/20 shrink-0">
-                 <Check className="h-7 w-7 text-[#16a34a]" strokeWidth={3} />
+             <h3 className="card-h3 text-primary mb-6 font-display flex items-center gap-3 border-b-2 border-border/50 pb-3">
+               <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#22c55e]/20 shrink-0">
+                 <Check className="h-6 w-6 sm:h-7 sm:w-7 text-[#16a34a]" strokeWidth={3} />
                </span>
                WHO IT'S FOR
              </h3>
@@ -1289,9 +1289,9 @@ export function Disqualifiers() {
           {/* Who This Is NOT For Card */}
           <div className="rounded-3xl border-[3px] border-[#ef4444]/40 bg-white p-8 shadow-xl relative overflow-hidden flex flex-col">
              <div className="absolute top-0 right-0 w-24 h-24 bg-[#ef4444]/10 rounded-bl-[100px] -z-10"></div>
-             <h3 className="text-3xl sm:text-4xl font-black uppercase text-primary mb-8 font-display tracking-tight flex items-center gap-3 border-b-2 border-border/50 pb-4">
-               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ef4444]/20 shrink-0">
-                 <X className="h-7 w-7 text-[#dc2626]" strokeWidth={3} />
+             <h3 className="card-h3 text-primary mb-6 font-display flex items-center gap-3 border-b-2 border-border/50 pb-3">
+               <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#ef4444]/20 shrink-0">
+                 <X className="h-6 w-6 sm:h-7 sm:w-7 text-[#dc2626]" strokeWidth={3} />
                </span>
                WHO IT'S NOT FOR
              </h3>
