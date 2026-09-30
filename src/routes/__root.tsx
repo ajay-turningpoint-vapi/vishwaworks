@@ -93,6 +93,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
+        rel: "preload",
+        as: "style",
+        href: appCss,
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -101,11 +106,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "preconnect",
         href: "https://fonts.gstatic.com",
         crossOrigin: "anonymous",
-      },
-      {
-        rel: "preload",
-        as: "style",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap",
       },
       {
         rel: "stylesheet",
@@ -139,7 +139,7 @@ function RootShell({ children }: { children: ReactNode }) {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
           />
         </noscript>
-        {/* Google tag (gtag.js) - High-Performance Deferred Loader */}
+        {/* Google tag (gtag.js) - High-Performance Interaction & Engagement Loader */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -159,13 +159,13 @@ function RootShell({ children }: { children: ReactNode }) {
                 document.head.appendChild(s);
               }
 
-              if ('requestIdleCallback' in window) {
-                requestIdleCallback(function() { setTimeout(loadGA, 1500); });
-              } else {
-                setTimeout(loadGA, 2000);
-              }
-              ['pointerdown', 'scroll', 'touchstart', 'keydown'].forEach(function(e) {
+              var interactionEvents = ['pointerdown', 'scroll', 'touchstart', 'keydown', 'click'];
+              interactionEvents.forEach(function(e) {
                 window.addEventListener(e, loadGA, { once: true, passive: true });
+              });
+
+              window.addEventListener('load', function() {
+                setTimeout(loadGA, 7500);
               });
             `,
           }}
