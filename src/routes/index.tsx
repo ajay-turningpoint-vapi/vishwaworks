@@ -1,31 +1,28 @@
-import { lazy, Suspense } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import {
-  StickyMobileCTA,
+  Faq,
+  FinalCTA,
+  Footer,
+  HowItWorks,
+  NoNeedToKnow,
+  Offer,
   ProblemSelector,
-  FoundersStory,
+  Reviews,
+  ServiceAreas,
+  Services,
+  StickyMobileCTA,
+  WhyChooseUs,
+  WorkGallery,
+  WorkshopProof,
   UsVsThem,
+  Disqualifiers,
+  Benefits,
+  FoundersStory,
+  RealWorkGallery,
 } from "@/components/site/Sections";
-
-const Offer = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Offer })));
-const Benefits = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Benefits })));
-const HowItWorks = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.HowItWorks })));
-const NoNeedToKnow = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.NoNeedToKnow })));
-const RealWorkGallery = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.RealWorkGallery })));
-const Reviews = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Reviews })));
-const WorkGallery = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.WorkGallery })));
-const Services = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Services })));
-const WhyChooseUs = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.WhyChooseUs })));
-const WorkshopProof = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.WorkshopProof })));
-const Disqualifiers = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Disqualifiers })));
-const ServiceAreas = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.ServiceAreas })));
-const Faq = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Faq })));
-const FinalCTA = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.FinalCTA })));
-const Footer = lazy(() => import("@/components/site/Sections").then((m) => ({ default: m.Footer })));
-
 import { faqs } from "@/config/business";
 import { business } from "@/config/business";
 import heroVideo from "@/assets/hero.mp4";
@@ -124,31 +121,29 @@ function Index() {
         <FoundersStory />
         <UsVsThem />
         
-        <Suspense fallback={null}>
-          {/* Phase 2: The Godfather Offer & Solution */}
-          <Offer />
-          <Benefits />
-          <HowItWorks />
-          <NoNeedToKnow />
+        {/* Phase 2: The Godfather Offer & Solution */}
+        <Offer />
+        <Benefits />
+        <HowItWorks />
+        <NoNeedToKnow />
 
-          {/* Phase 3: Avalanche of Proof */}
-          <RealWorkGallery />
-          <Reviews />
-          <WorkGallery />
+        {/* Phase 3: Avalanche of Proof */}
+        <RealWorkGallery />
+        <Reviews />
+        <WorkGallery />
 
-          {/* Phase 4: Logical Justification & Takeaway */}
-          <Services />
-          <WhyChooseUs />
-          <WorkshopProof />
-          <Disqualifiers />
-          
-          {/* Phase 5: Closing */}
-          <ServiceAreas />
-          <Faq />
-          <FinalCTA />
-          <Footer />
-        </Suspense>
+        {/* Phase 4: Logical Justification & Takeaway */}
+        <Services />
+        <WhyChooseUs />
+        <WorkshopProof />
+        <Disqualifiers />
+        
+        {/* Phase 5: Closing */}
+        <ServiceAreas />
+        <Faq />
+        <FinalCTA />
       </main>
+      <Footer />
       <StickyMobileCTA />
     </>
   );
