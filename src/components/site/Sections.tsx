@@ -182,7 +182,7 @@ export function HowItWorks() {
                 </span>
                 <div className="pt-2 sm:pt-3">
                   <h3 className="text-xl sm:text-2xl font-black tracking-tight text-foreground font-display uppercase">{s.t}</h3>
-                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-foreground/90 font-medium">{s.d}</p>
+                  <p className="mt-2 text-[15px] sm:text-[17px] leading-relaxed text-slate-900 font-medium">{s.d}</p>
                 </div>
               </li>
             ))}
@@ -1232,8 +1232,8 @@ export function Benefits() {
           return (
             <div key={i} className="flex gap-4 items-start group">
               <Check className="mt-0.5 h-6 w-6 shrink-0 text-emerald-700 drop-shadow-sm group-hover:scale-110 transition-transform" strokeWidth={3} />
-              <p className="text-[16px] leading-relaxed text-foreground/90 font-medium">
-                <strong className="font-bold text-foreground">{title}:</strong> {desc}
+              <p className="text-[16px] leading-relaxed text-slate-900 font-medium">
+                <strong className="font-bold text-slate-950">{title}:</strong> {desc}
               </p>
             </div>
           );
