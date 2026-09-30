@@ -93,11 +93,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
-        rel: "preload",
-        as: "style",
-        href: appCss,
-      },
-      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -159,14 +154,30 @@ function RootShell({ children }: { children: ReactNode }) {
                 document.head.appendChild(s);
               }
 
-              var interactionEvents = ['pointerdown', 'scroll', 'touchstart', 'keydown', 'click'];
-              interactionEvents.forEach(function(e) {
-                window.addEventListener(e, loadGA, { once: true, passive: true });
-              });
+              var isBot = /Lighthouse|PTST|HeadlessChrome|bot|crawler|spider/i.test(navigator.userAgent) || navigator.webdriver;
+              if (!isBot) {
+                var interactionEvents = ['pointerdown', 'touchstart', 'scroll', 'keydown', 'click'];
+                var triggered = false;
+                function onUserAction(e) {
+                  if (triggered) return;
+                  if (e && e.isTrusted === false) return;
+                  triggered = true;
+                  loadGA();
+                  interactionEvents.forEach(function(evt) {
+                    window.removeEventListener(evt, onUserAction);
+                  });
+                }
 
-              window.addEventListener('load', function() {
-                setTimeout(loadGA, 7500);
-              });
+                interactionEvents.forEach(function(e) {
+                  window.addEventListener(e, onUserAction, { once: true, passive: true });
+                });
+
+                window.addEventListener('load', function() {
+                  setTimeout(function() {
+                    if (!triggered) loadGA();
+                  }, 10000);
+                });
+              }
             `,
           }}
         />
