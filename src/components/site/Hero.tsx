@@ -25,12 +25,14 @@ export function Hero() {
     <section id="top" className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pt-6 pb-12 sm:px-5 sm:py-16 md:grid-cols-2 md:gap-16 md:py-24">
         <div>
-          <div className="mb-3 sm:mb-6 inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-red-500/20 px-2.5 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wide text-red-300 backdrop-blur-sm border border-red-500/40 max-w-full text-left">
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2.5 sm:gap-3 rounded-full bg-black px-3.5 py-1.5 sm:px-4 sm:py-2 border border-white/15 shadow-xl max-w-full text-left">
+            <span className="relative flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-full bg-[#521616] border border-[#782222]">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/30 opacity-75"></span>
+              <span className="relative inline-flex h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full bg-[#e84141] shadow-[0_0_8px_rgba(232,65,65,0.8)]"></span>
             </span>
-            <span className="tracking-wide text-white font-black text-[11px] sm:text-xs leading-tight">⚠️ ATTENTION MUMBAI: BEFORE YOU REPLACE YOUR JAMMED WINDOWS...</span>
+            <span className="tracking-wide sm:tracking-wider text-white font-extrabold text-[11px] sm:text-xs md:text-sm uppercase leading-tight font-sans">
+              ATTENTION MUMBAI: BEFORE YOU REPLACE YOUR JAMMED WINDOWS...
+            </span>
           </div>
           
           <h1 className="hero-h1 max-w-2xl font-extrabold uppercase tracking-tight text-white font-display">
