@@ -249,6 +249,7 @@ export function Services() {
                         track("service_clicked", { service: s.name });
                         track("whatsapp_click", { location: "services" });
                       }}
+                      aria-label={`Get free estimate for ${s.name} on WhatsApp`}
                       className="mt-6 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 text-[14px] sm:text-[15px] font-black tracking-wide text-white tap shadow-[var(--shadow-cta)] hover:brightness-105 transition-all font-display uppercase"
                     >
                       <WhatsAppIcon className="h-4 w-4 text-white fill-current shrink-0" />

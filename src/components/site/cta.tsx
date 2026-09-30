@@ -23,18 +23,21 @@ export function WhatsAppButton({
   message = whatsappMessages.default,
   className,
   variant = "solid",
+  ariaLabel,
 }: {
   location: string;
   children?: ReactNode;
   message?: string;
   className?: string;
   variant?: "solid" | "outline";
+  ariaLabel?: string;
 }) {
   return (
     <a
       href={whatsappLink(message)}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={ariaLabel || "Contact Vishwa Works on WhatsApp for Free Window Repair Diagnosis"}
       onClick={() => track("whatsapp_click", { location })}
       className={cn(
         base,
@@ -61,15 +64,18 @@ export function CallButton({
   ),
   className,
   variant = "outline",
+  ariaLabel,
 }: {
   location: string;
   children?: ReactNode;
   className?: string;
   variant?: "outline" | "solid";
+  ariaLabel?: string;
 }) {
   return (
     <a
       href={business.phoneHref}
+      aria-label={ariaLabel || `Call Vishwa Works Window Repair at ${business.phone}`}
       onClick={() => track("call_click", { location })}
       className={cn(
         base,
