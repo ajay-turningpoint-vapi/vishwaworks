@@ -7,6 +7,7 @@ import { business } from "@/config/business";
 
 export type ServicePageContent = {
   h1: string;
+  title?: string;
   intro: string;
   signs: readonly string[];
   photoTip: string;
@@ -38,7 +39,7 @@ export function ServicePage({
               <WhatsAppButton
                 location={content.locationKey}
                 message={content.whatsappMessage}
-                ariaLabel={`Get free diagnosis for ${content.title} on WhatsApp`}
+                ariaLabel={`Get free diagnosis for ${content.title || content.h1} on WhatsApp`}
                 className="cta-live"
               >
                 <span className="flex flex-col items-center leading-tight">
@@ -83,7 +84,7 @@ export function ServicePage({
                 <WhatsAppButton
                   location={`${content.locationKey}_photo_tip`}
                   message={content.whatsappMessage}
-                  ariaLabel={`Get free diagnosis for ${content.title} on WhatsApp`}
+                  ariaLabel={`Get free diagnosis for ${content.title || content.h1} on WhatsApp`}
                   className="cta-live"
                 >
                   <span className="flex flex-col items-center leading-tight">
@@ -116,7 +117,7 @@ export function ServicePage({
               <WhatsAppButton
                 location={`${content.locationKey}_final`}
                 message={content.whatsappMessage}
-                ariaLabel={`Get free diagnosis for ${content.title} on WhatsApp`}
+                ariaLabel={`Get free diagnosis for ${content.title || content.h1} on WhatsApp`}
               />
               <CallButton location={`${content.locationKey}_final`} />
             </div>

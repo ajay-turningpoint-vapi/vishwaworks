@@ -498,12 +498,17 @@ function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    const touch = e.touches[0];
+    if (touch) {
+      touchStartX.current = touch.clientX;
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+    const touchEndX = touch.clientX;
     const diff = touchStartX.current - touchEndX;
     if (Math.abs(diff) > 40) {
       if (diff > 0) next();
@@ -1534,7 +1539,10 @@ Object.keys(allImagesGlob).forEach((key) => {
   const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
   if (filename.startsWith('poster-')) {
     const videoKey = filename.replace('poster-', '');
-    posterMap[videoKey] = allImagesGlob[key].default;
+    const item = allImagesGlob[key];
+    if (item) {
+      posterMap[videoKey] = item.default;
+    }
   }
 });
 
