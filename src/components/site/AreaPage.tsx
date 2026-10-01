@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
-import { Faq, Footer, Reviews, ServiceAreas, Services, StickyMobileCTA, WhyChooseUs, WorkshopProof } from "@/components/site/Sections";
+import { Faq, Footer, Reviews, ServiceAreas, Services, StickyMobileCTA, WhyChooseUs, WorkGallery } from "@/components/site/Sections";
 import { CallButton, WhatsAppButton } from "@/components/site/cta";
 import { business, whatsappLink } from "@/config/business";
 import { CheckCircle2, ShieldCheck, Clock, Wrench, ArrowRight } from "lucide-react";
@@ -140,7 +140,7 @@ export function AreaPage({
         <Services />
         <WhyChooseUs />
         <Reviews />
-        <WorkshopProof />
+        <WorkGallery />
         <ServiceAreas />
         <Faq />
 

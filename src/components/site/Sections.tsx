@@ -16,6 +16,7 @@ import {
   Check,
   X,
   Play,
+  MapPin,
 } from "lucide-react";
 import {
   Accordion,
@@ -332,140 +333,253 @@ export function Offer() {
 
 /* ---------------- 11 + 12. PROOF ---------------- */
 
-const galleryStages = ["Before", "During", "After"] as const;
-import rollerBefore from "@/assets/gallery/sliding-window-roller-repair-before.jpg";
-import rollerDuring from "@/assets/gallery/sliding-window-roller-repair-during.jpg";
-import rollerAfter from "@/assets/gallery/sliding-window-roller-repair-after.jpg";
-import trackBefore from "@/assets/gallery/sliding-glass-door-track-repair-before.jpg";
-import trackDuring from "@/assets/gallery/sliding-glass-door-track-repair-during.jpg";
-import trackAfter from "@/assets/gallery/sliding-glass-door-track-repair-after.jpg";
-import glassBefore from "@/assets/gallery/sliding-window-glass-replacement-before.jpg";
-import glassDuring from "@/assets/gallery/sliding-window-glass-replacement-during.jpg";
-import glassAfter from "@/assets/gallery/sliding-window-glass-replacement-after.jpg";
-import meshBefore from "@/assets/gallery/balcony-mosquito-pigeon-net-before.jpg";
-import meshAfter from "@/assets/gallery/balcony-mosquito-pigeon-net-after.jpg";
-import lockBefore from "@/assets/gallery/sliding-window-lock-repair-before.jpg";
-import lockAfter from "@/assets/gallery/sliding-window-lock-repair-after.jpg";
-import soundproofBefore from "@/assets/gallery/soundproof-window-glass-upgrade-before.jpg";
-import soundproofAfter from "@/assets/gallery/soundproof-window-glass-upgrade-after.jpg";
+import imgLockHandleKey from "@/assets/images/real-soundproof-domal-sliding.webp";
+import imgKitchenDuct1 from "@/assets/images/real-kitchen-window-exhaust-1.webp";
+import imgKitchenWorkshopProof05 from "@/assets/images/sliding-window-workshop-proof-05.webp";
+import imgGlassPartition from "@/assets/images/real-office-glass-partition.webp";
+import imgPigeonNet1 from "@/assets/images/real-balcony-pigeon-net-1.webp";
+import imgBalconyNet2 from "@/assets/images/real-balcony-pigeon-net-2.webp";
+import imgBalconyGrillBars from "@/assets/images/real-balcony-railing-grill-bars.webp";
+import imgInvisibleGrill1 from "@/assets/images/real-invisible-safety-grill-1.webp";
+import imgInvisibleGrill2 from "@/assets/images/real-invisible-safety-grill-2.webp";
+import imgInvisibleGrill3 from "@/assets/images/real-invisible-safety-grill-3.webp";
+import imgBalconyViewNet from "@/assets/images/real-highrise-balcony-net-view.webp";
+import imgLivingRoomSlider1 from "@/assets/images/real-living-room-sliding-window-1.webp";
+import imgLivingRoomSlider2 from "@/assets/images/real-living-room-sliding-window-2.webp";
+import imgWindowHandleLatch from "@/assets/images/real-broken-window-handle.webp";
+import imgBalconyGlider from "@/assets/images/real-balcony-sliding-glide.webp";
 
-import wsSkylineView from "@/assets/workshop/mumbai-highrise-sliding-window-repair.jpg";
-import wsLargeInstallation from "@/assets/workshop/aluminium-sliding-partition-installation.jpg";
-import wsWorkshopShelf from "@/assets/workshop/sliding-window-spare-parts-workshop.jpg";
-import wsCornerWindow from "@/assets/workshop/corner-sliding-window-repair-mumbai.jpg";
-import wsFinishedCloseup from "@/assets/workshop/domal-sliding-window-glide-closeup.jpg";
-import wsImg1 from "@/assets/workshop/sliding-window-repair-workshop-parts.jpg";
-import wsImg2 from "@/assets/workshop/aluminium-sliding-track-cutting-tools.jpg";
-import wsImg3 from "@/assets/workshop/balcony-sliding-door-hardware-repairs.jpg";
-import wsImg4 from "@/assets/workshop/custom-window-modification-workshop.jpg";
-import wsImg5 from "@/assets/workshop/aluminium-frame-fabrication-mumbai.jpg";
-import wsImg6 from "@/assets/workshop/sliding-window-bearing-roller-replacement.jpg";
-import wsImg7 from "@/assets/workshop/sliding-glass-door-repair-technician.jpg";
-import wsImg8 from "@/assets/workshop/sliding-window-lock-handle-hardware.jpg";
-import wsImg9 from "@/assets/workshop/window-glass-sealing-gasket-materials.jpg";
-import wsKitchenBalcony from "@/assets/workshop/unnamed.webp";
-import wsTechnicianMultiTrack from "@/assets/workshop/unnamed (1).webp";
-import wsHighriseWindowWork from "@/assets/workshop/unnamed (2).webp";
-import wsBalconySlidingTrackFix from "@/assets/workshop/unnamed (3).webp";
-import wsWhitePowderCoatedSliding from "@/assets/workshop/WhatsApp Image 2026-09-30 at 5.14.03 PM.jpeg";
-import founderImage from "@/assets/sumit-vishwakarma-founder.jpg";
+import imgOfficePartition1 from "@/assets/images/real-office-partition-view-1.webp";
+import imgOfficePartition2 from "@/assets/images/real-office-partition-view-2.webp";
+import imgOfficePartition3 from "@/assets/images/real-office-partition-view-3.webp";
 
-const galleryItems: { title: string; subtitle: string; before: string; after: string }[] = [
+import wsWorkshopShelf from "@/assets/images/sliding-window-spare-parts-workshop.jpg";
+import wsFinishedCloseup from "@/assets/images/domal-sliding-window-glide-closeup.jpg";
+import wsImg6 from "@/assets/images/sliding-window-bearing-roller-replacement.jpg";
+import imgSoundproofDomal from "@/assets/images/real-soundproof-domal-sliding.webp";
+import founderImage from "@/assets/images/sumit-vishwakarma-founder.jpg";
+
+interface RealWorkProject {
+  title: string;
+  category: string;
+  location: string;
+  description: string;
+  images: string[];
+  highlights: string[];
+}
+
+const realWorkProjects: RealWorkProject[] = [
   {
-    title: "Stuck Window ➔ Slides with 1 Finger",
-    subtitle: "Cracked nylon roller & grimy track replaced with heavy-duty brass ball-bearings",
-    before: rollerBefore,
-    after: rollerAfter,
+    title: "Heavy Balcony Sliding Windows & Multi-Track Doors",
+    category: "Balcony Sliders",
+    location: "Powai & Bandra High-Rise",
+    description: "Real repair and roller realignment for heavy multi-track sliding balcony doors in Mumbai high-rises. Restores effortless 1-finger glide and eliminates track grinding.",
+    images: [
+      imgLivingRoomSlider1,
+      imgLivingRoomSlider2,
+      imgBalconyGlider,
+    ],
+    highlights: ["Smooth 1-Finger Glide", "Domal & Euro Track Alignment", "Zero Rattle In High Wind"],
   },
   {
-    title: "Broken Lock & Handle ➔ Smooth Crescent Lock",
-    subtitle: "Snapped, loose lock replaced with premium black powder-coated aluminium sliding latch",
-    before: lockBefore,
-    after: lockAfter,
+    title: "Soundproof Domal & Double-Glazed (DGU) Windows",
+    category: "Soundproof & Domal",
+    location: "Bandra, Worli & JVLR High-Rises",
+    description: "Heavy Domal 27mm & 40mm sliding profiles fitted with double-glazed acoustic laminated glass (DGU) and EPDM weather gaskets. Cuts outside traffic horns and metro noise by up to 80%.",
+    images: [
+      imgSoundproofDomal,
+      wsFinishedCloseup,
+    ],
+    highlights: ["80% Traffic Noise Reduction", "Double-Glazed (DGU) Glass", "Domal Heavy Profiles"],
   },
   {
-    title: "Bent Aluminium Track ➔ Restored & Smooth",
-    subtitle: "Dented, dust-clogged sliding track restored & leveled with stainless aluminium cap",
-    before: trackBefore,
-    after: trackAfter,
+    title: "Office Glass Partitions & Sliding Commercial Cabins",
+    category: "Office & Cabins",
+    location: "BKC, Andheri East & Lower Parel",
+    description: "Floor-to-ceiling 10mm/12mm toughened glass partitions with slim anodized aluminium framework, frosted privacy film, and heavy-duty sliding glass door systems.",
+    images: [
+      imgOfficePartition1,
+      imgOfficePartition2,
+      imgOfficePartition3,
+    ],
+    highlights: ["10mm/12mm Toughened Glass", "Acoustic Cabin Privacy", "Floor-to-Ceiling Finish"],
   },
   {
-    title: "Street Traffic Noise ➔ Soundproof Domal DGU Window",
-    subtitle: "Thin single pane upgraded to double-glazed acoustic insulated glass with airtight EPDM gaskets",
-    before: soundproofBefore,
-    after: soundproofAfter,
+    title: "Invisible Stainless Steel Safety Wire Grill Systems",
+    category: "Invisible Safety Grills",
+    location: "Kandivali & Thane Apartments",
+    description: "High-tensile 316 marine-grade nylon-coated stainless steel invisible safety wires installed across balcony railings. Unblocked skyline views with 100% child and pet fall protection.",
+    images: [
+      imgInvisibleGrill3,
+      imgInvisibleGrill1,
+      imgInvisibleGrill2,
+    ],
+    highlights: ["Grade 316 SS Marine Wire", "Unblocked 180° View", "Child & Pet Safe (Up to 400kg)"],
   },
   {
-    title: "Broken Window Glass ➔ Brand New Toughened Glass",
-    subtitle: "Shattered high-rise window pane replaced with crystal-clear 5mm toughened safety float glass",
-    before: glassBefore,
-    after: glassAfter,
+    title: "Balcony Pigeon Netting & High-Rise Bird Protection",
+    category: "Pigeon Netting",
+    location: "Goregaon & Chembur",
+    description: "Durable UV-stabilized transparent nylon safety netting securely anchored with stainless steel hooks. Keeps pigeons, dirt, and droppings out while maintaining complete daylight and airflow.",
+    images: [
+      imgPigeonNet1,
+      imgBalconyViewNet,
+      imgBalconyNet2,
+    ],
+    highlights: ["UV-Resistant Nylon Mesh", "Rust-Free SS Fasteners", "Zero Obstruction to Airflow"],
   },
   {
-    title: "Torn Mosquito Net ➔ Heavy-Duty SS 304 Mesh",
-    subtitle: "Torn, sagging insect screen replaced with high-tension black stainless steel mosquito mesh",
-    before: meshBefore,
-    after: meshAfter,
+    title: "Concealed Flush Locks, Handles & Keyed Latches",
+    category: "Locks & Hardware",
+    location: "Andheri West & Malad",
+    description: "Broken, loose, and snapped sliding window locks replaced on-site with heavy-duty powder-coated aluminium flush latches, dual-hook locks, and high-security key sets.",
+    images: [
+      imgLockHandleKey,
+      imgWindowHandleLatch,
+    ],
+    highlights: ["Solid Brass Cylinders", "Powder-Coated Anti-Corrosion", "Tight Acoustic Weather-Seal"],
   },
   {
-    title: "Standard Window ➔ Custom Chimney Duct Modification",
-    subtitle: "Custom fabricated aluminium utility window with precision exhaust pipe cutout & wire mesh",
-    before: wsImg6,
-    after: wsImg4,
+    title: "Kitchen Utility Windows & Custom Exhaust Cutouts",
+    category: "Kitchen & Ventilators",
+    location: "Dadar & Ghatkopar",
+    description: "Custom precision exhaust fan and chimney duct cutouts directly in toughened glass, integrated with sliding mosquito screens and anodized frames.",
+    images: [
+      imgKitchenDuct1,
+      imgKitchenWorkshopProof05,
+    ],
+    highlights: ["Precision Diamond Glass Cutout", "Chimney Duct Sealed", "Mosquito Mesh Integrated"],
   },
   {
-    title: "Dismantled Aluminium Frame ➔ Floor-to-Ceiling Glass Partition",
-    subtitle: "Custom multi-panel sliding glass door & partition installation completed on-site",
-    before: wsImg5,
-    after: wsLargeInstallation,
+    title: "Heavy-Duty Ball-Bearing Rollers & Track Replacement",
+    category: "Roller & Track Workshop",
+    location: "Mumbai Central Workshop & On-Site",
+    description: "Direct parts from our workshop inventory. Crushed, squeaking plastic wheels swapped for industrial brass and stainless steel ball-bearing rollers carrying up to 120kg panes.",
+    images: [
+      imgLivingRoomSlider2,
+      wsFinishedCloseup,
+    ],
+    highlights: ["Solid Brass Ball-Bearings", "Heavy 120kg Pane Support", "1-Year Glide Guarantee"],
   },
 ];
 
-function BeforeAfterSlider({ beforeImage, afterImage, label }: { beforeImage: string, afterImage: string, label: string }) {
-  const [sliderPosition, setSliderPosition] = useState(50);
-  
-  return (
-    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border group shadow-sm bg-secondary">
-      {/* Base Image: After */}
-      <img src={afterImage} alt={`After ${label}`} width={640} height={480} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-      
-      {/* Top Image: Before (Clipped) */}
-      <img 
-        src={beforeImage} 
-        alt={`Before ${label}`} 
-        width={640}
-        height={480}
-        loading="lazy" 
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
-        style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }} 
-      />
-      
-      <div 
-        className="absolute inset-y-0 w-1 bg-white cursor-ew-resize pointer-events-none shadow-[0_0_4px_rgba(0,0,0,0.5)]" 
-        style={{ left: `calc(${sliderPosition}% - 2px)` }} 
-      >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg border border-border">
-          <ChevronLeft className="w-5 h-5 text-primary -mr-1" />
-          <ChevronRight className="w-5 h-5 text-primary" />
-        </div>
-      </div>
-      
-      <input
-        type="range"
-        min="0"
-        max="100"
-        value={sliderPosition}
-        aria-label="Drag to compare before and after"
-        onChange={(e) => setSliderPosition(Number(e.target.value))}
-        className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize"
-      />
+function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
-      <div className="absolute top-4 left-4 bg-black/60 px-3 py-1.5 rounded-full text-[10px] font-bold text-white tracking-widest uppercase backdrop-blur-sm pointer-events-none">
-        Before
+  // Maximum 3 images per carousel as requested
+  const displayImages = images.slice(0, 3);
+  const total = displayImages.length;
+
+  if (total === 1) {
+    return (
+      <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border/80 shadow-md bg-slate-900 group">
+        <img
+          src={displayImages[0]}
+          alt={alt}
+          width={640}
+          height={480}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
-      <div className="absolute top-4 right-4 bg-accent px-3 py-1.5 rounded-full text-[10px] font-bold text-white tracking-widest uppercase shadow-sm pointer-events-none">
-        After
+    );
+  }
+
+  const prev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+  };
+
+  const next = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) next();
+      else prev();
+    }
+    touchStartX.current = null;
+  };
+
+  return (
+    <div
+      className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border/80 shadow-md bg-slate-900 group select-none"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Slides */}
+      <div
+        className="flex w-full h-full transition-transform duration-500 ease-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {displayImages.map((img, idx) => (
+          <div key={idx} className="w-full h-full flex-shrink-0 relative">
+            <img
+              src={img}
+              alt={`${alt} - View ${idx + 1}`}
+              width={640}
+              height={480}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        type="button"
+        onClick={prev}
+        aria-label="Previous photo"
+        className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-sm flex items-center justify-center transition-all opacity-90 sm:opacity-75 sm:group-hover:opacity-100 shadow-md active:scale-90 z-10"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+      <button
+        type="button"
+        onClick={next}
+        aria-label="Next photo"
+        className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-sm flex items-center justify-center transition-all opacity-90 sm:opacity-75 sm:group-hover:opacity-100 shadow-md active:scale-90 z-10"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Photo Counter Badge */}
+      <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white tracking-wider flex items-center gap-1 shadow z-10">
+        <span>{currentIndex + 1}</span>
+        <span className="opacity-40">/</span>
+        <span>{total}</span>
+      </div>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-3 inset-x-0 flex items-center justify-center gap-1.5 z-10">
+        {displayImages.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex(idx);
+            }}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              idx === currentIndex ? "w-6 bg-accent" : "w-2 bg-white/60 hover:bg-white"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
@@ -473,380 +587,154 @@ function BeforeAfterSlider({ beforeImage, afterImage, label }: { beforeImage: st
 
 export function WorkGallery() {
   return (
-    <section id="our-work" className="reveal-section mx-auto max-w-4xl px-4 py-20 sm:py-28">
-      <Heading sub="Slide to compare actual before & after repairs from real Mumbai apartments across Powai, Bandra, and Andheri.">
+    <section id="our-work" className="reveal-section mx-auto max-w-7xl px-4 py-20 sm:py-28">
+      <Heading sub="Real job site photos from Mumbai apartments across Powai, Bandra, Andheri, and Thane. Genuine parts, clean work, no shortcuts.">
         THIS IS <span className="highlighter px-2 text-black">HOW WE FIX IT.</span>
       </Heading>
 
-      <div className="mt-14 grid gap-16 grid-cols-1">
-        {galleryItems.map((item) => (
-          <div key={item.title} className="flex flex-col gap-3">
-            <div className="text-center">
-              <h3 className="card-h3 text-primary font-display tracking-wide">{item.title}</h3>
-              <p className="mt-1 text-sm sm:text-base text-slate-800 font-medium">{item.subtitle}</p>
+      <div className="mt-12 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {realWorkProjects.map((project) => (
+          <div
+            key={project.title}
+            className="flex flex-col rounded-3xl bg-card border border-border/70 p-4 sm:p-5 shadow-sm hover:shadow-xl transition-all duration-300 group"
+          >
+            {/* Image Carousel (Max 3 real images) */}
+            <ProjectImageCarousel images={project.images} alt={project.title} />
+
+            {/* Meta tags */}
+            <div className="mt-4 flex items-center justify-between gap-2 flex-wrap text-xs">
+              <span className="bg-primary/10 text-primary font-bold px-2.5 py-1 rounded-full">
+                {project.category}
+              </span>
+              <span className="text-muted-foreground flex items-center gap-1 font-medium">
+                <MapPin className="w-3.5 h-3.5 text-accent" />
+                {project.location}
+              </span>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 w-full mt-3">
-              <BeforeAfterSlider 
-                beforeImage={item.before} 
-                afterImage={item.after} 
-                label={item.title} 
-              />
+
+            {/* Title & Description */}
+            <h3 className="card-h3 text-foreground font-display tracking-tight mt-3 text-lg leading-snug font-bold">
+              {project.title}
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground flex-1 leading-relaxed">
+              {project.description}
+            </p>
+
+            {/* Highlights */}
+            <div className="mt-4 pt-3 border-t border-border/60 flex flex-wrap gap-1.5">
+              {project.highlights.map((h, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center text-[11px] font-semibold text-slate-700 bg-secondary/80 px-2 py-0.5 rounded-md"
+                >
+                  ✓ {h}
+                </span>
+              ))}
             </div>
           </div>
         ))}
       </div>
-    </section>
-  );
-}
 
-interface WorkshopShotItem {
-  label: string;
-  src: string;
-  category: "all" | "workshop" | "sliding" | "ventilators";
-  tag: string;
-}
+      {/* Powai Physical Workshop Credibility Proof */}
+      <div className="mt-16 rounded-[28px] sm:rounded-[36px] bg-gradient-to-br from-white via-slate-50 to-slate-100/90 border-2 border-border/80 p-5 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          {/* Left Column: Workshop Photo with Overlays */}
+          <div className="lg:col-span-5 flex flex-col">
+            <div className="relative w-full h-[260px] sm:h-[340px] lg:h-full min-h-[320px] rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-md group bg-slate-900">
+              <img
+                src={wsWorkshopShelf}
+                alt="Vishwa Works Powai Workshop and Hardware Inventory"
+                width={640}
+                height={480}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute top-3.5 left-3.5 bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-white flex items-center gap-1.5 shadow-md">
+                <span>📍</span>
+                <span>Physical Workshop • Powai</span>
+              </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 sm:p-5 text-left">
+                <p className="text-[11px] font-extrabold uppercase tracking-wider text-accent">
+                  GENUINE HARDWARE READY IN STOCK
+                </p>
+                <p className="text-xs text-white/90 font-medium mt-1 leading-snug">
+                  Opp. IIT Market, Powai • 1,000+ Domal & Jindal bearings ready for same-day doorstep dispatch across Mumbai.
+                </p>
+              </div>
+            </div>
+          </div>
 
-const workshopShots: WorkshopShotItem[] = [
-  {
-    label: "Powai workshop desk & aluminium section sample profile display",
-    src: wsWorkshopShelf,
-    category: "workshop",
-    tag: "Powai Workshop",
-  },
-  {
-    label: "Anodized bronze casement window frame shrink-wrapped for dispatch",
-    src: wsImg1,
-    category: "workshop",
-    tag: "Fabricated Frame",
-  },
-  {
-    label: "Bathroom ventilator window with exhaust fan cutout & glass louvers",
-    src: wsImg2,
-    category: "ventilators",
-    tag: "Ventilator & Louvers",
-  },
-  {
-    label: "3-track sliding balcony window with stainless steel mosquito mesh",
-    src: wsImg3,
-    category: "sliding",
-    tag: "3-Track Sliding",
-  },
-  {
-    label: "Kitchen utility window with chimney exhaust duct cutout & mesh",
-    src: wsImg4,
-    category: "ventilators",
-    tag: "Kitchen Exhaust",
-  },
-  {
-    label: "Fabricated aluminium sliding frames & glass panels ready on-site",
-    src: wsImg5,
-    category: "workshop",
-    tag: "On-Site Stacking",
-  },
-  {
-    label: "Slim frosted glass privacy ventilator window with black aluminium frame",
-    src: wsImg6,
-    category: "ventilators",
-    tag: "Slim Ventilator",
-  },
-  {
-    label: "Granite framed bathroom ventilator with exhaust cutout & frosted casement",
-    src: wsImg7,
-    category: "ventilators",
-    tag: "Exhaust Cutout",
-  },
-  {
-    label: "White powder-coated bathroom casement window with frosted glass",
-    src: wsImg8,
-    category: "ventilators",
-    tag: "White Casement",
-  },
-  {
-    label: "Custom circular arched window with fitted safety grill & mesh",
-    src: wsImg9,
-    category: "ventilators",
-    tag: "Circular Window",
-  },
-  {
-    label: "L-shaped corner sliding window with invisible safety grill wires",
-    src: wsCornerWindow,
-    category: "sliding",
-    tag: "Corner Window",
-  },
-  {
-    label: "Champagne anodized 3-track sliding window with marble sill & lock",
-    src: wsFinishedCloseup,
-    category: "sliding",
-    tag: "3-Track Sliding",
-  },
-  {
-    label: "5-panel floor-to-ceiling sliding glass partition & door installation",
-    src: wsLargeInstallation,
-    category: "sliding",
-    tag: "Glass Partition",
-  },
-  {
-    label: "Wooden-finish sliding balcony window with pigeon net, high-rise view",
-    src: wsSkylineView,
-    category: "sliding",
-    tag: "Wooden Finish Sliding",
-  },
-  {
-    label: "Vishwa Works technicians aligning high-rise sliding windows with safety net",
-    src: wsHighriseWindowWork,
-    category: "sliding",
-    tag: "On-Site Highrise",
-  },
-  {
-    label: "Balcony sliding door track repair & roller alignment in Mumbai apartment",
-    src: wsBalconySlidingTrackFix,
-    category: "sliding",
-    tag: "Balcony Door Fix",
-  },
-  {
-    label: "Technician testing smooth glide on multi-track sliding window with grill",
-    src: wsTechnicianMultiTrack,
-    category: "sliding",
-    tag: "Track & Grill Check",
-  },
-  {
-    label: "Bronze anodized sliding glass door installed for kitchen dry balcony",
-    src: wsKitchenBalcony,
-    category: "sliding",
-    tag: "Kitchen Balcony",
-  },
-  {
-    label: "White powder-coated sliding window panel with flush lock & 1-finger glide",
-    src: wsWhitePowderCoatedSliding,
-    category: "sliding",
-    tag: "Smooth Glide",
-  },
-];
+          {/* Right Column: High-Converting Direct Response Copy */}
+          <div className="lg:col-span-7 flex flex-col justify-between text-left">
+            <div>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold bg-amber-500/15 text-amber-950 border border-amber-500/30 uppercase tracking-wide">
+                ⚠️ TIRED OF RANDOM APP GUYS GUESSING IN YOUR LIVING ROOM?
+              </span>
 
-export function WorkshopProof() {
-  const [activeTab, setActiveTab] = useState<"all" | "workshop" | "sliding" | "ventilators">("all");
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [lightboxShot, setLightboxShot] = useState<WorkshopShotItem | null>(null);
+              <h3 className="card-h3 text-primary font-display tracking-tight text-xl sm:text-2xl lg:text-3xl mt-3.5 font-extrabold leading-snug">
+                We Don't "Order Parts Online." <br className="hidden sm:inline" />
+                <span className="highlighter px-1.5 text-black">We Stock 1,000+ Bearings</span> In Our Own Powai Workshop.
+              </h3>
 
-  const filteredShots = activeTab === "all" 
-    ? workshopShots 
-    : workshopShots.filter((s) => s.category === activeTab);
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev > 0 ? prev - 1 : filteredShots.length - 1));
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev < filteredShots.length - 1 ? prev + 1 : 0));
-  };
-
-  const handleTabChange = (tab: "all" | "workshop" | "sliding" | "ventilators") => {
-    setActiveTab(tab);
-    setActiveIndex(0);
-  };
-
-  // Prevent background scroll when lightbox is open
-  useEffect(() => {
-    if (lightboxShot) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [lightboxShot]);
-
-  return (
-    <section className="reveal-section bg-secondary/10 py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
-        <Heading sub="Tired of apps sending random guys to your home? We have a real, physical workshop in Powai. You know exactly who is fixing your window.">
-          <br className="hidden sm:block" />JUST <span className="highlighter px-2 text-black">REAL PEOPLE & PROOF.</span>
-        </Heading>
-
-        {/* Filter categories */}
-        <div className="mt-8 flex items-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pb-2 sm:pb-0 sm:flex-wrap sm:justify-center sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
-          {[
-            { id: "all", label: `All Photos (${workshopShots.length})` },
-            { id: "workshop", label: `Workshop & Stock (${workshopShots.filter(s => s.category === "workshop").length})` },
-            { id: "sliding", label: `Sliding & Balconies (${workshopShots.filter(s => s.category === "sliding").length})` },
-            { id: "ventilators", label: `Ventilators & Exhaust (${workshopShots.filter(s => s.category === "ventilators").length})` },
-          ].map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => handleTabChange(cat.id as any)}
-              className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-black transition-all ${
-                activeTab === cat.id
-                  ? "bg-primary text-white shadow-md scale-105"
-                  : "bg-white/80 text-foreground/80 hover:bg-white border border-border/60 hover:text-foreground"
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-        
-        {/* Stacked Carousel for Mobile */}
-        <div className="relative h-[360px] w-full overflow-hidden sm:hidden mt-8">
-          {filteredShots.map((shot, idx) => {
-            const offset = idx - activeIndex;
-            // Render the active image and up to 3 next images
-            if (offset < 0 || offset > 3) return null;
-
-            return (
-              <figure
-                key={shot.label + idx}
-                className="absolute overflow-hidden rounded-2xl border border-border bg-card shadow-2xl transition-all duration-500 ease-out cursor-pointer"
-                style={{
-                  left: offset === 0 ? "0%" : `calc(70% + ${offset * 8}%)`,
-                  width: offset === 0 ? "82%" : "30%",
-                  height: offset === 0 ? "100%" : `${100 - offset * 6}%`,
-                  top: offset === 0 ? "0%" : `${offset * 3}%`,
-                  zIndex: 40 - offset,
-                  opacity: offset === 3 ? 0 : 1,
-                }}
-                onClick={() => {
-                  if (offset === 0) {
-                    setLightboxShot(shot);
-                  } else {
-                    handleNext();
-                  }
-                }}
-              >
-                <img
-                  src={shot.src}
-                  alt={shot.label}
-                  width={400}
-                  height={400}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
-                <span className="absolute top-3 right-3 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
-                  {shot.tag}
-                </span>
-                {offset === 0 && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4">
-                    <figcaption className="text-sm font-bold text-white leading-tight">
-                      {shot.label}
-                    </figcaption>
-                    <p className="text-[11px] text-white/70 mt-1 flex items-center gap-1 font-medium">
-                      <span>Tap to zoom</span> 🔍
+              {/* The Mistri Trap vs. Vishwa Works Way */}
+              <div className="mt-5 rounded-2xl bg-white border border-border shadow-sm divide-y divide-border overflow-hidden">
+                <div className="p-3.5 sm:p-4 flex items-start gap-3 bg-red-500/[0.03]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-black">
+                    ✕
+                  </span>
+                  <div>
+                    <p className="text-xs sm:text-sm font-black text-red-950">
+                      The Random App & Mistri Trap
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                      A guy shows up on a bike with zero spare parts and says: <i>"Bhaiya, ₹500 advance do, market jaake dhoondna padega."</i> Vanishes for 3 hours, fits a cheap ₹50 plastic duplicate, and your window jams again next week.
                     </p>
                   </div>
-                )}
-              </figure>
-            );
-          })}
-        </div>
+                </div>
 
-        {/* Controller buttons for mobile */}
-        <div className="mt-5 flex items-center justify-between sm:hidden">
-          <div className="text-xs font-bold text-muted-foreground">
-            Photo {activeIndex + 1} of {filteredShots.length}
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={handlePrev}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground shadow-md transition-all hover:bg-secondary border border-border/80"
-              aria-label="Previous photo"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white shadow-md transition-all hover:bg-primary/90"
-              aria-label="Next photo"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Desktop Grid */}
-        <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
-          {filteredShots.map((shot) => (
-            <figure
-              key={shot.label}
-              onClick={() => setLightboxShot(shot)}
-              className="tap group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col"
-            >
-              <div className="relative aspect-square w-full overflow-hidden bg-secondary/30">
-                <img
-                  src={shot.src}
-                  alt={shot.label}
-                  width={400}
-                  height={400}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className="absolute top-3 right-3 bg-black/75 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
-                  {shot.tag}
-                </span>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm">
-                    Click to enlarge 🔍
+                <div className="p-3.5 sm:p-4 flex items-start gap-3 bg-emerald-500/[0.04]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-xs font-black">
+                    ✓
                   </span>
+                  <div>
+                    <p className="text-xs sm:text-sm font-black text-emerald-950">
+                      The Honest Mumbai Vishwa Works Way
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-800 mt-1 leading-relaxed font-medium">
+                      Our technician arrives with genuine Domal, Jindal, and heavy-duty steel roller bearings in his toolkit. Fixed right in front of your eyes in <b>45 minutes flat</b> with a 1-year smooth glide guarantee.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <figcaption className="p-4 text-[13px] font-bold text-primary leading-snug flex-1 flex items-center">
-                {shot.label}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
 
-        {/* Lightbox Modal for Full View */}
-        {lightboxShot && typeof document !== "undefined" && createPortal(
-          <div
-            className="fixed inset-0 z-[9999] bg-black/95 flex flex-col items-center justify-center p-4 cursor-pointer backdrop-blur-md"
-            onClick={() => setLightboxShot(null)}
-          >
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setLightboxShot(null);
-              }}
-              className="absolute top-6 right-6 z-[10000] flex items-center gap-2 text-white bg-white/15 hover:bg-white/30 px-4 py-2 rounded-full backdrop-blur-md transition-colors border border-white/20 shadow-2xl"
-            >
-              <span className="font-bold text-sm">Close</span>
-              <X className="w-5 h-5" />
-            </button>
-
-            <div
-              className="relative max-w-4xl max-h-[85vh] w-full flex flex-col items-center cursor-default"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative max-h-[70vh] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black">
-                <img
-                  src={lightboxShot.src}
-                  alt={lightboxShot.label}
-                  width={800}
-                  height={600}
-                  className="max-h-[70vh] max-w-full object-contain"
-                />
-              </div>
-              <div className="mt-4 text-center max-w-2xl px-4">
-                <span className="inline-block bg-accent text-black font-black text-xs uppercase px-3 py-1 rounded-full mb-2">
-                  {lightboxShot.tag}
-                </span>
-                <p className="text-white text-base sm:text-lg font-bold">
-                  {lightboxShot.label}
-                </p>
-                <div className="mt-4 flex justify-center">
-                  <WhatsAppButton 
-                    location="workshop_lightbox" 
-                    className="scale-95"
-                  >
-                    SEND A PHOTO ON WHATSAPP
-                  </WhatsAppButton>
+              {/* 3 Quick Proof Points */}
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div className="rounded-xl bg-slate-50 border border-slate-200/80 p-3 text-center sm:text-left">
+                  <p className="text-xs font-black text-primary uppercase">No "Market Jao"</p>
+                  <p className="text-[11px] text-slate-600 mt-0.5 font-medium">1,000+ bearings in stock</p>
+                </div>
+                <div className="rounded-xl bg-slate-50 border border-slate-200/80 p-3 text-center sm:text-left">
+                  <p className="text-xs font-black text-primary uppercase">No Random Strangers</p>
+                  <p className="text-[11px] text-slate-600 mt-0.5 font-medium">10+ yrs trade veterans</p>
+                </div>
+                <div className="rounded-xl bg-slate-50 border border-slate-200/80 p-3 text-center sm:text-left">
+                  <p className="text-xs font-black text-primary uppercase">No Advance Money</p>
+                  <p className="text-[11px] text-slate-600 mt-0.5 font-medium">Pay only after 1-finger glide</p>
                 </div>
               </div>
             </div>
-          </div>,
-          document.body
-        )}
+
+            <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <WhatsAppButton
+                location="work_gallery_workshop_callout"
+                className="w-full sm:w-auto text-xs sm:text-sm font-bold"
+              >
+                SEND PHOTO ON WHATSAPP FOR 5-MIN DIAGNOSIS ➔
+              </WhatsAppButton>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1638,17 +1526,15 @@ export function Footer() {
   );
 }
 
-const newImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/proof-photos/*.{jpeg,jpg,png,webp}', { eager: true });
-const workshopGlob: Record<string, { default: string }> = import.meta.glob('@/assets/workshop/*.{jpeg,jpg,png,webp}', { eager: true });
-const newVideosGlob: Record<string, { default: string }> = import.meta.glob('@/assets/videos/*.{mov,mp4}', { eager: true });
-const videoPostersGlob: Record<string, { default: string }> = import.meta.glob('@/assets/video-posters/*.{jpeg,jpg,png,webp}', { eager: true });
+const allImagesGlob: Record<string, { default: string }> = import.meta.glob('@/assets/images/*.{jpeg,jpg,png,webp,avif}', { eager: true });
+const newVideosGlob: Record<string, { default: string }> = import.meta.glob('@/assets/videos/*.mp4', { eager: true });
 
 const posterMap: Record<string, string> = {};
-Object.keys(videoPostersGlob).forEach((key) => {
+Object.keys(allImagesGlob).forEach((key) => {
   const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
-  const item = videoPostersGlob[key];
-  if (item) {
-    posterMap[filename] = item.default;
+  if (filename.startsWith('poster-')) {
+    const videoKey = filename.replace('poster-', '');
+    posterMap[videoKey] = allImagesGlob[key].default;
   }
 });
 
@@ -1658,41 +1544,50 @@ type GalleryItem = {
   isVideo: boolean;
 };
 
-const newVideos: GalleryItem[] = Object.keys(newVideosGlob).map(key => {
-  const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
-  const item = newVideosGlob[key];
-  const url = item ? item.default : "";
-  return {
-    url,
-    poster: posterMap[filename] || url,
-    isVideo: true,
-  };
-});
+const newVideos: GalleryItem[] = Object.keys(newVideosGlob)
+  .filter((key) => !key.includes('hero.mp4'))
+  .map((key) => {
+    const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
+    const item = newVideosGlob[key];
+    const url = item ? item.default : "";
+    return {
+      url,
+      poster: posterMap[filename] || url,
+      isVideo: true,
+    };
+  });
 
-const newImages: GalleryItem[] = Object.keys(newImagesGlob).map(key => {
-  const item = newImagesGlob[key];
-  const url = item ? item.default : "";
-  return {
-    url,
-    poster: url,
-    isVideo: false,
-  };
-});
+const excludeFromGallery = new Set([
+  'hero-poster',
+  'hero-window-repair',
+  'sumit-vishwakarma-founder',
+  'wreath-left',
+  'wreath-right',
+]);
 
-const workshopImages: GalleryItem[] = Object.keys(workshopGlob).map(key => {
-  const item = workshopGlob[key];
-  const url = item ? item.default : "";
-  return {
-    url,
-    poster: url,
-    isVideo: false,
-  };
-});
+const galleryPhotos: GalleryItem[] = Object.keys(allImagesGlob)
+  .filter((key) => {
+    const filename = key.split('/').pop()?.replace(/\.[^/.]+$/, "") || "";
+    if (filename.startsWith('poster-')) return false;
+    for (const prefix of excludeFromGallery) {
+      if (filename.startsWith(prefix)) return false;
+    }
+    return true;
+  })
+  .map((key) => {
+    const item = allImagesGlob[key];
+    const url = item ? item.default : "";
+    return {
+      url,
+      poster: url,
+      isVideo: false,
+    };
+  });
 
 export function RealWorkGallery() {
   const [selectedAsset, setSelectedAsset] = useState<GalleryItem | null>(null);
 
-  const allAssets = [...newVideos, ...newImages, ...workshopImages];
+  const allAssets = [...newVideos, ...galleryPhotos];
   const row1 = allAssets.slice(0, Math.ceil(allAssets.length / 2));
   const row2 = allAssets.slice(Math.ceil(allAssets.length / 2));
 

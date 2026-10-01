@@ -16,7 +16,6 @@ import {
   StickyMobileCTA,
   WhyChooseUs,
   WorkGallery,
-  WorkshopProof,
   UsVsThem,
   Disqualifiers,
   Benefits,
@@ -25,8 +24,8 @@ import {
 } from "@/components/site/Sections";
 import { faqs } from "@/config/business";
 import { business } from "@/config/business";
-import heroVideo from "@/assets/hero.mp4";
-import heroPoster from "@/assets/hero-poster.jpg";
+import heroVideo from "@/assets/videos/hero.mp4";
+import heroPoster from "@/assets/images/hero-poster.jpg";
 
 const title = "Sliding Glass Door & Window Repair Near Me Mumbai | Rollers, Wheels & Track Fix";
 const description =
@@ -135,7 +134,6 @@ function Index() {
         {/* Phase 4: Logical Justification & Takeaway */}
         <Services />
         <WhyChooseUs />
-        <WorkshopProof />
         <Disqualifiers />
         
         {/* Phase 5: Closing */}

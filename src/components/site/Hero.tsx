@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import heroVideo from "@/assets/hero.mp4";
-import heroPoster from "@/assets/hero-poster.jpg";
+import heroVideo from "@/assets/videos/hero.mp4";
+import heroPoster from "@/assets/images/hero-poster.jpg";
 import { business } from "@/config/business";
 import { track } from "@/lib/analytics";
 import { CallButton, WhatsAppButton } from "./cta";
 import { ShieldCheck, Star, Sparkles } from "lucide-react";
-import wreathLeft from "@/assets/wreath-left.Dhid9-Kp_1emOdB.avif";
-import wreathRight from "@/assets/wreath-right.6OR3ntW6_Z1oK18L.avif";
+import wreathLeft from "@/assets/images/wreath-left.Dhid9-Kp_1emOdB.avif";
+import wreathRight from "@/assets/images/wreath-right.6OR3ntW6_Z1oK18L.avif";
 
 const googleProfileUrl = business.googleBusinessProfileUrl || business.googleMapsSearchUrl;
 
@@ -36,7 +36,7 @@ export function Hero() {
           </div>
           
           <h1 className="hero-h1 max-w-2xl font-extrabold uppercase tracking-tight text-white font-display">
-            Don't Pay <span className="highlighter">₹20,000</span> For New Windows When Your Old Ones Just Need A <span className="text-red-500">45-Minute Fix</span>
+            Don't Pay <span className="highlighter">₹15,000</span> For New Windows When Your Old Ones Just Need A <span className="text-red-500">45-Minute Fix</span>
           </h1>
           <p className="hero-sub mt-4 sm:mt-6 max-w-lg font-medium text-primary-foreground/90">
             Is your sliding door stuck? Does your maid need both hands just to move it 2 inches? Local mistris say: <i>"Pura window change karna padega."</i> <b>Don't believe them.</b>
