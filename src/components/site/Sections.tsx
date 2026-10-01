@@ -548,7 +548,7 @@ function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }
         type="button"
         onClick={prev}
         aria-label="Previous photo"
-        className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-sm flex items-center justify-center transition-all opacity-90 sm:opacity-75 sm:group-hover:opacity-100 shadow-md active:scale-90 z-10"
+        className="absolute left-2.5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-sm flex items-center justify-center transition-all opacity-90 sm:opacity-75 sm:group-hover:opacity-100 shadow-md active:scale-90 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
@@ -557,7 +557,7 @@ function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }
         type="button"
         onClick={next}
         aria-label="Next photo"
-        className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-sm flex items-center justify-center transition-all opacity-90 sm:opacity-75 sm:group-hover:opacity-100 shadow-md active:scale-90 z-10"
+        className="absolute right-2.5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-sm flex items-center justify-center transition-all opacity-90 sm:opacity-75 sm:group-hover:opacity-100 shadow-md active:scale-90 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
@@ -570,7 +570,7 @@ function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }
       </div>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-3 inset-x-0 flex items-center justify-center gap-1.5 z-10">
+      <div className="absolute bottom-1 inset-x-0 flex items-center justify-center gap-0.5 z-10">
         {displayImages.map((_, idx) => (
           <button
             key={idx}
@@ -579,11 +579,15 @@ function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }
               e.stopPropagation();
               setCurrentIndex(idx);
             }}
-            aria-label={`Go to slide ${idx + 1}`}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? "w-6 bg-accent" : "w-2 bg-white/60 hover:bg-white"
-            }`}
-          />
+            aria-label={`Go to slide ${idx + 1} of ${total}`}
+            className="flex items-center justify-center min-w-[44px] min-h-[44px] p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-full group/dot transition-transform active:scale-95"
+          >
+            <span
+              className={`h-1.5 rounded-full transition-all duration-300 block shadow-sm ${
+                idx === currentIndex ? "w-6 bg-accent" : "w-2 bg-white/60 group-hover/dot:bg-white"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>
